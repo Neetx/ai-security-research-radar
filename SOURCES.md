@@ -29,9 +29,9 @@ tooling, exploitation research); skip product/marketing.
 - Trail of Bits — https://blog.trailofbits.com/ · feed `/feed/` (application/xml) **[verified 2026-06-23]** — AI/ML offensive security
 - NVIDIA — cybersecurity category Atom https://developer.nvidia.com/blog/category/cybersecurity/feed/ **[verified 2026-06-23]** (garak / AI red team)
 - Microsoft Security blog — https://www.microsoft.com/en-us/security/blog/ · feed `/feed/` (rss+xml) **[verified 2026-06-23]** (AI Red Team / PyRIT posts)
-- Microsoft MSRC blog — https://msrc.microsoft.com/blog/ — NO clean RSS (the `/blog/feed/` path returns HTML, checked 2026-06-23) → fetch via `tvly extract`
+- Microsoft MSRC blog — https://msrc.microsoft.com/blog/ — NO clean RSS, AND a JS-rendered SPA: `tvly extract` (even `--extract-depth advanced`) returns only nav chrome, no post bodies (checked 2026-06-23 Pass 2, 2nd failure). HEAL: do not rely on the blog index; surface MSRC items via `tvly search --include-domains msrc.microsoft.com` for the topic, or via the Microsoft Security blog feed which carries most AI-security items. Mark `degraded: SPA, search-only`.
 - OpenAI — https://openai.com/news/ · RSS `/news/rss.xml` (text/xml) **[verified 2026-06-23]** — filter for red-teaming / preparedness items
-- Anthropic — https://www.anthropic.com/research — NO public RSS (`/news/rss.xml` 404, checked 2026-06-23) → `tvly extract`; track jailbreak-robustness / red-team research
+- Anthropic — https://www.anthropic.com/research — NO public RSS (`/news/rss.xml` 404). HEAL (2026-06-23 Pass 2): `tvly extract "https://www.anthropic.com/research" --extract-depth advanced` yields the dated publication index (Frontier Red Team items: N-days, exploit-development, LLM ATT&CK Navigator); follow each to its `/research/<slug>` article and extract that to cite. **[verified 2026-06-23]**
 - Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence **[candidate]** (verify feed on first sweep)
 - Protect AI — huntr disclosures & blog https://protectai.com/ + https://huntr.com/ **[candidate]** (AI/ML vuln disclosures)
 - Meta — Llama / AI security https://ai.meta.com/blog/ **[candidate]** (HTML extract if no feed)
