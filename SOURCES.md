@@ -42,6 +42,7 @@ tooling, exploitation research); skip product/marketing.
 
 - arXiv — **cs.CR** (core) https://arxiv.org/list/cs.CR/recent **[verified 2026-06-23]**, plus cs.AI / cs.LG / cs.CL for attack-on-model work. Metadata via `export.arxiv.org/api/query?id_list=...`.
 - Conferences (proceedings/preprints) **[candidate]**: USENIX Security, IEEE S&P (Oakland), ACM CCS, NDSS; offensive cons (DEF CON, Black Hat AI/ML tracks).
+- DEF CON AI Village — https://aivillage.org/ **[verified 2026-06-23]** — the offensive-AI community/event (talks, CTFs, red-team challenges, generative-AI bug bounties); track outputs and writeups.
 - Standards & taxonomies (track changes/additions): OWASP GenAI / LLM Top 10 https://genai.owasp.org/llm-top-10/ **[verified 2026-06-23]** ; MITRE ATLAS https://atlas.mitre.org/ **[verified 2026-06-23]** ; NIST AI RMF / adversarial-ML taxonomy **[candidate]**.
 
 ## GitHub watch (Phase 5 — repos, profiles, and fork trees)
@@ -62,6 +63,7 @@ is a queue signal. (Agent owns and grows these lists.)
 - ethz-spylab/agentdojo — dynamic env to evaluate ATTACKS & defenses for LLM agents
 - andyzorigin/cybench — CTF benchmark for autonomous agents
 - princeton-nlp/intercode — InterCode benchmark (NeurIPS 2023; code/CTF agent tasks)
+- elder-plinius/L1B3RT4S — **[verified 2026-06-23 via API]** large public collection of working jailbreaks per model; track ADDITIONS as a leading indicator of new bypasses (intake — link the repo, never paste payloads into the ledger)
 - (agent: add tools as they appear in papers/cons; drop abandoned ones)
 
 ### Watched profiles/users  (GitHub orgs behind the watched tools — **[verified 2026-06-23]** via API; watch for NEW repos/releases under each)
@@ -88,13 +90,16 @@ reach subs via Tavily, not `.json`.
 - Hacker News — Algolia API https://hn.algolia.com/api/v1/search?tags=front_page (+ `query=<term>`) **[verified pattern; known reliable]**
 
 ### YouTube — TRUSTED-CURATOR POINTER LANE (check EVERY run, intake only)
-- Embrace The Red (Johann Rehberger) — channel exists; **[candidate — resolve `channel_id` on first use]**, then use `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`. On-topic: prompt injection / AI agent attacks.
+- Microsoft Developer — feed `https://www.youtube.com/feeds/videos.xml?channel_id=UCsMica-v34Irf9KVTh6xx-g` **[verified 2026-06-23; channel_id resolved]** — hosts the "AI Red Teaming 101" series; BROAD channel, filter for AI-red-team/security items only.
+- Embrace The Red (Johann Rehberger) — channel exists; **[candidate — resolve `channel_id` on first use]**. On-topic: prompt injection / AI agent attacks.
 - (agent: add offensive-AI / red-team / CTF-agent channels as they prove high-signal — resolve `channel_id` once, follow each video's link to the named primary, cite the primary not the video. Do NOT invent channel names.)
 
 ### Curated digests + explainer/aggregator blogs (INTAKE LANE — swept every run)
 - Embrace The Red — https://embracethered.com/blog/ · RSS https://embracethered.com/blog/index.xml **[verified 2026-06-23]** — Rehberger's own prompt-injection / agent-attack research; often IS the primary artifact (then cite it directly).
 - tldrsec — https://tldrsec.com/ **[verified 2026-06-23; no clean RSS at /feed → HTML extract]** — security newsletter (Clint Gibler), heavy AI-security coverage; follow to the named primary.
 - Simon Willison — https://simonwillison.net/ **[verified 2026-06-23]** — extensive prompt-injection coverage and original framing; follow to the primary.
+- Kai Greshake — https://kai-greshake.de/ · RSS https://kai-greshake.de/index.xml **[verified 2026-06-23]** — the researcher who pioneered indirect prompt injection; his posts are often the original disclosure (cite directly).
+- MLSecOps — https://mlsecops.com/ + https://community.mlsecops.com/ **[verified 2026-06-23]** — ML/AI-security community & content hub (Protect AI-affiliated); follow to the primary.
 - Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/ **[candidate]** — threat-intel research on in-the-wild prompt injection / agent attacks (verify feed on first sweep).
 - (agent grows this list; every entry logged opened or `degraded:<reason>`; follow to the primary, never cite the digest unless it is the original disclosure.)
 
