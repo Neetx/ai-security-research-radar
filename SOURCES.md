@@ -64,13 +64,19 @@ is a queue signal. (Agent owns and grows these lists.)
 - princeton-nlp/intercode — InterCode benchmark (NeurIPS 2023; code/CTF agent tasks)
 - (agent: add tools as they appear in papers/cons; drop abandoned ones)
 
-### Watched profiles/users
-- **[candidate]** orgs/maintainers that ship offensive AI-security tooling — NVIDIA,
-  Microsoft (Azure), Protect AI, Trail of Bits, ETH SPY Lab — track new repos/releases.
+### Watched profiles/users  (GitHub orgs behind the watched tools — **[verified 2026-06-23]** via API; watch for NEW repos/releases under each)
+- github.com/NVIDIA (garak) · github.com/Azure (PyRIT) · github.com/microsoft
+- github.com/protectai (ai-exploits, modelscan) · github.com/promptfoo · github.com/confident-ai (deepteam)
+- github.com/ethz-spylab (agentdojo, adversarial ML) · github.com/meta-llama (PurpleLlama/CyberSecEval) · github.com/Giskard-AI
+- (agent: add individual maintainers/researchers as their repos prove high-signal — link the profile, never quote the person)
 
 ### Fork-tree analysis
-- For high-signal tool repos, scan notable forks (depth ~3, scored by stars/recency) — a
-  diverging fork is often where a new offensive capability first appears.
+- Scan notable forks (depth ~3, scored by stars/recency) of the highest-signal repos — a
+  diverging fork is often where a new offensive capability first appears. Seed targets:
+  `llm-attacks/llm-attacks` (GCG — heavily forked for new adversarial-suffix variants),
+  `NVIDIA/garak` (new probes/detectors), `ethz-spylab/agentdojo` (new agent attacks),
+  `protectai/ai-exploits` (new disclosed exploits). Add a repo here once its fork tree
+  proves productive.
 
 ## Social & community channels (Phase 2 — INTAKE ONLY, never evidence)
 
@@ -78,14 +84,19 @@ Method: `radar-pulse`. Intake feeds `observation_queue` (unverified) + the pulse
 never name/quote individuals beyond a bare URL. Multi-channel earthquake check.
 NOTE: Reddit blocks direct API from this setup (`about.json` → 403, checked 2026-06-23) —
 reach subs via Tavily, not `.json`.
-- Reddit (via Tavily): r/netsec, r/MachineLearning, r/LocalLLaMA, r/ChatGPTJailbreak, r/hacking, r/AskNetsec  **[candidate — confirm each resolves]**
+- Reddit (Reddit direct API is 403 from this setup — reach via Tavily): r/netsec, r/MachineLearning, r/LocalLLaMA, r/hacking, r/AskNetsec (well-known active subs); r/ChatGPTJailbreak (jailbreak community). Read TOP + earthquake check.
 - Hacker News — Algolia API https://hn.algolia.com/api/v1/search?tags=front_page (+ `query=<term>`) **[verified pattern; known reliable]**
 
 ### YouTube — TRUSTED-CURATOR POINTER LANE (check EVERY run, intake only)
-- **[candidate]** seed with offensive-AI / red-team channels as found; resolve each to its `channel_id` once, then use `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`.
+- Embrace The Red (Johann Rehberger) — channel exists; **[candidate — resolve `channel_id` on first use]**, then use `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`. On-topic: prompt injection / AI agent attacks.
+- (agent: add offensive-AI / red-team / CTF-agent channels as they prove high-signal — resolve `channel_id` once, follow each video's link to the named primary, cite the primary not the video. Do NOT invent channel names.)
 
 ### Curated digests + explainer/aggregator blogs (INTAKE LANE — swept every run)
-- **[candidate]** AI-security / adversarial-ML newsletters & aggregators — follow to the named primary, verify, cite the primary, never the digest. Agent grows this list; every entry logged opened or `degraded:<reason>`.
+- Embrace The Red — https://embracethered.com/blog/ · RSS https://embracethered.com/blog/index.xml **[verified 2026-06-23]** — Rehberger's own prompt-injection / agent-attack research; often IS the primary artifact (then cite it directly).
+- tldrsec — https://tldrsec.com/ **[verified 2026-06-23; no clean RSS at /feed → HTML extract]** — security newsletter (Clint Gibler), heavy AI-security coverage; follow to the named primary.
+- Simon Willison — https://simonwillison.net/ **[verified 2026-06-23]** — extensive prompt-injection coverage and original framing; follow to the primary.
+- Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/ **[candidate]** — threat-intel research on in-the-wild prompt injection / agent attacks (verify feed on first sweep).
+- (agent grows this list; every entry logged opened or `degraded:<reason>`; follow to the primary, never cite the digest unless it is the original disclosure.)
 
 ## Discovery / exploration venues (Phase 4 — iterated EVERY run by radar-explore)
 
