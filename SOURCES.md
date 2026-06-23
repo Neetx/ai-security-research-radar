@@ -8,56 +8,65 @@ describe the *method*; this file is the *data* (the lists the skills iterate by 
 Hard-rule reminder: papers, tool repos, vendor/lab security blogs, CVEs/advisories and
 standards are PRIMARY sources (citable evidence). Social/community sources are an INTAKE
 LANE ONLY — never evidence; when a social signal links to or names a primary artifact,
-follow the link and verify the artifact (that artifact, not the post, becomes evidence).
-Track and cite; never invent URLs/dates. A source listed under a "swept every run"
-heading is a coverage PROMISE — log it opened or `degraded: <reason>` every run.
+follow the link and verify the artifact. Track and cite; never invent URLs/dates. A
+source listed under a "swept every run" heading is a coverage PROMISE — log it opened or
+`degraded: <reason>` every run.
+
+Verification: entries marked **[verified 2026-06-23]** had their URL/feed opened and
+confirmed during setup. Entries marked **[candidate]** are plausible but NOT yet opened —
+the first sweep must verify them (`radar-source-verify`) before citing, and heal or drop
+on failure.
 
 ---
 
 ## Primary feeds — vendor/lab security blogs & advisories (Phase 1 — swept EVERY run)
 
-Method: `radar-lab-sweep` skill (a primary-feed sweep). Prefer RSS/Atom; open only
-posts newer than the last scan. Filter for OFFENSIVE relevance (attack techniques,
-red-team tooling, exploitation research) — skip pure product/marketing.
+Method: `radar-lab-sweep`. Iterate EVERY entry; prefer the feed, fall back to `tvly
+extract` for feed-less ones. Filter for OFFENSIVE relevance (attack techniques, red-team
+tooling, exploitation research); skip product/marketing.
 
-- Microsoft — MSRC blog https://msrc.microsoft.com/blog/ + AI Red Team https://www.microsoft.com/en-us/security/blog/ (PyRIT) (verify feeds)
-- Google — Project Zero https://googleprojectzero.blogspot.com/ (Atom) + Threat Intelligence (GTIG) https://cloud.google.com/blog/topics/threat-intelligence + DeepMind security posts
-- NVIDIA — developer/security blog (garak, AI red team) https://developer.nvidia.com/blog/ (verify feed)
-- Meta — AI red team / Purple Llama https://ai.meta.com/blog/ (verify; HTML extract if no feed)
-- OpenAI — red-teaming / preparedness posts https://openai.com/news/ (RSS; filter offensive)
-- Anthropic — red-team / jailbreak-robustness research https://www.anthropic.com/research (HTML extract; no public RSS as of setup)
-- Trail of Bits https://blog.trailofbits.com/ (RSS) — AI/ML offensive security
-- NCC Group / research blogs, Bishop Fox, Protect AI (huntr.com) — AI/ML attack research (verify feeds)
-- Advisory feeds: NVD https://services.nvd.nist.gov/rest/json/cves/2.0 ; GitHub advisories (GHSA) for AI tooling; Protect AI huntr disclosures.
+- Google Project Zero — https://googleprojectzero.blogspot.com/ · Atom `…/feeds/posts/default` **[verified 2026-06-23]**
+- Trail of Bits — https://blog.trailofbits.com/ · feed `/feed/` (application/xml) **[verified 2026-06-23]** — AI/ML offensive security
+- NVIDIA — cybersecurity category Atom https://developer.nvidia.com/blog/category/cybersecurity/feed/ **[verified 2026-06-23]** (garak / AI red team)
+- Microsoft Security blog — https://www.microsoft.com/en-us/security/blog/ · feed `/feed/` (rss+xml) **[verified 2026-06-23]** (AI Red Team / PyRIT posts)
+- Microsoft MSRC blog — https://msrc.microsoft.com/blog/ — NO clean RSS (the `/blog/feed/` path returns HTML, checked 2026-06-23) → fetch via `tvly extract`
+- OpenAI — https://openai.com/news/ · RSS `/news/rss.xml` (text/xml) **[verified 2026-06-23]** — filter for red-teaming / preparedness items
+- Anthropic — https://www.anthropic.com/research — NO public RSS (`/news/rss.xml` 404, checked 2026-06-23) → `tvly extract`; track jailbreak-robustness / red-team research
+- Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence **[candidate]** (verify feed on first sweep)
+- Protect AI — huntr disclosures & blog https://protectai.com/ + https://huntr.com/ **[candidate]** (AI/ML vuln disclosures)
+- Meta — Llama / AI security https://ai.meta.com/blog/ **[candidate]** (HTML extract if no feed)
+- NCC Group / Bishop Fox research blogs **[candidate]** (AI/ML offensive research; verify feeds)
+- Advisory feeds: NVD API https://services.nvd.nist.gov/rest/json/cves/2.0 **[verified 2026-06-23]** ; GitHub advisories (GHSA) for AI tooling **[candidate]**
 
 ## Research venues — arXiv & security conferences (primary)
 
-- arXiv — **cs.CR** (core), plus cs.AI / cs.LG / cs.CL for attack-on-model work. Metadata via `export.arxiv.org/api/query?id_list=...`.
-- Conferences (proceedings/preprints): USENIX Security, IEEE S&P (Oakland), ACM CCS, NDSS.
-- Offensive cons (talk/whitepaper archives): DEF CON, Black Hat (AI/ML tracks), Offensive-security writeups.
-- Standards & taxonomies (track changes/additions): OWASP LLM Top 10 + Agentic Security, MITRE ATLAS, NIST AI RMF / adversarial-ML taxonomy.
+- arXiv — **cs.CR** (core) https://arxiv.org/list/cs.CR/recent **[verified 2026-06-23]**, plus cs.AI / cs.LG / cs.CL for attack-on-model work. Metadata via `export.arxiv.org/api/query?id_list=...`.
+- Conferences (proceedings/preprints) **[candidate]**: USENIX Security, IEEE S&P (Oakland), ACM CCS, NDSS; offensive cons (DEF CON, Black Hat AI/ML tracks).
+- Standards & taxonomies (track changes/additions): OWASP GenAI / LLM Top 10 https://genai.owasp.org/llm-top-10/ **[verified 2026-06-23]** ; MITRE ATLAS https://atlas.mitre.org/ **[verified 2026-06-23]** ; NIST AI RMF / adversarial-ML taxonomy **[candidate]**.
 
 ## GitHub watch (Phase 5 — repos, profiles, and fork trees)
 
 Method: `radar-repo-watch`. Watch releases (`<repo>/releases.atom`), notable forks, and
-profile activity for published offensive/red-team AI-security tools. New releases/tools
-are citable artifacts; issue/PR/fork/profile movement is a queue signal. (Agent owns and
-grows these lists.)
+profile activity. New releases/tools are citable artifacts; issue/PR/fork/profile movement
+is a queue signal. (Agent owns and grows these lists.)
 
-### Watched repositories
-- garak (NVIDIA) — LLM vulnerability scanner
-- PyRIT (Microsoft) — automated red-teaming for genAI
-- promptfoo — red-team / eval harness (jailbreak/injection probes)
-- giskard / deepteam — LLM red-team & scanning
-- llm-attacks / GCG and successor adversarial-suffix repos (research)
-- prompt-injection & agent-exploitation PoC repos (research, as published)
-- LLM fuzzers / automated jailbreak-search frameworks (research)
+### Watched repositories  (all **[verified 2026-06-23]** via GitHub API unless noted)
+- NVIDIA/garak — the LLM vulnerability scanner (note: `leondz/garak` 301-redirects here)
+- Azure/PyRIT — Python Risk Identification Tool for generative AI (Microsoft)
+- promptfoo/promptfoo — prompt/agent/RAG red-teaming & pentesting
+- confident-ai/deepteam — framework to red-team LLMs and AI agents
+- Giskard-AI/giskard — LLM red-team & scanning (repo resolves via 301)
+- llm-attacks/llm-attacks — Universal & Transferable Attacks on Aligned LLMs (GCG)
+- protectai/ai-exploits — real-world AI/ML exploits for responsibly-disclosed vulns
+- meta-llama/PurpleLlama — LLM security tools incl. CyberSecEval offensive benchmarks
+- ethz-spylab/agentdojo — dynamic env to evaluate ATTACKS & defenses for LLM agents
+- andyzorigin/cybench — CTF benchmark for autonomous agents
+- princeton-nlp/intercode — InterCode benchmark (NeurIPS 2023; code/CTF agent tasks)
 - (agent: add tools as they appear in papers/cons; drop abandoned ones)
 
 ### Watched profiles/users
-- (seed with orgs/researchers who ship offensive AI-security tooling — Microsoft, NVIDIA,
-  Protect AI, Trail of Bits, and individual maintainers — as discovered; track new repos
-  and releases under them)
+- **[candidate]** orgs/maintainers that ship offensive AI-security tooling — NVIDIA,
+  Microsoft (Azure), Protect AI, Trail of Bits, ETH SPY Lab — track new repos/releases.
 
 ### Fork-tree analysis
 - For high-signal tool repos, scan notable forks (depth ~3, scored by stars/recency) — a
@@ -65,23 +74,22 @@ grows these lists.)
 
 ## Social & community channels (Phase 2 — INTAKE ONLY, never evidence)
 
-Method: `radar-pulse`. Best-effort via Tavily / public APIs. Intake feeds
-`observation_queue` (unverified) + the pulse note; never name/quote individuals beyond
-a bare URL. The earthquake check is multi-channel (don't collapse to one).
-- Reddit: r/netsec, r/MachineLearning, r/LocalLLaMA, r/ChatGPTJailbreak, r/hacking, r/AskNetsec
-- Hacker News — via Algolia API `https://hn.algolia.com/api/v1/search?tags=front_page` (+ `query=<term>`)
-- Security research curators / newsletters / YouTube channels (agent-curated; follow to the primary, cite the primary, never the curator)
+Method: `radar-pulse`. Intake feeds `observation_queue` (unverified) + the pulse note;
+never name/quote individuals beyond a bare URL. Multi-channel earthquake check.
+NOTE: Reddit blocks direct API from this setup (`about.json` → 403, checked 2026-06-23) —
+reach subs via Tavily, not `.json`.
+- Reddit (via Tavily): r/netsec, r/MachineLearning, r/LocalLLaMA, r/ChatGPTJailbreak, r/hacking, r/AskNetsec  **[candidate — confirm each resolves]**
+- Hacker News — Algolia API https://hn.algolia.com/api/v1/search?tags=front_page (+ `query=<term>`) **[verified pattern; known reliable]**
 
 ### YouTube — TRUSTED-CURATOR POINTER LANE (check EVERY run, intake only)
-- (seed with offensive-AI / red-team channels as found; resolve each to its `channel_id` once, then use `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`)
+- **[candidate]** seed with offensive-AI / red-team channels as found; resolve each to its `channel_id` once, then use `https://www.youtube.com/feeds/videos.xml?channel_id=UC…`.
 
 ### Curated digests + explainer/aggregator blogs (INTAKE LANE — swept every run)
-- AI-security / adversarial-ML newsletters and aggregators (follow to the named primary, verify, cite the primary, never the digest). Agent grows this list; every entry is logged opened or `degraded:<reason>`.
+- **[candidate]** AI-security / adversarial-ML newsletters & aggregators — follow to the named primary, verify, cite the primary, never the digest. Agent grows this list; every entry logged opened or `degraded:<reason>`.
 
 ## Discovery / exploration venues (Phase 4 — iterated EVERY run by radar-explore)
 
-Where NEW / not-yet-tracked offensive work surfaces; read top/most-attention items
-regardless of sub-topic.
-- arXiv cs.CR recent listing (advancing date window) + Hugging Face papers (security-tagged).
-- GitHub Trending (security / LLM-attack tooling); alphaXiv / Papers with Code trending (security).
+Read top/most-attention items regardless of sub-topic, advancing the date window.
+- arXiv cs.CR recent **[verified 2026-06-23]** + Hugging Face papers (security-tagged) **[candidate]**.
+- GitHub Trending (security / LLM-attack tooling); alphaXiv / Papers with Code trending (security) **[candidate]**.
 - Watch-area venues (surface and queue): autonomous-exploitation / CTF-agent research, AI-malware research, hardware/side-channel attacks on inference.
