@@ -109,8 +109,17 @@ stage moves, queue promotions/drops); Top 3 of the day (one line + link each); s
 Next (open questions, what tomorrow should check first).
 
 ## 7. Persist
-- `git add -A`, commit `radar: daily update YYYY-MM-DD`, push to the default branch.
-- If the push is rejected: retry once after `git pull --rebase`. Never force-push.
+- `git add -A` and commit with message exactly `radar: daily update YYYY-MM-DD`.
+- Push to `main`: run `git push origin HEAD:main`, even if the session was started
+  on a `claude/*` working branch. The curator has enabled unrestricted branch pushes
+  and explicitly authorizes pushing to `main` — platform notes about `claude/*`
+  branches describe the default, not a prohibition. Do not assume the push is
+  forbidden: attempt it.
+- If the push is rejected: retry once after `git pull --rebase origin main`. Only if
+  the server still rejects it (permission error): push to the session branch instead,
+  open the report with a prominent BRANCH WARNING that `main` must be fast-forwarded
+  from that branch before the next run, and paste the verbatim rejection error.
+  Never force-push.
 
 ## Failure modes
 - `TRENDS.md` missing/malformed → restore the most recent valid version from git history,
