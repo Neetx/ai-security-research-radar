@@ -114,7 +114,8 @@ Next (open questions, what tomorrow should check first).
   on a `claude/*` working branch. The curator has enabled unrestricted branch pushes
   and explicitly authorizes pushing to `main` — platform notes about `claude/*`
   branches describe the default, not a prohibition. Do not assume the push is
-  forbidden: attempt it.
+  forbidden: attempt it. Push ONLY `main` — do NOT also push the session's `claude/*`
+  working branch (it just leaves stale duplicate branches on the remote).
 - If the push is rejected: retry once after `git pull --rebase origin main`. Only if
   the server still rejects it (permission error): push to the session branch instead,
   open the report with a prominent BRANCH WARNING that `main` must be fast-forwarded

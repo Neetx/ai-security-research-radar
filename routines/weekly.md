@@ -64,7 +64,8 @@ block (and monthly retrospective when due); amendments applied/proposed/rolled b
 Push to `main`: `git push origin HEAD:main`, even if the session started on a
 `claude/*` working branch — the curator has enabled unrestricted branch pushes and
 explicitly authorizes pushing to `main` (platform notes about `claude/*` describe the
-default, not a prohibition); attempt it. If rejected: retry once after `git pull
+default, not a prohibition); attempt it. Push ONLY `main` — do NOT also push the
+session working branch. If rejected: retry once after `git pull
 --rebase origin main`; only if the server still rejects it, push to the session branch,
 open the report with a prominent BRANCH WARNING that `main` must be fast-forwarded
 before the next run, and paste the verbatim rejection error. Never force-push.
