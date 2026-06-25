@@ -17,8 +17,10 @@ breadth of orgs, presence in tools/standards).
   move the entry to `ARCHIVE.md` as a one-line post-mortem.
 - **Merge** overlapping trends (keep the older id, union aliases, keep the 10 strongest
   evidence items, note the merge).
-- **Confidence**: raise to `high` only after repeated multi-week confirmation from primary
-  sources; lower when evidence is mostly vendor-reported.
+- **Confidence**: raise to `high` when EITHER ≥2 INDEPENDENT authoritative primary sources
+  (different orgs/groups) corroborate the trend on concrete artifacts, OR after sustained
+  multi-week confirmation — whichever comes first; otherwise hold at `medium`. Lower when
+  evidence thins or is mostly vendor-reported.
 - After recalibration, regenerate `README.md` (`radar-render-dashboard`).
 
 ## 3. Clean the observation queue
