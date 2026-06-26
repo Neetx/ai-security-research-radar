@@ -47,9 +47,17 @@ commit:
   tally) is a coverage leak — NAME it and promote-or-drop it now. Zero candidates
   staged for two weeks while new evidence keeps arriving from the SAME few orgs is
   itself a signal the capture-the-source step isn't firing.
+- **capture-leak** (the notes-prose blind spot, complementary to routing-leak):
+  scan every trend's `notes` field AND the week's reports for named primaries
+  (arXiv ids, repo / release URLs) that appear NOWHERE as a discrete
+  `observation_queue` item or an evidence line on any trend. Each is a capture
+  leak — a primary the radar named but never captured as a first-class item, so
+  it never reached study-pick selection or the convergence check. NAME them and
+  queue them now. routing-leak only scans the queue, so an item that never
+  reached the queue is invisible to it; this metric is what catches it.
 
 Append ONE dated line to `logs/calibration.md` (the externalized self-eval log; the `## calibration` section of TRENDS.md is now only a pointer):
-`- YYYY-MM-DD — W<nn>: queue +a/→p/−d/stale s · evidence +e · moves m · exploration c/r · off-axis o/a · lag expl Xd / backfill Yd (Z%) · coverage <opened>/<listed> (miss <n>, degr <d>) · routing-leak <n> · src-disc <staged>/<promoted> (lat L)`
+`- YYYY-MM-DD — W<nn>: queue +a/→p/−d/stale s · evidence +e · moves m · exploration c/r · off-axis o/a · lag expl Xd / backfill Yd (Z%) · coverage <opened>/<listed> (miss <n>, degr <d>) · routing-leak <n> · capture-leak <n> · src-disc <staged>/<promoted> (lat L)`
 and include the same numbers, readable, in the weekly report.
 
 Interpretation thresholds (act, don't just log):

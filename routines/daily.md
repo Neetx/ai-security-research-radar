@@ -85,9 +85,15 @@ is owed every run.
   trend; the ≥3 bar is only for CREATING one); keep max 10 evidence, update `last_evidence`;
   (b) a queue cluster of ≥3 independent groups on one untracked sub-theme → promote to a
   `seed` trend; (c) else → `observation_queue` (below-bar is the queue's purpose, incl.
-  exploration finds; never leave a named primary in report prose only).
+  exploration finds; never leave a named primary in report prose or another trend's `notes` only).
 - CAPTURE, don't just attribute: any lane that NAMES a primary must end the run with it
-  routed to evidence/queue — never "noted in prose".
+  routed to evidence/queue — never "noted in prose". This includes a trend's own `notes`:
+  writing a primary into another trend's notes as a below-bar/adjacent aside is NOT capture —
+  "below the bar for trend X" routes it to the `observation_queue` as its OWN item (so study-pick
+  selection and the convergence check can see it), never parks it in X's prose; a primary that
+  lives only inside a trend's notes is invisible to both. Reconciliation (every run): a primary
+  named in any report or trend `notes` but absent as a discrete queue item / evidence line is a
+  capture leak — queue it now.
 - CAPTURE the SOURCE too (source-discovery): the same capture applies to WHERE a primary came
   from. When a lane names an on-axis primary whose publishing org/domain is NOT in any SOURCES.md
   swept list, append/increment that org in SOURCES.md → "Discovered-source candidates" (a tally:
