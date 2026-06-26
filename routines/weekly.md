@@ -40,6 +40,15 @@ produced nothing repeatedly; are the scope priorities in `strategy_notes` actual
 Tunnel-vision check: if ALL of this week's new evidence landed on pre-existing trends,
 record an anchoring warning in `strategy_notes` and redirect next week's exploration.
 Grow the curator/source lists (add recurring high-hit sources; drop noisy/dead ones).
+**Source discovery (drain the auto-staged candidates — the tool-author/vendor analog of curator
+scouting):** review SOURCES.md → "Discovered-source candidates", the tally the daily fills
+whenever a lane names an on-axis primary from an org not yet swept. For each org/domain at or
+above the promotion bar (≥2 on-axis primary artifacts, OR recurrence across ≥2 runs), VERIFY by
+OPENING its feed / repo / channel (Tavily/curl — never from memory, reject SEO); if it is a real
+on-axis primary source, PROMOTE it into the matching swept list as `[verified YYYY-MM-DD]` and
+clear its staging line; drop one-off noise with a one-line reason. Curators are one source-type
+in this same loop. A recurring on-axis org left un-promoted week after week is a coverage leak
+(the `source-discovery` metric in `radar-self-eval`).
 Append a dated correction entry to `strategy_notes`.
 
 ## 5. Self-evaluation

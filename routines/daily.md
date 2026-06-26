@@ -88,6 +88,14 @@ is owed every run.
   exploration finds; never leave a named primary in report prose only).
 - CAPTURE, don't just attribute: any lane that NAMES a primary must end the run with it
   routed to evidence/queue — never "noted in prose".
+- CAPTURE the SOURCE too (source-discovery): the same capture applies to WHERE a primary came
+  from. When a lane names an on-axis primary whose publishing org/domain is NOT in any SOURCES.md
+  swept list, append/increment that org in SOURCES.md → "Discovered-source candidates" (a tally:
+  domain — times seen — last artifact+date — first-seen date). Tally only, NO extra fetch — you
+  already hold the URL. Sources are discovered like items and curators: the daily STAGES, the
+  weekly VERIFIES and PROMOTES. This is what lets the radar grow its own source coverage instead
+  of waiting for the curator — an on-axis source that announces only on its own channel must
+  surface as a staged candidate the first run any lane names it.
 - Stage moves: at most ONE stage up per trend per day, on new independent evidence. 21+
   days quiet → `dormant` (weekly archives at 45+).
 - `observation_queue` maintenance (every run): add today's weak signals; promote those

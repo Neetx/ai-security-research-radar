@@ -37,11 +37,19 @@ commit:
   honest about what it actually sweeps.
 - **routing-leak**: queue items tagged with (or clearly on) an EXISTING trend's
   axis yet absent from that trend's evidence — on-axis primaries hoarded in the
-  queue instead of routed to evidence (the UltraQuant failure class). Count and
-  name them; each is a routing miss to correct this week.
+  queue instead of routed to evidence. Count and name them; each is a routing
+  miss to correct this week.
+- **source-discovery**: from SOURCES.md → "Discovered-source candidates" and the
+  week's reports — candidates STAGED this week / PROMOTED to a swept source /
+  PRUNED, plus discovery-latency = runs (or days) between an org's FIRST
+  appearance in the staging tally and its promotion. The tool-author/vendor analog
+  of routing-leak: a recurring on-axis org that stays un-promoted (≥2 weeks in the
+  tally) is a coverage leak — NAME it and promote-or-drop it now. Zero candidates
+  staged for two weeks while new evidence keeps arriving from the SAME few orgs is
+  itself a signal the capture-the-source step isn't firing.
 
 Append ONE dated line to `logs/calibration.md` (the externalized self-eval log; the `## calibration` section of TRENDS.md is now only a pointer):
-`- YYYY-MM-DD — W<nn>: queue +a/→p/−d/stale s · evidence +e · moves m · exploration c/r · off-axis o/a · lag expl Xd / backfill Yd (Z%) · coverage <opened>/<listed> (miss <n>, degr <d>) · routing-leak <n>`
+`- YYYY-MM-DD — W<nn>: queue +a/→p/−d/stale s · evidence +e · moves m · exploration c/r · off-axis o/a · lag expl Xd / backfill Yd (Z%) · coverage <opened>/<listed> (miss <n>, degr <d>) · routing-leak <n> · src-disc <staged>/<promoted> (lat L)`
 and include the same numbers, readable, in the weekly report.
 
 Interpretation thresholds (act, don't just log):
