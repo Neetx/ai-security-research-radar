@@ -28,6 +28,13 @@ Items older than 14 days — verify now and either promote, drop (one-line reaso
 report), or re-date stating what is still missing. HARD CAP ~25 live items: resolve the
 oldest over cap regardless of age. Never silently delete. Also curate `study_shelf`
 (merge duplicates, prune picks older than 30 days, preserve the rest in their day's report).
+**Capture-leak sweep (MANDATORY — weekly backstop to the daily reconciliation; the `capture-leak`
+metric AS AN ACTION, not just a number):** grep every trend's `notes` field AND this week's
+reports for arXiv-ids / repo / release URLs; for each, verify the id ACTUALLY appears as a
+DISCRETE `observation_queue` line or evidence line (grep the id in the queue — do NOT trust prose
+that merely calls an item "queued" / "adjacent" / "noted"). Any named primary absent from both is
+a capture leak → queue it now. Report the count; a non-zero count left un-acted this run is itself
+a self-eval failure.
 
 ## 4. Source strategy review
 **Coverage check (first-class — the registry must be honest):** diff every "swept every
@@ -53,9 +60,13 @@ Append a dated correction entry to `strategy_notes`.
 
 ## 5. Self-evaluation
 Follow `radar-self-eval`:
-- Every run: compute calibration metrics (queue funnel, evidence/stage moves, exploration
+- Every run: compute the FULL metric set (queue funnel, evidence/stage moves, exploration
   compliance, off-axis rate, discovery lag, `coverage` = registered sources vs the week's
-  logs, `routing-leak`) and append one dated line to `logs/calibration.md`.
+  logs, `routing-leak`, `capture-leak`, `source-discovery`) and append one dated line to
+  `logs/calibration.md` — EVERY metric appears, even at zero. `capture-leak` and
+  `source-discovery` are ACTIONS as well as numbers (queue the leaked primary; promote/clear
+  the staged candidate); a narrative calibration that silently drops them is itself a
+  self-eval miss to fix this run.
 - First run of each calendar month (`date +%d` ≤ 7): run the hit/miss retrospective.
 - Prepare up to 3 proposed amendments, each motivated by a metric or retrospective.
 
