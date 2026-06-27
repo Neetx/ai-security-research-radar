@@ -1,53 +1,50 @@
-# AI Security Radar
+# AI Radar
 
-Autonomous radar tracking the **offensive AI-security frontier** — tools, releases and
-research — on two coupled fronts: **AI for offense** (LLM red-teaming, autonomous
-pentest/exploitation, AI-driven vulnerability discovery) and **offense against AI**
-(jailbreaking, prompt injection, steering vectors, model extraction, agent/MCP attacks).
-Primary-source trend ledger + study shelf, refreshed by a daily scan and a weekly
-recalibration.
+![trends](https://img.shields.io/badge/trends-4-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-2-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-19-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--06--27-2f9e44?style=flat-square)
 
-> This page is fully derived from [`TRENDS.md`](TRENDS.md) — regenerated each run, never
-> hand-edited. Source of truth is the ledger.
-
-![trends](https://img.shields.io/badge/trends-3-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-2-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-22-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--06--26-2f9e44?style=flat-square)
+Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
 **Since last scan (2026-06-26):**
-- [Agent / MCP attack surface](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) (🚀 accelerating) **+2 evidence**: [ShareLock](https://arxiv.org/abs/2606.27027) disperses a tool-poisoning payload across *multiple* cooperating MCP tools to evade TPA detectors, and [Embrace The Red's computer-use TOCTOU](https://embracethered.com/blog/posts/2026/toctou-agent-what-you-click-is-not-what-you-get/) turns a confirmed click into a different action via a race condition.
-- [LLM vuln discovery & repair](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) (🚀 accelerating) **+1 evidence**: [Chai](https://arxiv.org/abs/2606.26933) pushes autonomous AI vuln discovery into *cryptographic misuse* — a class with no instrumentation to confirm bugs — via AI-augmented differential testing.
-- [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) **promoted 🌱 seed → 📈 emerging**: a 4th group — [Inherited Circuits](https://arxiv.org/abs/2606.27091) shows a fine-tuned security classifier is evadable by behavior-preserving transformations *and* the failure is invisible to standard evaluation.
-- **Watchlist 19 → 22** — added a 2nd diffusion-poisoning group (TEMPO-Diffusion), an agentic-RAG red-team (MIRROR), bandit-selected jailbreaks, and agent-skill runtime enforcement (VIGIL) → [observation_queue](TRENDS.md#observation_queue). **Worth studying +1**: [SoK on out-of-band prompt-injection defenses](https://arxiv.org/abs/2606.26479).
+- 🌱 **New seed trend** [`adversarial-trigger-backdoor-004`](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types): 4 independent groups (diffusion models ×2, sensor/IoT, federated learning) on backdoor trigger implantation promoted from queue at weekly W26.
+- 🗑 **Queue housekeeping**: 4 items promoted to trend-004; 2 dropped (NVIDIA article text unreachable, jqwik: no primary after 5+ attempts); 3 new intakes — CVE-2026-48529 GitHub MCP Server (CVSS 6.0), [Mythos classified-systems](TRENDS.md#observation_queue) and [US restriction signal](TRENDS.md#observation_queue).
+- 📡 **Field-shaking pulse**: US government reportedly restricting GPT-5.6 Sol and Anthropic Mythos on offensive-capability grounds (~1315 HN pts combined); Mythos reportedly found vulnerabilities in classified US systems (AP News, ~850 pts) — both primary sources paywalled/not found; [queued unverified](TRENDS.md#observation_queue).
+
+---
 
 ## Trends
 
-🌱 0 · 📈 1 · 🚀 2 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
+🌱 1 · 📈 1 · 🚀 2 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
 
 | trend | stage | latest signal |
 |---|---|---|
-| [Agent / MCP attack surface](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-06-25](https://arxiv.org/abs/2606.27027) |
-| [LLM vuln discovery & repair](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-06-25](https://arxiv.org/abs/2606.26933) |
-| [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 📈 emerging | [2026-06-25](https://arxiv.org/abs/2606.27091) |
+| [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-06-25](https://embracethered.com/blog/posts/2026/toctou-agent-what-you-click-is-not-what-you-get/) |
+| [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-06-25](https://arxiv.org/abs/2606.26933) |
+| [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 📈 emerging | [2026-06-25](https://arxiv.org/abs/2606.27091) |
+| [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🌱 seed | [2026-06-24](https://arxiv.org/abs/2606.25858) |
+
+---
 
 ## Worth studying
 
-- [Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents](https://arxiv.org/abs/2606.26479) — organizes the 2024–2026 wave of out-of-band agent defenses (CaMeL, FIDES, Progent, RTBAS, FORGE) as classical Biba integrity / reference-monitor / least-privilege, then stress-tests them with adaptive attacks — the reference map for "enforce security outside the model" and how durable their near-100% AgentDojo numbers are.
-- [SoK: AI Secure Code Generation (Patir, Guo, Cai, Hu)](https://arxiv.org/abs/2606.25195) — systematizes what today's models and coding agents can/cannot do for secure code via a three-level framework (NL understanding → secure generation → agentic workflows), mapping where prompting/fine-tuning/RL/agentic methods help and why failures persist — the map for the "(in)security of AI-written code" problem.
-- [Mapping AI-enabled cyber threats: the LLM ATT&CK Navigator (Anthropic FRT)](https://www.anthropic.com/research/attack-navigator) — 832 real threat actors observed misusing models, mapped to MITRE ATT&CK: 69% used T1587 (Develop Capabilities), 560 on malware development — in-the-wild ground truth for the "AI for offense" axis.
-- [Measuring LLMs' ability to develop exploits (Anthropic FRT)](https://www.anthropic.com/research/exploit-evals) — introduces SCONE-bench (open-sourced) and shows "Mythos Preview" chaining exploit primitives into full end-to-end attacks on widely-used software.
-- [Measuring LLMs' impact on N-day exploits (Anthropic FRT)](https://www.anthropic.com/research/n-days) — frontier models turning public PoCs into working N-day exploits (21 Windows kernel LPE bugs, mechanically graded) — weaponizing already-disclosed CVEs at machine speed.
-- [The Geometry of Refusal: Linear Instability in Safety-Aligned LLMs](https://arxiv.org/abs/2606.22686) — argues refusal is a manipulable linear feature, not a deep semantic decision: the mechanistic basis behind refusal-direction / steering-vector jailbreaks.
-- [AutoJack (Microsoft)](https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/) — canonical confused-deputy chain: a single attacker web page drives a browsing agent across the localhost boundary into AutoGen Studio's MCP control plane and gets host RCE.
+- [Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents](https://arxiv.org/abs/2606.26479) — organizes the 2024–2026 out-of-band agent defenses (CaMeL, FIDES, Progent, RTBAS, FORGE) as Biba integrity / reference-monitor instances and stress-tests them with adaptive attacks — the reference map for "enforce security outside the model."
+- [SoK: AI Secure Code Generation](https://arxiv.org/abs/2606.25195) — three-level framework mapping where prompting / fine-tuning / RL / agentic methods help secure-code generation and why substantial failures persist — the map for the "(in)security of AI-written code" problem.
+- [The Geometry of Refusal: Linear Instability in Safety-Aligned LLMs](https://arxiv.org/abs/2606.22686) — refusal is a manipulable linear feature, not a deep semantic decision: the mechanistic basis behind refusal-direction / steering-vector jailbreaks.
+- [AutoJack (Microsoft)](https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/) — canonical confused-deputy chain: one attacker web page drives a browsing agent across the localhost boundary into AutoGen Studio's MCP control plane and gets host RCE.
+- [Measuring LLMs' impact on N-day exploits (Anthropic FRT)](https://www.anthropic.com/research/n-days) — frontier models turning public PoCs into working N-day exploits for 21 Windows kernel LPE bugs — weaponizing already-disclosed CVEs at machine speed.
+- [Mapping AI-enabled cyber threats: the LLM ATT&CK Navigator (Anthropic FRT)](https://www.anthropic.com/research/attack-navigator) — 832 real actors mapped to MITRE ATT&CK: 69% on T1587 Develop-Capabilities — in-the-wild ground truth for the AI-for-offense axis.
+- [Measuring LLMs' ability to develop exploits (Anthropic FRT)](https://www.anthropic.com/research/exploit-evals) — SCONE-bench (open-sourced) + "Mythos Preview" chains exploit primitives into full end-to-end exploits on widely-used software.
+
+---
 
 ## Community pulse
 
-_Unverified intake — sentiment only, never evidence; links to threads, no individuals named._
-- Quiet pass: HN front page was product-led (Apple pricing, an Obsidian/Notion clone); the only offensive-adjacent item was a low-rank "[2k people tried to hack my AI assistant](https://hn.algolia.com/?query=tried%20to%20hack%20my%20AI%20assistant)" write-up — no earthquake.
-- Still-open intake from the week: [Anthropic↔Alibaba model-extraction](https://hn.algolia.com/?query=Anthropic%20Alibaba%20extracted%20Claude) claim, prompt injection as ["role confusion"](https://hn.algolia.com/?query=prompt%20injection%20role%20confusion), and a jqwik dependency reportedly injecting destructive instructions into AI coding agents — all held in the [observation_queue](TRENDS.md#observation_queue).
+_Unverified intake — never evidence; follow to primary sources before acting._
 
-## Output map
+- US government reportedly restricting Mythos and GPT-5.6 Sol on offensive-capability grounds (~1315 HN pts, 2026-06-26); [queued unverified](TRENDS.md#observation_queue).
+- Anthropic Mythos reportedly found vulnerabilities in classified US systems during red-team testing (~850 HN pts, AP News 2026-06-26); [queued unverified](TRENDS.md#observation_queue).
+- Embrace The Red TOCTOU race-condition attack on computer-use agents demoed at Real-World AI Security conference (06-25) — captured as [primary evidence in agentic-attack-surface-001](https://embracethered.com/blog/posts/2026/toctou-agent-what-you-click-is-not-what-you-get/).
+- Anthropic↔Alibaba model-extraction claim (~247 HN pts); [queued unverified](TRENDS.md#observation_queue).
 
-- Source of truth: [`TRENDS.md`](TRENDS.md) — trends, [watchlist (22)](TRENDS.md#observation_queue), `strategy_notes`, `study_shelf`.
-- Sources registry: [`SOURCES.md`](SOURCES.md) — the lists the radar sweeps.
-- Reports: [`reports/`](reports/) — newest: [2026-06-26](reports/2026-06-26.md). Weekly: none yet.
-- Coverage & self-eval logs: [`logs/`](logs/).
-- Scope, rules and the autonomy contract: [`AGENTS.md`](AGENTS.md).
+---
+
+[TRENDS.md](TRENDS.md) · [watchlist (19)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-06-26](reports/2026-06-26.md) · [weekly: 2026-W26](reports/weekly/2026-W26.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)

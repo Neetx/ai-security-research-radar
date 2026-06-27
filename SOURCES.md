@@ -27,7 +27,7 @@ tooling, exploitation research); skip product/marketing.
 
 - Google Project Zero — https://googleprojectzero.blogspot.com/ · Atom `…/feeds/posts/default` **[verified 2026-06-23]**
 - Trail of Bits — https://blog.trailofbits.com/ · feed `/feed/` (application/xml) **[verified 2026-06-23]** — AI/ML offensive security
-- NVIDIA — cybersecurity category Atom https://developer.nvidia.com/blog/category/cybersecurity/feed/ **[verified 2026-06-23]** (garak / AI red team)
+- NVIDIA — cybersecurity category Atom https://developer.nvidia.com/blog/category/cybersecurity/feed/ **[verified 2026-06-23]** (garak / AI red team). NOTE (2026-06-27): individual article URLs (developer.nvidia.com/blog/<slug>) are blocked by the proxy — ONLY the Atom feed URL above works. Do not attempt to `tvly extract` individual article URLs; `degraded: article-URL-blocked`.
 - Microsoft Security blog — https://www.microsoft.com/en-us/security/blog/ · feed `/feed/` (rss+xml) **[verified 2026-06-23]** (AI Red Team / PyRIT posts)
 - Microsoft MSRC blog — https://msrc.microsoft.com/blog/ — NO clean RSS, AND a JS-rendered SPA: `tvly extract` (even `--extract-depth advanced`) returns only nav chrome, no post bodies (checked 2026-06-23 Pass 2, 2nd failure). HEAL: do not rely on the blog index; surface MSRC items via `tvly search --include-domains msrc.microsoft.com` for the topic, or via the Microsoft Security blog feed which carries most AI-security items. Mark `degraded: SPA, search-only`.
 - OpenAI — https://openai.com/news/ · RSS `/news/rss.xml` (text/xml) **[verified 2026-06-23]** — filter for red-teaming / preparedness items
@@ -100,8 +100,8 @@ AND it survives verification (real feed, on-axis, not SEO). Line format:
 Method: `radar-pulse`. Intake feeds `observation_queue` (unverified) + the pulse note;
 never name/quote individuals beyond a bare URL. Multi-channel earthquake check.
 NOTE: Reddit blocks direct API from this setup (`about.json` → 403, checked 2026-06-23) —
-reach subs via Tavily, not `.json`.
-- Reddit (Reddit direct API is 403 from this setup — reach via Tavily): r/netsec, r/MachineLearning, r/LocalLLaMA, r/hacking, r/AskNetsec (well-known active subs); r/ChatGPTJailbreak (jailbreak community). Read TOP + earthquake check.
+reach subs via Tavily, not `.json`. Additionally, Tavily Reddit searches also failed across multiple attempts in W26 (all subreddits returned 0 results or timeout) — `degraded: Tavily-Reddit-fail (2026-06-27)`; cross-channel pulse via HN + arXiv + curators provides redundancy. Retry on next pass; if 2+ more weeks fail, downgrade to intermittent.
+- Reddit (`degraded: Tavily-Reddit-fail 2026-06-27` — retry each pass): r/netsec, r/MachineLearning, r/LocalLLaMA, r/hacking, r/AskNetsec (well-known active subs); r/ChatGPTJailbreak (jailbreak community). Read TOP + earthquake check.
 - Hacker News — Algolia API https://hn.algolia.com/api/v1/search?tags=front_page (+ `query=<term>`) **[verified pattern; known reliable]**
 
 ### YouTube — TRUSTED-CURATOR POINTER LANE (check EVERY run, intake only)
@@ -111,10 +111,10 @@ reach subs via Tavily, not `.json`.
 
 ### Curated digests + explainer/aggregator blogs (INTAKE LANE — swept every run)
 - Embrace The Red — https://embracethered.com/blog/ · RSS https://embracethered.com/blog/index.xml **[verified 2026-06-23]** — Rehberger's own prompt-injection / agent-attack research; often IS the primary artifact (then cite it directly).
-- tldrsec — https://tldrsec.com/ **[verified 2026-06-23; no clean RSS at /feed → HTML extract]** — security newsletter (Clint Gibler), heavy AI-security coverage; follow to the named primary.
+- tldrsec — https://tldrsec.com/ `degraded: 403 all access methods (tvly extract, search, domain filter) — 5+ consecutive passes as of 2026-06-27; HEAL NEEDED` — security newsletter (Clint Gibler), heavy AI-security coverage; follow to the named primary. (Was **[verified 2026-06-23]** via HTML extract but now blocked.)
 - Simon Willison — https://simonwillison.net/ **[verified 2026-06-23]** — extensive prompt-injection coverage and original framing; follow to the primary.
 - Kai Greshake — https://kai-greshake.de/ · RSS https://kai-greshake.de/index.xml **[verified 2026-06-23]** — the researcher who pioneered indirect prompt injection; his posts are often the original disclosure (cite directly).
-- MLSecOps — https://mlsecops.com/ + https://community.mlsecops.com/ **[verified 2026-06-23]** — ML/AI-security community & content hub (Protect AI-affiliated); follow to the primary.
+- MLSecOps — https://mlsecops.com/ + https://community.mlsecops.com/ `degraded: extract/search fail — 3+ consecutive passes as of 2026-06-27; HEAL NEEDED` — ML/AI-security community & content hub (Protect AI-affiliated); follow to the primary. (Was **[verified 2026-06-23]** but now fails.)
 - Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/ **[candidate]** — threat-intel research on in-the-wild prompt injection / agent attacks (verify feed on first sweep).
 - (agent grows this list; every entry logged opened or `degraded:<reason>`; follow to the primary, never cite the digest unless it is the original disclosure.)
 
