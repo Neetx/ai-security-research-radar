@@ -32,8 +32,9 @@ tooling, exploitation research); skip product/marketing.
 - Microsoft MSRC blog — https://msrc.microsoft.com/blog/ — NO clean RSS, AND a JS-rendered SPA: `tvly extract` (even `--extract-depth advanced`) returns only nav chrome, no post bodies (checked 2026-06-23 Pass 2, 2nd failure). HEAL: do not rely on the blog index; surface MSRC items via `tvly search --include-domains msrc.microsoft.com` for the topic, or via the Microsoft Security blog feed which carries most AI-security items. Mark `degraded: SPA, search-only`.
 - OpenAI — https://openai.com/news/ · RSS `/news/rss.xml` (text/xml) **[verified 2026-06-23]** — filter for red-teaming / preparedness items
 - Anthropic — https://www.anthropic.com/research — NO public RSS (`/news/rss.xml` 404). HEAL (2026-06-23 Pass 2): `tvly extract "https://www.anthropic.com/research" --extract-depth advanced` yields the dated publication index (Frontier Red Team items: N-days, exploit-development, LLM ATT&CK Navigator); follow each to its `/research/<slug>` article and extract that to cite. **[verified 2026-06-23]**
-- Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence **[candidate]** (verify feed on first sweep)
-- Protect AI — huntr disclosures & blog https://protectai.com/ + https://huntr.com/ **[candidate]** (AI/ML vuln disclosures)
+- Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/ · RSS `/feed/` **[verified 2026-06-29]** — PRIMARY threat-intel research (in-the-wild AI/agent attacks; e.g. OpenClaw/ClawHub malicious-skill disclosure 2026-06-23, cited on trend 001). Cite the article directly. Swept every run.
+- Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence — RSS `/rss` returns only the channel title, no items (JS-filtered blog) `degraded: feed-not-itemized (2026-06-29)`. HEAL: surface items via `tvly search --include-domains cloud.google.com` for the topic until a working item feed is found.
+- Protect AI — huntr disclosures https://huntr.com/ **[candidate — verify next]** (live AI/ML vuln disclosures). Blog feed https://protectai.com/blog/rss.xml is reachable but STALE (latest 2025-08-15, checked 2026-06-29) — not swept; check huntr.com for the live channel.
 - Meta — Llama / AI security https://ai.meta.com/blog/ **[candidate]** (HTML extract if no feed)
 - NCC Group / Bishop Fox research blogs **[candidate]** (AI/ML offensive research; verify feeds)
 - Advisory feeds: NVD API https://services.nvd.nist.gov/rest/json/cves/2.0 **[verified 2026-06-23]** ; GitHub advisories (GHSA) for AI tooling **[candidate]**
@@ -115,7 +116,7 @@ reach subs via Tavily, not `.json`. Additionally, Tavily Reddit searches also fa
 - Simon Willison — https://simonwillison.net/ **[verified 2026-06-23]** — extensive prompt-injection coverage and original framing; follow to the primary.
 - Kai Greshake — https://kai-greshake.de/ · RSS https://kai-greshake.de/index.xml **[verified 2026-06-23]** — the researcher who pioneered indirect prompt injection; his posts are often the original disclosure (cite directly).
 - MLSecOps — https://mlsecops.com/ + https://community.mlsecops.com/ `degraded: extract/search fail — 3+ consecutive passes as of 2026-06-27; HEAL NEEDED` — ML/AI-security community & content hub (Protect AI-affiliated); follow to the primary. (Was **[verified 2026-06-23]** but now fails.)
-- Palo Alto Unit 42 — https://unit42.paloaltonetworks.com/ **[candidate]** — threat-intel research on in-the-wild prompt injection / agent attacks (verify feed on first sweep).
+- Palo Alto Unit 42 — MOVED to "Primary feeds" (verified 2026-06-29, RSS `/feed/`); it is a primary research source, not a digest.
 - (agent grows this list; every entry logged opened or `degraded:<reason>`; follow to the primary, never cite the digest unless it is the original disclosure.)
 
 ## Discovery / exploration venues (Phase 4 — iterated EVERY run by radar-explore)
