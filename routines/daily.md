@@ -95,9 +95,14 @@ is owed every run.
   named in any report or trend `notes` but absent as a discrete queue item / evidence line is a
   capture leak — queue it now.
 - CAPTURE the SOURCE too (source-discovery): the same capture applies to WHERE a primary came
-  from. When a lane names an on-axis primary whose publishing org/domain is NOT in any SOURCES.md
-  swept list, append/increment that org in SOURCES.md → "Discovered-source candidates" (a tally:
-  domain — times seen — last artifact+date — first-seen date). Tally only, NO extra fetch — you
+  from. When a lane names an on-axis primary, stage every UNTRACKED domain involved — BOTH (a) the
+  org/domain that PUBLISHED it AND (b) the surface you DISCOVERED it THROUGH (the blog/site/feed/
+  channel that pointed you to it) — appending/incrementing each one not already in a SOURCES.md
+  swept list into SOURCES.md → "Discovered-source candidates" (a tally: domain — times seen — last
+  artifact+date — first-seen date). Case (b) fires EVEN when the primary itself sits on a TRACKED
+  venue: a paper found via an untracked vendor/research/pointer blog that linked the arXiv id means
+  that blog is an untracked high-signal source — stage it; don't let "the venue is tracked" hide
+  the pointer. Tally only, NO extra fetch — you
   already hold the URL. Sources are discovered like items and curators: the daily STAGES, the
   weekly VERIFIES and PROMOTES. This is what lets the radar grow its own source coverage instead
   of waiting for the curator — an on-axis source that announces only on its own channel must
