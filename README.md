@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-4-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-2-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-24-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--06--30-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-4-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-2-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--01-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-06-29):**
-- 🔓 **Agent frameworks fail-open on tool arguments**: [Capability Gates Are Not Authorization](https://arxiv.org/abs/2606.28679) audits LangChain/LangGraph, LlamaIndex and the Stripe Agent Toolkit — all gate tool exposure but none re-authorizes each call against its concrete arguments before execution; added to [`agentic-attack-surface-001`](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain). A same-week cluster on agent-runtime authorization (MCP-invariants, formal protocol analysis, [sensory-vector PI on ROS 2 robots](https://arxiv.org/abs/2606.28649)) sits in the queue.
-- 🎚️ **Quantization-conditioned LLM backdoors**: two independent defenses ([QuantGuard](https://arxiv.org/abs/2606.29239), [FlipGuard](https://arxiv.org/abs/2606.28962)) confirm QCB as a live threat — malicious behavior dormant in full precision, activating only after quantized deployment, bypassing pre-deployment audits; a new LLM-specific sub-theme of [`adversarial-trigger-backdoor-004`](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types).
-- 📚 **Study shelf**: [Capability Gates Are Not Authorization](https://arxiv.org/abs/2606.28679) — why "the agent has the tool" ≠ "may use it on these arguments," with a deployable fail-closed PDP/PEP (ScopeGate).
-- 📡 **Source coverage**: huntr.com access verified (hacktivity HTTP 200, Tavily-extract; no RSS); NVIDIA cybersec feed degraded again. Queue 21→24 (+8 lines / 9 papers, −5 stale burndown).
+**Since last scan (2026-06-30):**
+- 🧨 **AI-for-offense goes off-axis**: two independent signals in the untracked AI-malware/AI-supply-chain space — Unit 42's in-the-wild [Phantom Squatting](https://unit42.paloaltonetworks.com/phantom-squatting-hallucinated-web-domains/) (adversaries registering LLM-hallucinated domains to intercept AI traffic) and [AI-Generated PowerShell Malware](https://arxiv.org/abs/2606.30819) (open-weight LLMs producing malware with 84.5% median event-overlap vs real samples); both [queued](TRENDS.md#observation_queue) as significant off-axis nuclei.
+- 🚀 **Claw-agent attack surface measured**: [SafeClawArena](https://arxiv.org/abs/2606.30755) benchmarks 406 adversarial tasks on OpenClaw-style agents through an OS lens — 70% top ASR, malicious plugins succeed 100% regardless of LLM; added to [`agentic-attack-surface-001`](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain), corroborated by Microsoft's in-the-wild MCP tool-poisoning report.
+- 📚 **Study shelf** +2: an eight-stage [LLM-vulnerability lifecycle SoK](https://arxiv.org/abs/2606.31639) and [AI-Infra-Guard](https://arxiv.org/abs/2606.31227), an open-source multi-layer agent red-team framework.
+- 📡 **Source coverage**: NVIDIA cybersec feed healed (User-Agent gate — fetch with a browser UA). Queue 24→25 (+7 captures, −6 stale burndown).
 
 ---
 
@@ -18,7 +18,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 | trend | stage | latest signal |
 |---|---|---|
-| [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-06-27](https://arxiv.org/abs/2606.28679) |
+| [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-06-29](https://arxiv.org/abs/2606.30755) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-06-25](https://arxiv.org/abs/2606.26933) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 📈 emerging | [2026-06-25](https://arxiv.org/abs/2606.27091) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🌱 seed | [2026-06-25](https://arxiv.org/abs/2606.27511) |
@@ -27,6 +27,8 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## Worth studying
 
+- [A Lifecycle and Application-Stack Survey of LLM Vulnerabilities](https://arxiv.org/abs/2606.31639) — eight-stage systematization (data → pretraining → alignment → supply-chain → retrieval/memory → prompting → tool/agent execution → deployment) of where trust boundaries fail and how untrusted data becomes executable instruction; the reference map for "the risk is the app stack, not the weights."
+- [AI-Infra-Guard](https://arxiv.org/abs/2606.31227) — open-source framework matching a detection paradigm to each agent layer (infra→protocol/tool→behavior→model): rules over 75+ components / 1,400+ vuln rules, agentic MCP-server + agent-skill auditing, and a jailbreak harness (26+ operators, 16 datasets).
 - [Capability Gates Are Not Authorization (2606.28679)](https://arxiv.org/abs/2606.28679) — LangChain/LangGraph, LlamaIndex and the Stripe Agent Toolkit all gate tool exposure but none re-authorizes each model-emitted call against its concrete arguments; ships ScopeGate (fail-closed PDP/PEP: scope → auth → money ceiling → idempotency → default-deny). The practical reference + fix for per-call agent-tool authorization.
 - [On the Inseparability of Instructions and Data in Shared-Embedding Sequence Models](https://arxiv.org/abs/2606.27567) — proves perfect prompt-injection prevention is mathematically impossible in shared-embedding architectures (provenance-recovery impossibility + control-path exposure + finite-coverage invariance gap) — the theoretical why behind "every PI defense gets broken."
 - [Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents](https://arxiv.org/abs/2606.26479) — organizes the 2024–2026 out-of-band agent defenses (CaMeL, FIDES, Progent, RTBAS, FORGE) as Biba integrity / reference-monitor instances and stress-tests them with adaptive attacks — the reference map for "enforce security outside the model."
@@ -42,10 +44,10 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- Quiet scan (2026-06-30) — no new community earthquake; HN front page was model-release news (Ornith self-improving agentic-coding models, LongCat-2.0), nothing offensive-AI.
-- US government reportedly restricting Mythos and GPT-5.6 Sol on offensive-capability grounds (~1315 HN pts, 2026-06-26); [queued unverified](TRENDS.md#observation_queue).
+- Quiet scan (2026-07-01) — no offensive-AI research earthquake on HN; top items were model/product news ("Claude Code steganographically marking requests", Sonnet 5, Claude Science).
+- US Dept. of Commerce reportedly *lifted* export controls on Claude Fable 5 and Mythos (~487 HN pts, 2026-07-01) — the governance flip-side of the earlier restriction signal; no primary opened, [queued unverified](TRENDS.md#observation_queue).
 - Anthropic Mythos reportedly found vulnerabilities in classified US systems during red-team testing (~850 HN pts, AP News 2026-06-26); [queued unverified](TRENDS.md#observation_queue).
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (24)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-06-30](reports/2026-06-30.md) · [weekly: 2026-W26](reports/weekly/2026-W26.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-01](reports/2026-07-01.md) · [weekly: 2026-W26](reports/weekly/2026-W26.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
