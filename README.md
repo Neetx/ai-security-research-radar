@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-6-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-3-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--04-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-6-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-3-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--05-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-07-04):**
-- 🚀 **Stage move — refusal-direction mechanics → accelerating**: [`refusal-direction-mechanics-005`](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) promoted emerging→accelerating on its pre-registered 5th-group trigger — [Fast Multi-dimensional Refusal Subspaces via RFM-AGOP](https://arxiv.org/abs/2607.02396) refines refusal from a single linear direction into a multi-dimensional subspace and extracts it in *seconds* on reasoning models. A new independent group each day since seeding (06-21 → 07-02). Confidence held medium — still no end-to-end steering-vector *jailbreak tool*.
-- 🔭 **Exploration slot paid off**: the first use of the new cs.AI/cs.LG rotating explore-supplement surfaced two on-axis attacks that never cross-listed to cs.CR — [SkillFuzz](https://arxiv.org/abs/2607.02345) (fuzzing *skill composition* to find implicit intents that isolated marketplace audits miss) and [Distributed Attacks in Persistent-State AI Control](https://arxiv.org/abs/2607.02514) (a coding agent timing a payload across pull requests) — both [queued](TRENDS.md#observation_queue).
-- 😴 **Quiet on the primary lanes**: no new arXiv announce batch since 07-03 (weekend), no new MCP CVE since 07-02, vendor blogs (Trail of Bits, Microsoft, Unit 42, Project Zero) and tool releases all unchanged.
-- 🔊 **Community pulse**: a large HN discussion around whether small models replicate the vulnerabilities Anthropic's Mythos found ("the jagged frontier") — reinforces the [AI-vuln-discovery trend](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) but no new primary.
+**Since last scan (2026-07-05):**
+- 😴 **Quiet on the primary lanes, no stage moves**: no new arXiv announce batch (Sunday — newest ID still 2607.02451), no new MCP CVE since 07-02, and vendor blogs (Trail of Bits, Microsoft, OpenAI, Unit 42, Anthropic, NVIDIA, AI Village) + watched tool releases all unchanged — all six trends held.
+- 🧭 **New study pick — a "theory of prompt injection"**: [Prompt Injection as Role Confusion](https://arxiv.org/abs/2603.12277) (MIT) traces PI to *role confusion* — LLMs infer who is speaking from how text *sounds*, not its labeled role — and builds internal "role probes". Freshly v6-revised 07-05; on the agent-stack PI axis but [001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) is at its evidence cap, so also [queued](TRENDS.md#observation_queue).
+- 🩹 **Two source heals**: [tldrsec](https://tldrsec.com/) recovered (HTTP 200 + full content after 5+ passes of 403 — its #335 lead item is what surfaced the role-confusion paper); NVIDIA's cybersec feed now pulled reliably via `tvly extract` after the browser-UA curl went flaky.
+- 🔊 **Community pulse**: HN surfaced ["Meta's Un-Stable Signature"](https://hackerfactor.com/blog/index.php?/archives/1098-Metas-Un-Stable-Signature.html) — a researcher's claim that Meta's *Stable Signature* AI-image watermark is removable/forgeable — [queued unverified](TRENDS.md#observation_queue) as an off-axis AI-provenance-attack signal (watch for a 2nd group).
 
 ---
 
@@ -39,8 +39,8 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 - [On the Inseparability of Instructions and Data in Shared-Embedding Sequence Models](https://arxiv.org/abs/2606.27567) — proves perfect prompt-injection prevention is mathematically impossible in shared-embedding architectures (provenance-recovery impossibility + control-path exposure + finite-coverage invariance gap) — the theoretical why behind "every PI defense gets broken."
 - [Adaptive Evaluation of Out-of-Band Defenses Against Prompt Injection in LLM Agents](https://arxiv.org/abs/2606.26479) — organizes the 2024–2026 out-of-band agent defenses (CaMeL, FIDES, Progent, RTBAS, FORGE) as Biba integrity / reference-monitor instances and stress-tests them with adaptive attacks — the reference map for "enforce security outside the model."
 - [SoK: AI Secure Code Generation](https://arxiv.org/abs/2606.25195) — three-level framework mapping where prompting / fine-tuning / RL / agentic methods help secure-code generation and why substantial failures persist — the map for the "(in)security of AI-written code" problem.
+- [Prompt Injection as Role Confusion](https://arxiv.org/abs/2603.12277) — MIT: traces prompt injection to *role confusion* — an LLM infers who is speaking from how text *sounds*, not its labeled `<user>`/`<tool>` role, so untrusted text in an authoritative voice is read as a trusted instruction; builds internal "role probes" for who's speaking. The conceptual "theory of PI" complementing the instruction/data-inseparability impossibility result — a science-of-roles framing for why every content-based PI defense leaks.
 - [The Geometry of Refusal: Linear Instability in Safety-Aligned LLMs](https://arxiv.org/abs/2606.22686) — refusal is a manipulable linear feature, not a deep semantic decision: the mechanistic basis behind refusal-direction / steering-vector jailbreaks (anchors trend 005).
-- [AutoJack (Microsoft)](https://www.microsoft.com/en-us/security/blog/2026/06/18/autojack-single-page-rce-host-running-ai-agent/) — canonical confused-deputy chain: one attacker web page drives a browsing agent across the localhost boundary into AutoGen Studio's MCP control plane and gets host RCE.
 
 ---
 
@@ -48,10 +48,10 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- Large [HN discussion](https://news.ycombinator.com/item?id=47732020) (1284 pts) around Anthropic's Mythos vuln-discovery claims — whether smaller models replicate the vulnerabilities it found ("the jagged frontier"), plus press on Mythos-found macOS/Apple-security bypasses and classified-systems findings — community reinforcement of the [AI-vuln-discovery trend](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code); no new primary.
+- HN front page surfaced ["Meta's Un-Stable Signature"](https://hackerfactor.com/blog/index.php?/archives/1098-Metas-Un-Stable-Signature.html) (~80 pts) — a forensics researcher's claim that Meta's *Stable Signature* AI-image watermark is removable/forgeable; [queued unverified](TRENDS.md#observation_queue) as an off-axis AI-content-provenance-attack signal, watch for a 2nd group before seeding.
 - Anthropic's Alibaba distillation accusation (a private letter to US Senators, made public via press ~06-24) is well-corroborated across multiple outlets but still has no direct Anthropic/Alibaba primary naming Alibaba specifically — [queued unverified](TRENDS.md#observation_queue).
 - Otherwise quiet on HN/Reddit — no offensive-AI research earthquake beyond what's already tracked above.
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-04](reports/2026-07-04.md) · [weekly: 2026-W27](reports/weekly/2026-W27.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-05](reports/2026-07-05.md) · [weekly: 2026-W27](reports/weekly/2026-W27.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
