@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-6-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-3-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--05-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-6-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-3-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--06-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-07-05):**
-- 😴 **Quiet on the primary lanes, no stage moves**: no new arXiv announce batch (Sunday — newest ID still 2607.02451), no new MCP CVE since 07-02, and vendor blogs (Trail of Bits, Microsoft, OpenAI, Unit 42, Anthropic, NVIDIA, AI Village) + watched tool releases all unchanged — all six trends held.
-- 🧭 **New study pick — a "theory of prompt injection"**: [Prompt Injection as Role Confusion](https://arxiv.org/abs/2603.12277) (MIT) traces PI to *role confusion* — LLMs infer who is speaking from how text *sounds*, not its labeled role — and builds internal "role probes". Freshly v6-revised 07-05; on the agent-stack PI axis but [001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) is at its evidence cap, so also [queued](TRENDS.md#observation_queue).
-- 🩹 **Two source heals**: [tldrsec](https://tldrsec.com/) recovered (HTTP 200 + full content after 5+ passes of 403 — its #335 lead item is what surfaced the role-confusion paper); NVIDIA's cybersec feed now pulled reliably via `tvly extract` after the browser-UA curl went flaky.
-- 🔊 **Community pulse**: HN surfaced ["Meta's Un-Stable Signature"](https://hackerfactor.com/blog/index.php?/archives/1098-Metas-Un-Stable-Signature.html) — a researcher's claim that Meta's *Stable Signature* AI-image watermark is removable/forgeable — [queued unverified](TRENDS.md#observation_queue) as an off-axis AI-provenance-attack signal (watch for a 2nd group).
+**Since last scan (2026-07-06):**
+- 😴 **Quiet pass, no stage moves**: arXiv is paused over the US July-4 holiday weekend — no new announce batch (cs.CR still 2607.02451, cs.AI still 2607.02514) — and every vendor/lab feed (Trail of Bits, Microsoft, OpenAI, Unit 42, Anthropic, AI Village, Embrace The Red) + watched tool release is unchanged. All six trends held.
+- 🧩 **One new MCP-server CVE**: [CVE-2026-14748](https://nvd.nist.gov/vuln/detail/CVE-2026-14748) — SSRF via the `url` arg in AIAnytime *Awesome-MCP-Server* (mcp-wiki), CVSS 6.3, public PoC (07-05) — folded into trend [001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain)'s running MCP-CVE volume tally (below the per-item evidence bar).
+- 📡 **Watchlist held at 25**: no signal cleared the bar or needed adding; capture-leak sweep clean (66 arXiv ids checked / 0 leaks).
+- 🩹 **Project Zero degraded a 2nd pass**: feed + HTML index both return empty via curl *and* `tvly` — on heal-watch; its content is consistently off-axis (kernel/mobile), so citable risk is low.
 
 ---
 
@@ -54,4 +54,4 @@ _Unverified intake — never evidence; follow to primary sources before acting._
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-05](reports/2026-07-05.md) · [weekly: 2026-W27](reports/weekly/2026-W27.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-06](reports/2026-07-06.md) · [weekly: 2026-W27](reports/weekly/2026-W27.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
