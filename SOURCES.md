@@ -122,6 +122,7 @@ AND it survives verification (real feed, on-axis, not SEO). Line format:
 `domain/org — times seen — last on-axis artifact (date) — first seen YYYY-MM-DD`.
 
 - hackerfactor.com (Dr. Neal Krawetz, image-forensics researcher) — 1 — "Meta's Un-Stable Signature" AI-image-watermark attack (~2026-06-30, surfaced via HN 2026-07-05) — first seen 2026-07-05
+- blog.zksecurity.xyz (zkSecurity — AI audit agent "zkao"; crypto/security research firm) — 1 — "AI meets Cryptography 1: What AI Found in Cloudflare's CIRCL" — 7 AI-found, upstream-fixed crypto bugs (2026-07-07, surfaced via HN, → evidence on ai-vuln-discovery-002) — first seen 2026-07-08. On-axis in-the-wild AI-vuln-discovery series; verify feed/RSS next weekly.
 
 ## Social & community channels (Phase 2 — INTAKE ONLY, never evidence)
 
