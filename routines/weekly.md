@@ -42,6 +42,17 @@ run" list in `SOURCES.md` against the week's `logs/source_rotation.md` — every
 source must appear as `opened` or `degraded`. Any source MISSING all week is a coverage
 lie: heal it now (`radar-source-heal`), or if already healed and still un-sweepable,
 propose heal-or-REMOVE (don't list what you won't sweep).
+**Rolling cross-check (APPLIED 2026-07-11, W28 — was W27 Proposal E, cooling period held,
+signal persisted: OWASP GenAI Top 10 / MITRE ATLAS repeated the EXACT SAME miss for a 2nd
+week running, and it took a manual re-read of the full `SOURCES.md` structure — not the
+current-week-only coverage check — to see that neither source had ever had a "swept every
+run" heading to begin with):** the plain diff above only catches a source going missing
+THIS week. Once a quarter of weeklies (or whenever a MISSING repeats a prior week's miss),
+also re-read `SOURCES.md` end to end and ask, for every entry marked `[verified ...]`,
+whether it actually lives under a "swept every run" heading with a daily lane that owns
+it — a source can sit `[verified]` for many weeks while structurally unreachable by any
+daily lane (DEF CON AI Village for 6 weeks, OWASP/ATLAS for 2), and the current-week-only
+diff cannot see that pattern by construction.
 Then compare the coverage log against the ledger: which sources produced evidence, which
 produced nothing repeatedly; are the scope priorities in `strategy_notes` actually covered?
 Tunnel-vision check: if ALL of this week's new evidence landed on pre-existing trends,
