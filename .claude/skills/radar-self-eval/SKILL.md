@@ -34,7 +34,16 @@ commit:
   `degraded`, or **MISSING** (in SOURCES.md but never in any log line this week).
   MISSING = a coverage lie — NAME them. A source MISSING or `degraded` for the
   whole week is a heal-or-REMOVE candidate (see Amendments): the registry must be
-  honest about what it actually sweeps.
+  honest about what it actually sweeps. AMENDMENT (2026-07-11, W28, applied —
+  proposed W27 as Proposal D, signal persisted): "opened" is not enough on its
+  own — when SOURCES.md documents a CONFIRMED heal for a source (a specific
+  working method, e.g. a search+extract pipeline replacing a broken feed), check
+  whether the daily logs actually RAN that method this week, not just re-logged
+  the source's OLD pre-heal `degraded:` label. A source can pass "opened" for
+  weeks while quietly reading only a stale/broken slice of its own surface
+  (multi-section sources like Anthropic /research+/news are the same failure
+  class as an unused heal) — name any source where this happened as its own
+  finding, distinct from a plain MISSING.
 - **routing-leak**: queue items tagged with (or clearly on) an EXISTING trend's
   axis yet absent from that trend's evidence — on-axis primaries hoarded in the
   queue instead of routed to evidence. Count and name them; each is a routing
