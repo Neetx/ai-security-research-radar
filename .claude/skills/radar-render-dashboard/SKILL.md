@@ -39,15 +39,21 @@ on every run, never patch it. Design goal: one screen, everything clickable.
    - **latest signal** = the `last_evidence` date linking to the evidence URL
      whose date equals `last_evidence` (first match in list order); if none
      matches, link the top evidence item.
-7. **Worth studying** — the `study_shelf` section of TRENDS.md, newest first,
-   up to 12 bullets: `[name](url) — one line of why` (the shelf persists ~20 picks
-   / 30 days so a reader away for a couple of weeks can still catch up).
-8. **Community pulse** — `## Community pulse` (Phase 3): up to 5 bullets distilled
+7. **🛠️ Tools & releases** — `## 🛠️ Tools & releases` — a FIRST-CLASS output block (offensive
+   tools/repos ARE a primary deliverable of this radar): up to ~8 bullets of the newest / newly
+   -updated on-axis GitHub tools & tool releases from the watched list AND the tool-discovery lane
+   — `[owner/repo](github-url) — one line (what it does + new version/date if a release)`. Draw
+   from `study_shelf` tool picks + `observation_queue` tool items + the Discovered-source
+   candidates promoted this cycle. If genuinely none this cycle: one line "No new tools this scan."
+   Never leave it out — an empty-but-present block tells the reader the lane ran.
+8. **Worth studying** — the `study_shelf` section of TRENDS.md (papers/writeups; tools go in the
+   Tools block above), newest first, up to 12 bullets: `[name](url) — one line of why`.
+9. **Community pulse** — `## Community pulse` (Phase 3): up to 5 bullets distilled
    from the latest `radar-pulse` intake — non-evidence, link-only, NEVER naming
    individuals (link the thread/profile, summarise). If no pulse data yet, one
    line: "No community pulse sampled yet." This section is clearly marked as
    unverified sentiment, separate from the verified trend table.
-9. **Output map** — one line of links: TRENDS.md, watchlist (queue count) →
+10. **Output map** — one line of links: TRENDS.md, watchlist (queue count) →
    `TRENDS.md#observation_queue`, `reports/` + newest daily, newest weekly
    ("weekly: none yet" if absent), AGENTS.md, SOURCES.md.
 

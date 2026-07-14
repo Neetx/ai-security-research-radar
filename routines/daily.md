@@ -43,8 +43,15 @@ intake-vs-evidence distinction governs what you DO with a hit, not whether you C
   curator lists; multi-channel earthquake check; feeds `observation_queue` unverified +
   the pulse note. Never evidence; never name individuals.
 - **Tool/repo & advisory watch (every run)** — `radar-repo-watch`: releases of watched
-  offensive/red-team tool repos, notable forks, and new CVEs/GHSA on AI tooling — citable
-  artifacts; issue/PR/fork movement is a queue signal.
+  offensive/red-team tool repos (via the package-registry heal — PyPI/npm — since github.com is
+  403-scoped), notable forks, and new CVEs/GHSA on AI tooling — citable artifacts.
+- **GitHub tool-DISCOVERY (every run, MANDATORY — new tools are a primary output here)**: per
+  SOURCES.md → "GitHub tool-DISCOVERY", run `tvly search --include-domains github.com "<topic>"`
+  over ≥2 rotating offensive-AI-sec topics + check a curated awesome-list, to find NEW tools the
+  watched list would miss. A newly-found on-axis tool → stage in Discovered-source candidates,
+  verify (package registry / tvly), and CAPTURE it as a first-class item (study-shelf + the
+  render's "🛠️ Tools & releases" block). Do NOT let a tool ship un-noticed because it wasn't
+  already on the watched list.
 - **Exploration slot (MANDATORY)** — `radar-explore`: iterate the discovery-venue list
   (arXiv cs.CR recent with an advancing window; security trending), significance-first:
   read the top items REGARDLESS of sub-topic; a genuinely significant item OFF every

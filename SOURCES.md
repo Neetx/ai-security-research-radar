@@ -106,6 +106,29 @@ the newest commit, 5 months stale) — NOT adopted as a heal, do not rely on it 
 Next attempt: a repo-specific third-party mirror/RSS, or a GitHub search-API path not scoped
 the same way as `releases.atom`/`repos/.../releases`.
 
+### GitHub tool-DISCOVERY (swept every run — NEW tools are a PRIMARY output of this radar, not just watched-repo releases)
+
+The watched list below only catches KNOWN repos; a brand-new offensive tool that ships outside a
+paper gets MISSED. So actively DISCOVER new tools every run. The session's github.com is 403-scoped
+and `tvly extract` of GitHub release pages returns JS nav-chrome — BUT `tvly search --include-domains
+github.com "<topic>"` WORKS (verified 2026-07-14: surfaced PromptShield, an AI/ML pentest toolkit,
+and curated lists). Method:
+- **`tvly search --include-domains github.com "<topic>"`** over a ROTATING offensive-AI-sec topic set
+  (≥2 per run, advance through the list): `LLM red-team / jailbreak framework`, `prompt-injection tool
+  / harness`, `agent (or MCP) exploitation / attack`, `AI pentest toolkit`, `model extraction /
+  fingerprinting`, `adversarial-suffix / GCG`, `agent-sandbox escape`, `AI supply-chain / malicious
+  skill`, `LLM data-exfiltration`. Read titles/dates; a repo dated within ~2 months is a candidate.
+- **Curated "awesome" lists** (a firehose — follow to the tools they enumerate, then to each repo):
+  `user1342/Awesome-LLM-Red-Teaming`, plus `tvly search "awesome LLM security / AI red team"` for new
+  ones. **[verified 2026-07-14]**
+- The **pulse/curator lane** (tldrsec, DEF CON AI Village, HN) already names tools — when it does,
+  the tool's repo MUST be captured here, not left in prose.
+For each newly-found on-axis tool: stage its `owner/repo` in "Discovered-source candidates" → VERIFY
+(package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` if it ships to one; else
+`tvly search` the repo name) → add to Watched repositories AND surface it as a first-class output
+(the render's **🛠️ Tools & releases** block + a study-shelf pick). The GOAL: do NOT miss a tool the
+week it ships.
+
 ### Watched repositories  (all **[verified 2026-06-23]** via GitHub API unless noted)
 - NVIDIA/garak — the LLM vulnerability scanner (note: `leondz/garak` 301-redirects here)
 - Azure/PyRIT — Python Risk Identification Tool for generative AI (Microsoft)
