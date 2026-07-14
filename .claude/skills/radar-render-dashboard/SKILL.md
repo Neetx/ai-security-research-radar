@@ -39,13 +39,15 @@ on every run, never patch it. Design goal: one screen, everything clickable.
    - **latest signal** = the `last_evidence` date linking to the evidence URL
      whose date equals `last_evidence` (first match in list order); if none
      matches, link the top evidence item.
-7. **🛠️ Tools & releases** — `## 🛠️ Tools & releases` — a FIRST-CLASS output block (offensive
-   tools/repos ARE a primary deliverable of this radar): up to ~8 bullets of the newest / newly
+7. **🛠️ Tools & releases** — `## 🛠️ Tools & releases` — a FIRST-CLASS output block (public,
+   usable offensive tools ARE a primary deliverable): up to ~8 bullets of the newest / newly
    -updated on-axis GitHub tools & tool releases from the watched list AND the tool-discovery lane
-   — `[owner/repo](github-url) — one line (what it does + new version/date if a release)`. Draw
-   from `study_shelf` tool picks + `observation_queue` tool items + the Discovered-source
-   candidates promoted this cycle. If genuinely none this cycle: one line "No new tools this scan."
-   Never leave it out — an empty-but-present block tells the reader the lane ran.
+   — `[owner/repo](github-url) — one line (what it does + new version/date if a release)`. ONLY
+   tools with a REAL PUBLIC repo you could clone today (verified per SOURCES → tool-discovery) —
+   a paper that merely CLAIMS a tool with no public/populated repo does NOT go here (it stays in
+   Worth studying as a paper). Draw from Discovered-source candidates promoted this cycle +
+   `study_shelf`/`observation_queue` tool items. If genuinely none: one line "No new tools this
+   scan." Never leave it out — an empty-but-present block tells the reader the lane ran.
 8. **Worth studying** — the `study_shelf` section of TRENDS.md (papers/writeups; tools go in the
    Tools block above), newest first, up to 12 bullets: `[name](url) — one line of why`.
 9. **Community pulse** — `## Community pulse` (Phase 3): up to 5 bullets distilled

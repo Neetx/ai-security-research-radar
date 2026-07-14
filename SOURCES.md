@@ -108,26 +108,32 @@ the same way as `releases.atom`/`repos/.../releases`.
 
 ### GitHub tool-DISCOVERY (swept every run — NEW tools are a PRIMARY output of this radar, not just watched-repo releases)
 
-The watched list below only catches KNOWN repos; a brand-new offensive tool that ships outside a
-paper gets MISSED. So actively DISCOVER new tools every run. The session's github.com is 403-scoped
-and `tvly extract` of GitHub release pages returns JS nav-chrome — BUT `tvly search --include-domains
-github.com "<topic>"` WORKS (verified 2026-07-14: surfaced PromptShield, an AI/ML pentest toolkit,
-and curated lists). Method:
+TARGET = PUBLIC, USABLE, standalone tools — GitHub-native, INDEPENDENT of any paper. The deliverable
+is "a tool a red-teamer can actually clone and run today", not a paper claiming a tool. In fact papers
+are the WEAK channel here: a paper's tool is OFTEN not public (empty/"coming soon" repo, or none) — so
+do NOT anchor tool-discovery to arXiv. Hunt GitHub directly, every run. The session's github.com is
+403-scoped and `tvly extract` of release pages returns JS nav-chrome — BUT `tvly search --include-domains
+github.com "<topic>"` and the GitHub Topics pages WORK via Tavily (verified 2026-07-14). Channels:
+- **GitHub Topics pages** (paper-independent firehose): `tvly search --include-domains github.com
+  "<topic> GitHub Topics"` → the `github.com/topics/<tag>` aggregation lists repos tagged e.g.
+  `prompt-injection`, `llm-security`, `ai-red-teaming`, `jailbreak`, `agent-security`, `mcp-scan`
+  **[verified 2026-07-14, score 0.82]**. Rotate the tags; read the freshest/most-starred.
 - **`tvly search --include-domains github.com "<topic>"`** over a ROTATING offensive-AI-sec topic set
-  (≥2 per run, advance through the list): `LLM red-team / jailbreak framework`, `prompt-injection tool
-  / harness`, `agent (or MCP) exploitation / attack`, `AI pentest toolkit`, `model extraction /
-  fingerprinting`, `adversarial-suffix / GCG`, `agent-sandbox escape`, `AI supply-chain / malicious
-  skill`, `LLM data-exfiltration`. Read titles/dates; a repo dated within ~2 months is a candidate.
-- **Curated "awesome" lists** (a firehose — follow to the tools they enumerate, then to each repo):
-  `user1342/Awesome-LLM-Red-Teaming`, plus `tvly search "awesome LLM security / AI red team"` for new
-  ones. **[verified 2026-07-14]**
-- The **pulse/curator lane** (tldrsec, DEF CON AI Village, HN) already names tools — when it does,
-  the tool's repo MUST be captured here, not left in prose.
-For each newly-found on-axis tool: stage its `owner/repo` in "Discovered-source candidates" → VERIFY
-(package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` if it ships to one; else
-`tvly search` the repo name) → add to Watched repositories AND surface it as a first-class output
-(the render's **🛠️ Tools & releases** block + a study-shelf pick). The GOAL: do NOT miss a tool the
-week it ships.
+  (≥2 per run): `LLM red-team / jailbreak framework`, `prompt-injection tool / harness`, `agent (or MCP)
+  exploitation / attack`, `AI pentest toolkit`, `model extraction / fingerprinting`, `adversarial-suffix
+  / GCG`, `agent-sandbox escape`, `AI supply-chain / malicious skill`, `LLM data-exfiltration`.
+- **Curated "awesome" lists** (a firehose of vetted public tools): `user1342/Awesome-LLM-Red-Teaming`,
+  plus `tvly search "awesome LLM security / AI red team"` for new ones **[verified 2026-07-14]**.
+- **New repos from watched security orgs/researchers** (Watched profiles below) — a known red-teamer's
+  brand-new repo is a top signal, no paper required.
+- The **pulse/curator lane** (tldrsec, DEF CON AI Village, HN) already names tools — capture the repo here.
+For each candidate tool: stage its `owner/repo` in "Discovered-source candidates" → **VERIFY IT IS REAL &
+PUBLIC** (the whole point): package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` (→
+version + timestamp + homepage) if it ships to one, else `tvly search`/`tvly extract` the repo to confirm
+it has actual code/README/recent activity — REJECT empty, "coming soon", archived, or 404 repos (this is
+exactly how a paper's non-public "tool" gets filtered out). A verified public tool → add to Watched
+repositories AND surface as a first-class output (render's **🛠️ Tools & releases** block + a study-shelf
+pick). GOAL: never miss a usable tool the week it ships; never surface a vaporware repo as if it were one.
 
 ### Watched repositories  (all **[verified 2026-06-23]** via GitHub API unless noted)
 - NVIDIA/garak — the LLM vulnerability scanner (note: `leondz/garak` 301-redirects here)
