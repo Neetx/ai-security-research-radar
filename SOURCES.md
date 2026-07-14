@@ -108,32 +108,47 @@ the same way as `releases.atom`/`repos/.../releases`.
 
 ### GitHub tool-DISCOVERY (swept every run — NEW tools are a PRIMARY output of this radar, not just watched-repo releases)
 
-TARGET = PUBLIC, USABLE, standalone tools — GitHub-native, INDEPENDENT of any paper. The deliverable
-is "a tool a red-teamer can actually clone and run today", not a paper claiming a tool. In fact papers
-are the WEAK channel here: a paper's tool is OFTEN not public (empty/"coming soon" repo, or none) — so
-do NOT anchor tool-discovery to arXiv. Hunt GitHub directly, every run. The session's github.com is
-403-scoped and `tvly extract` of release pages returns JS nav-chrome — BUT `tvly search --include-domains
-github.com "<topic>"` and the GitHub Topics pages WORK via Tavily (verified 2026-07-14). Channels:
-- **GitHub Topics pages** (paper-independent firehose): `tvly search --include-domains github.com
-  "<topic> GitHub Topics"` → the `github.com/topics/<tag>` aggregation lists repos tagged e.g.
-  `prompt-injection`, `llm-security`, `ai-red-teaming`, `jailbreak`, `agent-security`, `mcp-scan`
-  **[verified 2026-07-14, score 0.82]**. Rotate the tags; read the freshest/most-starred.
-- **`tvly search --include-domains github.com "<topic>"`** over a ROTATING offensive-AI-sec topic set
-  (≥2 per run): `LLM red-team / jailbreak framework`, `prompt-injection tool / harness`, `agent (or MCP)
-  exploitation / attack`, `AI pentest toolkit`, `model extraction / fingerprinting`, `adversarial-suffix
-  / GCG`, `agent-sandbox escape`, `AI supply-chain / malicious skill`, `LLM data-exfiltration`.
+TWO distinct, CO-EQUAL things to observe — do NOT rank one below the other:
+- **(A) RESEARCH** — papers/arXiv (the science of attacks & defenses) → feeds trends + `study_shelf`.
+- **(B) usable public TOOLS** — GitHub repos a red-teamer can clone & run → THIS lane + the render's
+  `🛠️ Tools & releases` block.
+They are complementary, not competing: a paper reports a *method*; a tool is a *thing you run*. Many
+strong tools ship with NO paper, and many papers have no public tool — so tool-discovery is GitHub-NATIVE
+and does not depend on arXiv (that is WHY it's a separate lane, NOT because papers are lesser). Hunt
+GitHub directly, every run. The session's github.com is 403-scoped and `tvly extract` of release pages
+returns JS nav-chrome — but `tvly search --include-domains github.com` and the GitHub Topics pages WORK
+via Tavily (verified 2026-07-14). Channels:
+- **GitHub Topics pages** — the biggest paper-independent firehose: `tvly search --include-domains
+  github.com "<tag> GitHub Topics"` → `github.com/topics/<tag>` lists every repo carrying that tag,
+  sortable by recency/stars. Rotate through a BROAD tag set (≥3 tags/run, advance through the list):
+  - *Prompt/jailbreak:* `prompt-injection` · `indirect-prompt-injection` · `prompt-injection-attacks` ·
+    `prompt-injections` · `prompt-security` · `jailbreak` · `llm-jailbreak` · `prompt-hacking`
+  - *LLM/AI-sec offensive:* `llm-security` · `ai-security` · `ai-security-tool` · `ai-red-teaming` ·
+    `llm-red-teaming` · `red-teaming` · `offensive-security` · `cybersecurity-tools`
+  - *Agents/MCP:* `agent-security` · `mcp-security` · `mcp-scan` · `skill-scanner` · `ai-agents` ·
+    `autonomous-agents` · `multi-agent-system` · `openclaw-security`
+  - *Adversarial-ML / model attacks:* `adversarial-attacks` · `adversarial-machine-learning` ·
+    `adversarial-examples` · `textattack` · `backdoor-attack` · `data-poisoning` · `model-extraction` ·
+    `membership-inference` · `model-inversion` · `model-stealing`
+  - *Misc offensive:* `deepfake` · `abliteration` · `ai-exploitation` · `ml-security` · `machine-learning-security`
+  Bolded/first-group tags **[verified real 2026-07-14 via topic-page harvest]**; the rest are plausible
+  → confirm each on first use (a `github.com/topics/<tag>` with 0 repos = drop it). SKIP the DEFENSIVE
+  variants (`prompt-injection-defense/detection/protection`, `guardrails`) except to find the tool being
+  attacked — this is an OFFENSIVE radar. The agent OWNS and grows this tag list.
+- **`tvly search --include-domains github.com "<free-text topic>"`** for things without a clean tag:
+  `AI pentest toolkit`, `adversarial-suffix / GCG`, `agent-sandbox escape`, `AI supply-chain / malicious
+  skill`, `LLM data-exfiltration`, `voice-clone / deepfake offense`, `MCP server exploit`.
 - **Curated "awesome" lists** (a firehose of vetted public tools): `user1342/Awesome-LLM-Red-Teaming`,
   plus `tvly search "awesome LLM security / AI red team"` for new ones **[verified 2026-07-14]**.
 - **New repos from watched security orgs/researchers** (Watched profiles below) — a known red-teamer's
   brand-new repo is a top signal, no paper required.
 - The **pulse/curator lane** (tldrsec, DEF CON AI Village, HN) already names tools — capture the repo here.
 For each candidate tool: stage its `owner/repo` in "Discovered-source candidates" → **VERIFY IT IS REAL &
-PUBLIC** (the whole point): package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` (→
-version + timestamp + homepage) if it ships to one, else `tvly search`/`tvly extract` the repo to confirm
-it has actual code/README/recent activity — REJECT empty, "coming soon", archived, or 404 repos (this is
-exactly how a paper's non-public "tool" gets filtered out). A verified public tool → add to Watched
-repositories AND surface as a first-class output (render's **🛠️ Tools & releases** block + a study-shelf
-pick). GOAL: never miss a usable tool the week it ships; never surface a vaporware repo as if it were one.
+PUBLIC**: package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` (→ version + timestamp
++ homepage) if it ships to one, else `tvly search`/`tvly extract` the repo to confirm it has actual
+code/README/recent activity — REJECT empty, "coming soon", archived, or 404 repos. A verified public tool
+→ add to Watched repositories AND surface it in the render's **🛠️ Tools & releases** block. GOAL: never
+miss a usable tool the week it ships; never surface a vaporware repo as if it were one.
 
 ### Watched repositories  (all **[verified 2026-06-23]** via GitHub API unless noted)
 - NVIDIA/garak — the LLM vulnerability scanner (note: `leondz/garak` 301-redirects here)
