@@ -163,6 +163,7 @@ miss a usable tool the week it ships; never surface a vaporware repo as if it we
 - andyzorigin/cybench — CTF benchmark for autonomous agents
 - princeton-nlp/intercode — InterCode benchmark (NeurIPS 2023; code/CTF agent tasks)
 - elder-plinius/L1B3RT4S — **[verified 2026-06-23 via API]** large public collection of working jailbreaks per model; track ADDITIONS as a leading indicator of new bypasses (intake — link the repo, never paste payloads into the ledger)
+- FuzzingLabs/mcp-security-hub — **[verified 2026-07-14 via tvly extract, tool-discovery lane]** production-ready, Dockerized collection of **38 offensive-security MCP servers / 300+ tools** (Nmap, Ghidra, Nuclei, SQLMap, Hashcat, …) that expose classic offensive tooling to AI assistants (Claude Desktop/Code) for agent-driven recon, vuln scanning and binary analysis — an AI-for-offense agent-tooling artifact (MIT). Surfaced this run via `tvly search --include-domains github.com "mcp-security"`; not previously watched. Watch releases/new MCPs.
 - (agent: add tools as they appear in papers/cons; drop abandoned ones)
 
 ### Watched profiles/users  (GitHub orgs behind the watched tools — **[verified 2026-06-23]** via API; watch for NEW repos/releases under each)
