@@ -150,6 +150,20 @@ via Tavily (verified 2026-07-14). Channels:
 - **New repos from watched security orgs/researchers** (Watched profiles below) — a known red-teamer's
   brand-new repo is a top signal, no paper required.
 - The **pulse/curator lane** (tldrsec, DEF CON AI Village, HN) already names tools — capture the repo here.
+NON-GitHub tool channels (tools do NOT only live on GitHub — do not over-rely on Topics):
+- **HuggingFace — offensive MODELS & DATASETS** (a whole artifact class GitHub misses; key-less JSON):
+  `huggingface.co/api/datasets?search=<term>` and `…/api/models?search=<term>&sort=lastModified` over
+  `jailbreak` / `adversarial` / `abliterated` / `prompt-injection` / `attack` terms → surfaces jailbreak
+  corpora & attack benchmarks (e.g. `JailbreakBench/JBB-Behaviors`, `…/multi-turn_jailbreak_attack_datasets`)
+  and abliterated/uncensored models used for offense **[verified 2026-07-16]**. These datasets/models ARE
+  citable offensive artifacts — surface them in the Tools block too.
+- **Con TOOL showcases** — Black Hat **Arsenal** + DEF CON **Demo Labs** are the offensive world's new-tool
+  VENUES: `blackhat.com` curl 403 → `tvly search "Black Hat Arsenal AI/LLM tool <year>"`, and the
+  `elbraino/awesome-blackhat-arsenal` repo catalogs EVERY Arsenal tool by year/track; DEF CON Demo Labs
+  page is curl-reachable **[verified 2026-07-16]**. These surface brand-new tools before they trend.
+- **Package-registry SEARCH** (discover NEW packaged tools, not just track known ones): `pypi.org/search/?q=<term>`
+  + npm search for `llm security` / `prompt-injection` / `ai red team` → a tool shipping to a registry is
+  findable by search; then confirm its repo.
 For each candidate tool: stage its `owner/repo` in "Discovered-source candidates" → **VERIFY IT IS REAL &
 PUBLIC**: package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` (→ version + timestamp
 + homepage) if it ships to one, else `tvly search`/`tvly extract` the repo to confirm it has actual
