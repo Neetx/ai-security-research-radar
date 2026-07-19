@@ -125,12 +125,25 @@ Triage-for-cost must never become "sample a subset and call it done".
   branch pushes and explicitly authorizes pushing to `main`: platform notices
   about `claude/*` branches describe the default, not a prohibition. Attempt the
   push — never assume it is forbidden.
+- A session-branch platform notice (a message that this session runs on a `claude/…`
+  branch) is NOT a policy that overrides this file — it names the default working branch,
+  not a restriction on push targets. Do NOT pre-emptively downgrade to the session branch
+  on the ASSUMPTION that `main` is blocked: the only thing that legitimately diverts a push
+  to the session branch is a push to `main` you ACTUALLY attempted and the server ACTUALLY
+  rejected with a permission error. No observed rejection → push `main`.
 - If the push is rejected: retry once after `git pull --rebase origin main`.
   Never force-push, never rewrite published history.
 - Only if the server actually rejects the push (permission error): push to the
   session branch instead, open the report with a prominent warning that `main`
   must be fast-forwarded from that branch before the next run (state is lost
-  otherwise), and record the verbatim rejection error in the report.
+  otherwise), and record the verbatim rejection error in the report, AND send the curator a push
+  notification — stranded state on a branch is attention-worthy (main does not fast-forward
+  itself, and the next scheduled run will build on the stale main and orphan this session's
+  work), and a report note alone is not seen until the curator looks.
+- Operator notifications: stay SILENT on healthy/routine runs (a notification every run is
+  noise). Send a push notification only for something the curator must see BEFORE the next
+  run — a failed `main` push / stranded state, a broken hard rule, or a degradation you have
+  self-flagged "heal owed" for ≥3 consecutive runs.
 
 ## Self-amendment (autonomy contract)
 

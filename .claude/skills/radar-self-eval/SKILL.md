@@ -27,12 +27,15 @@ commit:
   `git log -p -- TRENDS.md`, or the daily reports). Report the median, split by
   channel — exploration finds vs queue promotions (backfill) — plus the
   backfill share of all new evidence. This is the daily-ness KPI.
-- **coverage** (the self-check that auto-detects the alphamatch failure class):
-  for each "swept every run" list in SOURCES.md (lab blogs, YouTube curators,
-  pointer/digest blogs, discovery venues), diff the list against the week's
-  `logs/source_rotation.md` lines and classify every listed source as `opened`,
+- **coverage** (the self-check that auto-detects the listed-but-never-swept failure class):
+  for each "swept every run" heading in SOURCES.md (lab blogs, YouTube curators,
+  pointer/digest blogs, discovery venues, tool-discovery channels), enumerate EVERY entry
+  under it — INCLUDING bullets nested under a sub-label (e.g. a "non-GitHub channels:"
+  sub-block), not just top-level list entries — and diff that full list against the week's
+  `logs/source_rotation.md` lines, classifying every listed source as `opened`,
   `degraded`, or **MISSING** (in SOURCES.md but never in any log line this week).
-  MISSING = a coverage lie — NAME them. A source MISSING or `degraded` for the
+  MISSING = a coverage lie — NAME them; never report "0 missing" without having run the
+  full nested list-vs-log diff. A source MISSING or `degraded` for the
   whole week is a heal-or-REMOVE candidate (see Amendments): the registry must be
   honest about what it actually sweeps. AMENDMENT (2026-07-11, W28, applied —
   proposed W27 as Proposal D, signal persisted): "opened" is not enough on its

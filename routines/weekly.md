@@ -39,7 +39,10 @@ a self-eval failure.
 ## 4. Source strategy review
 **Coverage check (first-class — the registry must be honest):** diff every "swept every
 run" list in `SOURCES.md` against the week's `logs/source_rotation.md` — every listed
-source must appear as `opened` or `degraded`. Any source MISSING all week is a coverage
+source must appear as `opened` or `degraded` — enumerate EVERY entry under each "swept every run" heading, INCLUDING bullets nested
+under a sub-label (e.g. a "non-GitHub channels:" sub-block), not just top-level list
+entries: a nested swept-every-run source is a coverage PROMISE exactly like a top-level
+one. Never assert "0 sources missing" without having run this full list-vs-log diff. Any source MISSING all week is a coverage
 lie: heal it now (`radar-source-heal`), or if already healed and still un-sweepable,
 propose heal-or-REMOVE (don't list what you won't sweep).
 **Rolling cross-check (APPLIED 2026-07-11, W28 — was W27 Proposal E, cooling period held,

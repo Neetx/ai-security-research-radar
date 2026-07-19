@@ -52,6 +52,12 @@ intake-vs-evidence distinction governs what you DO with a hit, not whether you C
   verify (package registry / tvly), and CAPTURE it as a first-class item (study-shelf + the
   render's "🛠️ Tools & releases" block). Do NOT let a tool ship un-noticed because it wasn't
   already on the watched list.
+  The discovery lane is MULTI-CHANNEL, not GitHub-only: iterate and LOG (opened / degraded)
+  EVERY channel listed under a "swept every run" heading in `SOURCES.md` — the GitHub-native
+  channels AND any non-GitHub ones the domain uses (model/dataset hubs, conference
+  tool-showcases, package-registry SEARCH). A "swept every run" heading binds EVERY bullet
+  under it, nested sub-bullets included; a discovery log line that names only some channels
+  while others sit listed-but-unlogged is a coverage miss.
 - **Exploration slot (MANDATORY)** — `radar-explore`: iterate the discovery-venue list
   (arXiv cs.CR recent with an advancing window; security trending), significance-first:
   read the top items REGARDLESS of sub-topic; a genuinely significant item OFF every
