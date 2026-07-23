@@ -1,0 +1,5 @@
+{
+  "model": "claude-sonnet-5",
+  "effortLevel": "high",
+  "alwaysThinkingEnabled": true
+}
