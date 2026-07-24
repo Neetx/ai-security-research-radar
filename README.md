@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-9-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-5-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--23-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-9-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-5-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--07--24-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-07-23):**
-- 🎯 **[Trend 002](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) +1 evidence via cap rotation — cadence restored**: [KASS](https://arxiv.org/abs/2607.15673) synthesizes **executable, self-validating smart-contract exploits** (94.23% of 104 SmartBugs contracts, real-CVE validation), extending autonomous AI *exploitation* to a new domain; rotated out an older pentest-agent capability-boundary measurement (002 had gone 9 days without new evidence while strong candidates queued).
-- 🧩 **[Trend 001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) held at cap — novel channel queued**: [HijackKV](https://arxiv.org/abs/2607.19957) is the first attack framework for **KV-cache-reuse hijacking** — a poisoned cached chunk silently hijacks a later victim query with *no attacker text in its input*; queued as the fresh top rotate-candidate (also on the study shelf).
-- 🤖 **New-nucleus watch — automated agent red-teaming**: [KYA "Know Your Agent"](https://arxiv.org/abs/2607.19837) (recon-driven black-box pentesting of production AI agents) is the **2nd independent group** after [AHA](https://arxiv.org/abs/2607.11698) — AI systems that autonomously recon and attack *other* agents; watch for a 3rd to seed.
-- 📡 **Watchlist 25** (dropped a 14-day-old multi-agent safety-bypass mechanism, superseded by the live 5-agent CI/CD attack item); **Microsoft Security** heal re-confirmed working (07-22 off-domain junk was transient).
+**Since last scan (2026-07-24):**
+- 🔍 **[Trend 006](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) +1 evidence — cadence restored**: [LeakyLMs](https://arxiv.org/abs/2607.20723) steals model architecture (layer count, hidden dim) and inference optimizations from **production APIs using only per-token timing** — detects speculative decoding + draft-context length on Gemini Flash 2.5. A new timing-side-channel extraction lane distinct from all prior 006 evidence (6th independent group).
+- 🛠️ **Tool release — [PyRIT 1.0.0](https://pypi.org/project/pyrit/1.0.0/)**: Microsoft's LLM red-team / robustness framework hits its **first stable major release** (0.14.0 → 1.0.0, 2026-07-24) — caught by the PyPI repo-watch lane.
+- 🧩 **[Trend 001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) held at cap — new capture queued**: [IssueTrojanBench](https://arxiv.org/abs/2607.20759) benchmarks **malicious GitHub-issue requests** against production coding agents (Cursor, Claude Code, Codex Desktop) inducing insecure code / data exfiltration — the benchmark counterpart to Comment-and-Control.
+- 📡 **Watchlist 25** (dropped a 15-day-old LLM-directed-fuzzing item whose 2nd-group watch never materialized; 002's discovery facet amply covered by evidence). Quiet lab/pulse pass otherwise — no offensive-AI earthquake.
 
 ---
 
@@ -23,8 +23,8 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-07-17](https://arxiv.org/abs/2607.15673) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-07-14](https://arxiv.org/abs/2607.14147) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-07-10](https://arxiv.org/abs/2607.09473) |
+| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-07-22](https://arxiv.org/abs/2607.20723) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 📈 emerging | [2026-07-21](https://openai.com/index/hugging-face-model-evaluation-security-incident) |
-| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-07-11](https://arxiv.org/abs/2607.10252) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 🌱 seed | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 🌱 seed | [2026-07-11](https://arxiv.org/abs/2607.10269) |
 
@@ -32,14 +32,12 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-_No new tools this scan — the GitHub tool-discovery lane surfaced only curated awesome-lists + topic pages (no discrete new runnable tool); the HuggingFace-API substitute showed routine jailbreak-corpus churn. Watched-tool versions unchanged since 2026-07-14:_
-
+- [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI (LLM red-team / robustness assessment: automated jailbreak, prompt-injection & harm-elicitation probing); **v1.0.0** (2026-07-24) — first stable major release.
 - [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) — Dockerized collection of **38 offensive-security MCP servers / 300+ tools** (Nmap, Ghidra, Nuclei, SQLMap, Hashcat …) exposing classic offensive tooling to AI assistants for agent-driven recon, vuln scanning and binary analysis.
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.121.19** (2026-07-14, latest on npm).
 - [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) — LLM red-team & scanning; v2.19.2 (2026-07-06, latest on PyPI).
 - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — LLM/agent red-teaming framework; v1.0.7 (2026-07-01, latest on PyPI).
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — LLM vulnerability scanner; v0.15.1 (unchanged).
-- [Azure/PyRIT](https://github.com/Azure/PyRIT) — Python Risk Identification Tool for generative AI; v0.14.0 (unchanged).
 
 ---
 
@@ -56,7 +54,6 @@ _No new tools this scan — the GitHub tool-discovery lane surfaced only curated
 - [PromptFiction: a one-click flaw that made Claude Desktop act without consent (Oasis Security)](https://www.oasis.security/blog/claude-desktop-vulnerability) — the cleanest zero-click escalation yet on claude.ai/Claude Desktop: a crafted `claude://` deeplink hands the agent a full instruction set with **no send-button confirmation**, ranging from silent conversation exfiltration to code execution depending on config. Reported to and fixed by Anthropic (evidence on trend 001).
 - [The Memory Heist: How I tricked Claude into leaking your deepest secrets (Ayush Paul)](https://www.ayush.digital/blog/the-memory-heist) — the vivid demonstration of the **lethal trifecta** on a shipping consumer AI agent: production claude.ai's memory system (auto-injected daily summary + `conversation_search`) becomes an exfil target once paired with browsing; `web_fetch`'s exfiltration-avoidance allowlist is defeated by chaining its three criteria to reach an attacker URL encoding the stolen memories/PII (evidence on trend 001).
 - [Patriot Bait: One Man, One AI, One Fake Persona (Trend Micro / TrendAI)](https://www.trendmicro.com/en_us/research/26/e/inside-the-influence-and-fraud-patriot-bait-campaign.html) — the vivid in-the-wild reference for **AI-as-operational-infrastructure**: a single low-skilled actor ran a 5-year influence + crypto-fraud campaign by making a jailbroken Gemini / Gemini CLI do C&C setup, credential theft and stolen-key rotation; the jailbreak **persisted** via a poisoned GEMINI.md memory file (evidence on trend 009).
-- [Antiproof: Synthesizing Vulnerability Detectors and Proofs of Exploitability](https://arxiv.org/abs/2607.12316) — end-to-end AI vuln discovery pairing neuro-symbolic detector **synthesis** (high recall) with proof-of-exploitability **oracles** (automatic validation). Detects **64/66** on BountyBench + a curated KEVBench, +60pp recall over static baselines (evidence on trend 002).
 
 ---
 
@@ -64,10 +61,10 @@ _No new tools this scan — the GitHub tool-discovery lane surfaced only curated
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- HN front page quiet on offensive-AI this pass (an npm supply-chain scanner, model-release chatter) — no earthquake to follow.
+- HN front page quiet on offensive-AI this pass — top AI items were commentary on the [OpenAI/Hugging Face incident](https://openai.com/index/hugging-face-model-evaluation-security-incident) (already tracked on trend 009), open-weight-AI export policy, and a DARPA AI-controlled F-16 — no fresh offensive-AI earthquake to follow.
 - A [Black Hat Europe 2025 "MCP Unchained"](https://www.blackhat.com/eu-25/briefings/schedule/#mcp-unchained-compromising-the-ai-agent-ecosystem-via-its-universal-connector-49228) offensive briefing on compromising the AI-agent ecosystem through MCP stays [queued](TRENDS.md#observation_queue) as a trend-001 rotate-candidate (open the talk's abstract before citing).
-- Reddit reachable (generic jailbreak / prompt-injection discussion, no earthquake); [tldr sec](https://tldrsec.com/) no new issue this pass; HuggingFace shows steady jailbreak-corpus / abliterated-model uploads (routine uncensoring churn).
+- Curator digests carried the same HF/OpenAI-incident commentary plus a skeptical "runaway AI agent — or a marketing stunt?" thread (no verified primary to follow); HuggingFace shows steady jailbreak-corpus / abliterated-model uploads (routine uncensoring churn).
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-23](reports/2026-07-23.md) · [weekly: 2026-W29](reports/weekly/2026-W29.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-24](reports/2026-07-24.md) · [weekly: 2026-W29](reports/weekly/2026-W29.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
