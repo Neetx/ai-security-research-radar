@@ -44,6 +44,14 @@ missing → heal → SOURCES.md method → next iteration succeeds.
   HF org activity, a docs/changelog page) and switch to it.
 - No feed exists at all → set the method to "HTML index via Tavily extract" and
   note it, so the sweep stops hunting for a feed.
+- **Same URL failing 2+ sessions running → try an alternate URL PATH on the same
+  domain before concluding the source is unreachable** (AMENDED 2026-07-25, W30
+  Proposal J — motivated by Bishop Fox: W27/W28 marked it unresolved after
+  repeatedly retrying one individual post URL, when the plain `/blog` index path
+  worked the whole time). A rendering/JS failure on one path does not mean the
+  whole domain fails — try the bare blog/research index, `/blog`, `/research`,
+  `/news`, or a category root before the domain is written off as JS-blocked or
+  dead.
 
 **Class B — failing tool call on an otherwise-live source**
 - Vary the call shape: different `tvly` flags, `extract` vs `search`,
