@@ -42,6 +42,16 @@ intake-vs-evidence distinction governs what you DO with a hit, not whether you C
 - **Community pulse (every run, intake only)** — `radar-pulse`: iterate the social/
   curator lists; multi-channel earthquake check; feeds `observation_queue` unverified +
   the pulse note. Never evidence; never name individuals.
+  VOCABULARY capture (the pulse tracks NAMES, not only events): when the community coins or
+  broadly adopts a NAME for a practice — a paradigm label, an umbrella term, a technique or
+  attack-class nickname — CAPTURE it, even though a name is never evidence. If it names
+  something an EXISTING trend already tracks, add it to that trend's `notes` as an
+  `also-called:` alias so the ledger is searchable by the word the field actually uses; if it
+  names something untracked, queue it as an intake item. A renaming ships no paper, release,
+  advisory or changelog, so EVERY artifact lane is structurally blind to it — only the pulse
+  can catch it, and a ledger whose trends carry names nobody says is one the curator cannot
+  find their own topics in. This NEVER promotes a term to a trend on discourse alone: the
+  trend bar still requires primary artifacts, and the naming source stays intake.
 - **Tool/repo & advisory watch (every run)** — `radar-repo-watch`: releases of watched
   offensive/red-team tool repos (via the package-registry heal — PyPI/npm — since github.com is
   403-scoped), notable forks, and new CVEs/GHSA on AI tooling — citable artifacts.
