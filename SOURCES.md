@@ -171,9 +171,19 @@ NON-GitHub tool channels (tools do NOT only live on GitHub — do not over-rely 
   VENUES: `blackhat.com` curl 403 → `tvly search "Black Hat Arsenal AI/LLM tool <year>"`, and the
   `elbraino/awesome-blackhat-arsenal` repo catalogs EVERY Arsenal tool by year/track; DEF CON Demo Labs
   page is curl-reachable **[verified 2026-07-16]**. These surface brand-new tools before they trend.
+  SEASONAL — LOG IT ANYWAY: both venues cluster around their conference dates (Black Hat USA / DEF CON in
+  August), so most of the year there is nothing new. That is NOT a licence to skip them silently: log
+  `off-season (next: <event/month>)` when the season is closed, and sweep for real as the dates approach
+  and for the weeks after (the tool lists publish with the schedule, before the event). Coverage gap found
+  2026-07-29: both sat at 0/4 runs logged — listed-but-never-mentioned, the exact failure this note closes.
 - **Package-registry SEARCH** (discover NEW packaged tools, not just track known ones): `pypi.org/search/?q=<term>`
   + npm search for `llm security` / `prompt-injection` / `ai red team` → a tool shipping to a registry is
   findable by search; then confirm its repo.
+  DISTINCT FROM THE REPO-WATCH USE OF THE SAME HOST — log it under its own name (`registry SEARCH: …`),
+  never folded into the `REPO WATCH: PyPI/npm [<known tools>]` line. Repo-watch answers "did a tool I
+  already track ship a version?"; this answers "did a tool I have never heard of appear?" — the second
+  question is the one this radar exists for. Coverage gap found 2026-07-29: the watch line ran every run
+  while the SEARCH never did, and the shared host made the lane look covered.
 For each candidate tool: stage its `owner/repo` in "Discovered-source candidates" → **VERIFY IT IS REAL &
 PUBLIC**: package registry `pypi.org/pypi/<pkg>/json` or `registry.npmjs.org/<pkg>` (→ version + timestamp
 + homepage) if it ships to one, else `tvly search`/`tvly extract` the repo to confirm it has actual

@@ -68,6 +68,16 @@ intake-vs-evidence distinction governs what you DO with a hit, not whether you C
   tool-showcases, package-registry SEARCH). A "swept every run" heading binds EVERY bullet
   under it, nested sub-bullets included; a discovery log line that names only some channels
   while others sit listed-but-unlogged is a coverage miss.
+  Two ways a channel silently drops out of this lane — neither is acceptable:
+  (a) **WATCH is not SEARCH.** Checking the versions of tools you ALREADY track and SEARCHING a
+  source for tools you do NOT yet know are two different operations that often share one host
+  (a package registry, a hub, a forge). Doing one does NOT discharge the other, and logging
+  `REPO WATCH: PyPI/npm [<known tools> unchanged]` does NOT mean the registry SEARCH ran. Run
+  both and log them as SEPARATE named entries, so a reader can tell discovery from monitoring.
+  (b) **A seasonal source is still a promise.** A channel tied to an event or release cycle
+  (a conference tool-showcase, an annual report, a periodic dump) is not exempt when its season
+  is closed: log it `off-season (next: <event/date>)` — the point is that silence is
+  indistinguishable from having forgotten it. Out-of-season is a finding; nothing is not.
 - **Exploration slot (MANDATORY)** — `radar-explore`: iterate the discovery-venue list
   (arXiv cs.CR recent with an advancing window; security trending), significance-first:
   read the top items REGARDLESS of sub-topic; a genuinely significant item OFF every
