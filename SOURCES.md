@@ -193,7 +193,7 @@ miss a usable tool the week it ships; never surface a vaporware repo as if it we
 
 ### Watched repositories  (all **[verified 2026-06-23]** via GitHub API unless noted)
 - NVIDIA/garak — the LLM vulnerability scanner (note: `leondz/garak` 301-redirects here)
-- Azure/PyRIT — Python Risk Identification Tool for generative AI (Microsoft)
+- microsoft/PyRIT — Python Risk Identification Tool for generative AI (Microsoft) — **MOVED 2026-07-30**: the old Azure/PyRIT org was archived 2026-03-27 ("PyRIT has moved! Please see https://github.com/microsoft/PyRIT"); PyPI releases continued uninterrupted under the new org (v1.0.0 07-24, v1.0.1 07-30). Update watched-profile references from github.com/Azure to github.com/microsoft accordingly.
 - promptfoo/promptfoo — prompt/agent/RAG red-teaming & pentesting
 - confident-ai/deepteam — framework to red-team LLMs and AI agents
 - Giskard-AI/giskard — LLM red-team & scanning (repo resolves via 301)
@@ -208,7 +208,7 @@ miss a usable tool the week it ships; never surface a vaporware repo as if it we
 - (agent: add tools as they appear in papers/cons; drop abandoned ones)
 
 ### Watched profiles/users  (GitHub orgs behind the watched tools — **[verified 2026-06-23]** via API; watch for NEW repos/releases under each)
-- github.com/NVIDIA (garak) · github.com/Azure (PyRIT) · github.com/microsoft
+- github.com/NVIDIA (garak) · github.com/microsoft (PyRIT — moved from Azure 2026-03-27)
 - github.com/protectai (ai-exploits, modelscan) · github.com/promptfoo · github.com/confident-ai (deepteam)
 - github.com/ethz-spylab (agentdojo, adversarial ML) · github.com/meta-llama (PurpleLlama/CyberSecEval) · github.com/Giskard-AI
 - (agent: add individual maintainers/researchers as their repos prove high-signal — link the profile, never quote the person)
