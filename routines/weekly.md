@@ -70,6 +70,13 @@ on-axis primary source, PROMOTE it into the matching swept list as `[verified YY
 clear its staging line; drop one-off noise with a one-line reason. Curators are one source-type
 in this same loop. A recurring on-axis org left un-promoted week after week is a coverage leak
 (the `source-discovery` metric in `radar-self-eval`).
+**Below-bar re-check (APPLIED 2026-08-01, W31 — was W30 Proposal K, cooling period held, signal
+persisted: several candidates sat parked at "1" mention for 12-27 days with the staging tally
+itself never advancing, because nothing ever names them a 2nd time on-axis — a candidate can be
+genuinely single-artifact for months without the tally ever forcing a re-look):** in ADDITION to
+the at-or-above-bar check, also re-open every staged candidate that has gone 2+ weeks since its
+last re-check (regardless of tally count) — a plain single-artifact source can still be worth a
+periodic look, and the tally alone will never trigger it if nothing re-names the org.
 Append a dated correction entry to `strategy_notes`.
 
 ## 5. Self-evaluation
