@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-9-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-21-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--01-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-9-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-22-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--03-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-01, weekly recalibration):**
-- 🎯 **[Trend 009](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) confidence medium→high**: Google GTIG's ["AI Threat Tracker"](https://cloud.google.com/blog/topics/threat-intelligence/ai-vulnerability-exploitation-initial-access) — an 81-day capture-leak fix — becomes the trend's 7th independent group (self-modifying PROMPTFLUX/PROMPTSPY malware, PRC-nexus actors weaponizing Hexstrike/Strix against real targets).
-- 🔓 **[Trend 001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) rotation**: ["Second Time, Same Sandbox"](https://oddguan.com/blog/second-time-same-sandbox-anthropic-claude-code-network-allowlist-bypass-data-exfiltration) — a SOCKS5 null-byte bypass left Claude Code's network sandbox silently broken for ~5.5 months across ~130 releases, with no advisory or CVE.
-- 🧹 **Queue burndown**: 13 stale (14–19 day) items resolved this week (12 dropped with reason, 1 trimmed); 2 fresh capture-leak items queued (MOSAIC CLI-composition attack, an SMT function-calling jailbreak); watchlist trimmed 24→21.
-- ⏳ **Dormancy watch**: [Trend 008](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) (hallucination-squatting) is now 18 days without new evidence — 3 days from the 21-day dormant threshold.
+**Since last scan (2026-08-03):**
+- 🔓 **[Trend 001](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) rotation**: ["Lucid"](https://arxiv.org/abs/2607.15657) — the first black-box VISUAL memory-poisoning attack on multimodal AI agents — finally lands after 12+ days flagged as the standing top rotate-candidate.
+- 🐚 **[Trend 002](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) rotation**: XBOW's [autonomous Bing-Images RCE chain](https://xbow.com/blog/bing-images-rce-vulnerabilities) — three Critical Microsoft CVEs found and proven end-to-end with **no human in the loop**.
+- 🔍 **[Trend 006](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) reaches its evidence cap**: three new independent findings in one day — prompt reconstruction via LLM inversion, a zero-knowledge-verification bypass, and synthetic-face membership inference.
+- ⏳ **Dormancy watch**: [Trend 008](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) (hallucination-squatting) is now 20 days without new evidence — **one day** from the 21-day dormant threshold.
 
 ---
 
@@ -24,22 +24,22 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-07-28](https://arxiv.org/abs/2607.25479) |
 | [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-07-20](https://arxiv.org/abs/2607.17535) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-07-14](https://arxiv.org/abs/2607.14147) |
-| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-07-30](https://arxiv.org/abs/2607.28147) |
-| [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 🌱 seed | [2026-07-14](https://arxiv.org/abs/2607.12340) |
+| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-07-31](https://arxiv.org/abs/2607.29378) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 🌱 seed | [2026-07-30](https://arxiv.org/abs/2607.28165) |
+| [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 🌱 seed | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
 ---
 
 ## 🛠️ Tools & releases
 
+- [bugbasesecurity/pentest-copilot](https://github.com/bugbasesecurity/pentest-copilot) — **Pentest Copilot V2**, an agentic pentesting workspace (fully autonomous command execution, up to 25 iterations/turn, 16 agent tools); showcased as a Major Update at Black Hat USA 2026 Arsenal.
+- [GH05TCREW/pentestagent](https://github.com/GH05TCREW/pentestagent) — **PentestAgent**, a mature (2.9K stars, 570 forks) open-source AI-agent framework for black-box pentesting/bug-bounty workflows — RAG knowledge base, attack playbooks, MCP client/server, async task orchestration.
 - [KeyValueSoftwareSystems/agent-opfor](https://github.com/KeyValueSoftwareSystems/agent-opfor) — open-source adversary-emulation ("OPFOR") framework for AI agents/LLM apps/MCP servers — OWASP LLM/Agentic-AI/MCP/API Top-10 evaluators plus an autonomous `opfor hunt` multi-agent campaign mode; 419 commits, 567 stars.
 - [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI; **v1.0.1** (2026-07-30) — a major v1 architectural redesign (Policy Puppetry, extended GCG, Garak-technique integration, enhanced Crescendo). Moved from the now-archived Azure/PyRIT org.
 - [adithyan-ak/agenthound](https://github.com/adithyan-ak/agenthound) — open-source offensive-security framework for AI-agent infrastructure spanning MCP, A2A, model gateways, inference servers, vector stores, MLOps, notebooks and 12 agent clients — recon, credential looting, model inversion, active tool/instruction-poisoning; DEF CON 34 Red Team Village.
 - [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) — Dockerized collection of **38 offensive-security MCP servers / 300+ tools** (Nmap, Ghidra, Nuclei, SQLMap, Hashcat …) exposing classic offensive tooling to AI assistants for agent-driven recon, vuln scanning and binary analysis.
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.121.20** (2026-07-31, latest on npm).
 - [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) — LLM red-team & scanning; v2.19.2 (2026-07-06, latest on PyPI, unchanged).
-- [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — LLM/agent red-teaming framework; v1.0.7 (2026-07-01, latest on PyPI, unchanged).
-- [NVIDIA/garak](https://github.com/NVIDIA/garak) — LLM vulnerability scanner; v0.15.1 (unchanged).
 
 ---
 
@@ -64,12 +64,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- Black Hat USA and DEF CON both run in early August — the radar's con-showcase lane (Arsenal + Demo Labs) is about to go from off-season to the year's highest-density new-tool venue; a priority watch for the coming week's daily runs.
-- Hacker News cross-corroborated both Anthropic disclosures at scale (["Anthropic says its own AI models breached three companies during security tests"](https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/)) — already [evidence](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) on the radar, this is corroboration not a new signal.
-- ProPublica reported ["Microsoft Struggling with AI-Discovered Security Bugs"](https://www.propublica.org/article/anthropic-mythos-microsoft-software-vulnerabilities) — [queued](TRENDS.md#observation_queue) unverified, journalism on the downstream friction of AI-discovered vulnerabilities rather than a primary study.
-- A newsletter's "Context Bombs" coverage names a defensive canary-token technique (decoy secrets designed to trip an AI attacker's own guardrails) — a defense-side vocabulary term, noted for context, not queued as offensive evidence.
-- An investigative piece on a Chinese-market ecosystem reselling pooled/stolen LLM API keys (with a model-distillation-data-collection angle) surfaced via Simon Willison — the source (vectoral.com) is [staged](SOURCES.md) as a discovered-source candidate, primary not yet independently verified.
+- The Black Hat USA 2026 Arsenal schedule is now **live** — a dense slate of new AI/agent offensive tools, several not yet publicly released (announced at the event); DEF CON 34 runs Aug 6–9. The con-showcase priority flagged last week paid off immediately.
+- A viral tweet claiming a "Claude Opus 5 jailbreak with a 3-word prompt" gained traction on Hacker News (23 points) — no reachable primary source, unverified.
+- tldrsec covers "Agent Egress Bench," an open-source test corpus for AI-agent-egress security tooling — a defensive vocabulary term, noted for context, not queued as offensive evidence.
+- The vectoral.com token-relay-market piece (LLM-API-key reselling/fraud) remains a staged discovered-source candidate — primary still not independently verified.
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (21)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-07-31](reports/2026-07-31.md) · [weekly: 2026-W31](reports/weekly/2026-W31.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (22)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-03](reports/2026-08-03.md) · [weekly: 2026-W31](reports/weekly/2026-W31.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
