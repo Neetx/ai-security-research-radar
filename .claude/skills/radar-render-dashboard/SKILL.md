@@ -23,6 +23,11 @@ on every run, never patch it. Design goal: one screen, everything clickable.
    priority order: stage moves, queue promotions/drops, strongest new evidence.
    Every bullet must contain at least one link (trend anchor or evidence URL).
    If nothing changed: one bullet, "Quiet scan — no ledger changes."
+   NAME every trend by its LABEL, never by a bare number: write the readable slug or the
+   short label (`agentic-attack-surface-001`, "Agent-stack attacks"). `001`, `Trend 008`
+   and every other bare-number reference are FORBIDDEN in prose — the number belongs
+   inside the anchor/URL, not in the text a human reads. An id is self-describing only to
+   someone who already has the ledger open, and this page is read by someone who does not.
 5. **Pinned topics (⭐)** — `## ⭐ Pinned topics` then a table of ONLY the trends
    with `pinned: true`, same columns as the main table. These are the curator's
    standing-watch axes; they appear here AND in the main table (where their

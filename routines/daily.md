@@ -169,6 +169,11 @@ Create `reports/YYYY-MM-DD.md` (under ~60 lines): ledger changes (evidence per t
 stage moves, queue promotions/drops); Top 3 of the day (one line + link each); study picks;
 `capture-leak: N ids checked / M queued` (required every run, even at 0);
 Next (open questions, what tomorrow should check first).
+NAME trends by their LABEL, never by a bare number: write `agentic-attack-surface-001` (or the
+short label), NEVER `001` / `Trend 001`. The number is for the anchor, not for prose — a bare id
+is self-describing only to a reader who already has the ledger open. This binds the report AND
+the README digest (see `radar-render-dashboard`). Style drifts by imitation: each run copies the
+previous report's phrasing, so a lapse here becomes the house style within days.
 
 ## 7. Persist
 - `git add -A` and commit with message exactly `radar: daily update YYYY-MM-DD`.
