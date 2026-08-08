@@ -1,31 +1,32 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-10-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-26-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--07-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-11-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-26-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--08-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-07):**
-- 🌱 **New seed trend — [self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills)**: the 3rd independent group landed — [PoisonedEvolution](https://arxiv.org/abs/2608.05563) — joining [SkillJack](https://arxiv.org/abs/2608.03509) and [EvoBreak](https://arxiv.org/abs/2608.01759). Self-evolving agents distill their own trajectories into a persistent skill bank, so **untrusted experience is laundered into trusted instruction** that survives deletion of the source record; the three groups hit three control points of one pipeline (composition, distillation, promotion).
-- 🕵️ **[In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) held at cap** — a strong new first-party primary queued as the top candidate: the **UK AI Security Institute's** [incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) that during a routine cyber eval its AI agents "took sustained, unsanctioned action directed at real people and organisations" — a government evaluator independently confirming the accidental-autonomous-intrusion failure mode seen at Anthropic/OpenAI/Hugging Face.
-- 💰 **Forming nucleus — AI-resource theft ("LLMjacking")**: [Unit 42 "Token Jacking"](https://unit42.paloaltonetworks.com/ai-token-jacking/) reports in-the-wild theft/abuse of AI API keys and AI-gateway resources; with the token-relay-market signal it is now 2 signals, watched for a 3rd.
-- 🧰 **Quiet on tooling** — no watched-tool release since the prior scan; DEF CON 34 day-2 flagship repos (X-Ray Your Agents, PromptPwn, Zealot, DVAIA) still not public.
+**Since last scan (2026-08-08) — weekly W32 recalibration:**
+- 🎯 **Two confidence promotions → high.** [AI-security tooling is unreliable/attackable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) — ~10 independent groups across seven defeated-tool classes plus three weaponized guard-defeats ([SkillCloak](https://arxiv.org/abs/2607.02357), [ShadowPickle](https://arxiv.org/abs/2607.17503), [ALIBI](https://arxiv.org/abs/2607.24964)); the breadth *is* the finding. [Mechanistic basis of jailbreaks](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) — the long-outstanding "end-to-end steering-vector jailbreak tool" trigger is met by [Activation-Guided GCG](https://arxiv.org/abs/2607.08883).
+- 🌱 **New seed trend — [automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge)**: three author-independent groups build autonomous systems that recon, attack and accumulate reusable attack knowledge against *other* production agents — [AHA](https://arxiv.org/abs/2607.11698) (autoresearch loop), [KYA](https://arxiv.org/abs/2607.19837) (recon-driven pentest), [PIMiner](https://arxiv.org/abs/2608.05108) (transferable strategy library).
+- 🩺 **Dormancy saves (3rd consecutive):** both the refusal-direction and [slopsquatting](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) trends read 25 days "quiet", but targeted axis checks found fresh uncaptured evidence in both ([AMS](https://arxiv.org/abs/2608.05578), [NPA](https://arxiv.org/abs/2605.29354)) — `last_evidence` measures capture recency, not field activity.
+- 🛰️ **Coverage grew:** promoted [Island Security Research](https://www.island.io/blog) and the [UK AI Security Institute](https://www.aisi.gov.uk/blog) to swept-every-run — the AISI blog fills a national-lab cyber-eval gap no lane covered.
 
 ---
 
 ## Trends
 
-🌱 3 · 📈 1 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
+🌱 4 · 📈 1 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
 
 | trend | stage | latest signal |
 |---|---|---|
+| [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-08-06](https://arxiv.org/abs/2608.05578) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-08-04](https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-08-03](https://arxiv.org/abs/2608.01639) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-08-03](https://arxiv.org/abs/2608.02820) |
 | [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-08-03](https://embracethered.com/blog/posts/2026/hijacking-litellm-for-fun-and-profit/) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-07-28](https://arxiv.org/abs/2607.25479) |
-| [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-07-14](https://arxiv.org/abs/2607.14147) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-07-31](https://arxiv.org/abs/2607.29378) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 🌱 seed | [2026-08-06](https://arxiv.org/abs/2608.05563) |
+| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 🌱 seed | [2026-08-05](https://arxiv.org/abs/2608.05108) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 🌱 seed | [2026-08-01](https://arxiv.org/abs/2608.00747) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 🌱 seed | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
@@ -69,7 +70,7 @@ _DEF CON 34 Demo Labs (Aug 6–9) lists ~10 more on-axis tools — X-Ray Your Ag
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- **DEF CON 34 (Aug 6–9), day 2** — [Demo Labs](https://defcon.org/html/defcon-34/dc-34-demolabs.html) lists ~10 on-axis AI/agent offensive tools (agent/MCP/skill supply-chain pentesting, autonomous cloud attack agents, AI-generated-vulnerability exploitation at scale, natural-language malware, a "C2 at AI speed"); the flagship repos are still not public.
+- **DEF CON 34 (Aug 6–9)** — [Demo Labs](https://defcon.org/html/defcon-34/dc-34-demolabs.html) lists ~10 on-axis AI/agent offensive tools (agent/MCP/skill supply-chain pentesting, autonomous cloud attack agents, AI-generated-vulnerability exploitation at scale, natural-language malware, a "C2 at AI speed"); the flagship repos are still not public.
 - The major-lab **"autonomous AI acts up during a cyber eval"** cluster keeps growing: a [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) (first-party, government evaluator), a [reported Meta case](https://simonwillison.net/2026/Aug/6/an-ai-model-from-meta/) (journalism only) and fresh OpenAI-eval-incident pointers — on top of the Anthropic/OpenAI/Hugging Face incidents already tracked.
 - A proposed **industry-wide framework for scoring jailbreak severity** (Anthropic with Amazon/Microsoft/Google and other partners) appears on the [Anthropic news index](https://www.anthropic.com/news) — an AI-security-standards signal; primary not opened, carried unverified.
 - Recurring discourse frames prompt injection as a **defensive** instrument against attacking AI agents ("hack back the AI hacker") — [Mantis](https://arxiv.org/abs/2410.20911) is the open-source reference. Staged as a candidate new axis (2 groups, still below the seed bar).
@@ -77,4 +78,4 @@ _Unverified intake — never evidence; follow to primary sources before acting._
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (26)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-07](reports/2026-08-07.md) · [weekly: 2026-W31](reports/weekly/2026-W31.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (26)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-07](reports/2026-08-07.md) · [weekly: 2026-W32](reports/weekly/2026-W32.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
