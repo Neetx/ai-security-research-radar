@@ -15,6 +15,17 @@ breadth of orgs, presence in tools/standards).
 - **Demote** honestly when evidence thinned.
 - **Dormancy**: 21+ days without evidence → `dormant`. If `last_evidence` is 45+ days old,
   move the entry to `ARCHIVE.md` as a one-line post-mortem.
+  **Targeted-axis-check before dormancy (APPLIED 2026-08-15, W33 — was W32 Proposal N, cooling
+  period held, signal persisted: THREE consecutive metric-validity saves in six weeks (007 on
+  07-31, 008 on 08-04, 005+008 on 08-08) where a trend read past the 21-day rule on
+  `last_evidence` yet a targeted axis query found fresh work the standing cs.CR sweep had missed —
+  `last_evidence` measures the radar's CAPTURE recency, not the field's activity):** before ANY
+  trend moves to `dormant` on the 21-day rule, FIRST run a targeted keyword check on that trend's
+  own axis (arXiv `all:`-field + axis terms, not just the tracked cs.CR window) covering the
+  recorded-silent window. A hit dated in that window is a CAPTURE failure → HOLD the trend and
+  capture what was missed (route to evidence/queue), do NOT mark dormant. Only mark dormant when
+  the check runs and genuinely finds nothing (state the queries run and the newest on-axis result
+  in the trend's notes, so a reader can see the check was real). Adds a check; relaxes no hard rule.
 - **Merge** overlapping trends (keep the older id, union aliases, keep the 10 strongest
   evidence items, note the merge).
 - **Confidence**: raise to `high` when EITHER ≥2 INDEPENDENT authoritative primary sources

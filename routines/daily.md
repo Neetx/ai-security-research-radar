@@ -141,7 +141,12 @@ is owed every run.
   of waiting for the curator — an on-axis source that announces only on its own channel must
   surface as a staged candidate the first run any lane names it.
 - Stage moves: at most ONE stage up per trend per day, on new independent evidence. 21+
-  days quiet → `dormant` (weekly archives at 45+).
+  days quiet → `dormant` (weekly archives at 45+). TARGETED-AXIS-CHECK BEFORE DORMANCY
+  (APPLIED 2026-08-15, W33 — W32 Proposal N): before marking any trend `dormant` on the
+  21-day rule, first run a targeted arXiv `all:`-field + axis-terms check over the
+  recorded-silent window; a hit dated in that window is a CAPTURE failure → hold the trend
+  and capture what was missed, do not mark dormant. Only mark dormant when the check finds
+  nothing (note the queries + newest result in the trend's notes).
 - `observation_queue` maintenance (every run): add today's weak signals; promote those
   that clear the bar; cap-driven burndown to ~25 (resolve the oldest — promote or drop
   with a one-line reason in today's report; never silently delete).
