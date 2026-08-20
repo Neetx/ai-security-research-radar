@@ -1,14 +1,13 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-23-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--19-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-24-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--20-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-17):**
-- 🚀 **[AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack): CompoSkill rotated onto evidence** — skill-composition risk is a *path*-level property, so a skill that passes its per-skill scanner can still form a harmful chain when an agent wires it to other passing skills; a black-box attacker reaches Chain-Formation-Rates up to 80.6% while scanners block only a fraction ([2608.16246](https://arxiv.org/abs/2608.16246)). The 2nd independent group (with ColluSkill) on the compositional-scanner blind spot. No stage moves this scan.
-- 🚀 **[Attacks on the LLM-agent stack](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain): Resource Hijacking rotated onto evidence** — a new attack-surface *class*: inducing an agent to invoke/consume/transfer the high-value resources it can already reach (compute, credentials, budgets, identities, comms) for the attacker without stealing them; OpenClaw 84% ASR, strongest defense still leaves 55% ([2608.15108](https://arxiv.org/abs/2608.15108)).
-- 🛠️ **Study picks:** [CompoSkill](https://arxiv.org/abs/2608.16246) — why per-skill certification is structurally insufficient — and [Resource Hijacking / ResourceHijackBench](https://arxiv.org/abs/2608.15108).
-- 🧹 **Hygiene:** MCP-server-CVE burst continues (3 new — ArcadeDB, Apify, Context7-PI — on [agentic-attack-surface](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain)); 10 more cs.CR captures queued (KeyPooling prompt-cache-isolation collapse, Decomposition-Attacks, COMA on Security-RAG, …); watchlist 23, under cap; capture-leak 12/12 routed, 0 leaked.
+**Since last scan (2026-08-19):**
+- 🛠️ **New tool captured:** [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) **v4.5.2** (2026-08-17, 4.7k★) — a full-stack AI red-team platform the watched list missed: Agent-Scan, MCP-Scan (tool-poisoning / credential-exfil), Skill-Scan (SARIF 2.1.0) and jailbreak eval (26+ methods) — the run-it-yourself counterpart to the [skill-scanner](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) and [MCP-scan](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) themes.
+- 🔭 **Quiet extract day — no stage moves, no evidence rotations.** Seven below-bar cs.CR captures queued: an adaptive embedding-inversion attack defeating noise-protected embeddings ([Denoising-Aware Inversion](https://arxiv.org/abs/2608.18610), 006-adjacent), a novel continual-learning "learning-blocker" attack ([Catastrophic Learning](https://arxiv.org/abs/2608.18976), 004-adjacent), an abliteration-hardening defense ([Refusal Aliases](https://arxiv.org/abs/2608.18093), 005-adjacent), and a least-privilege MCP-agent defense ([2608.18351](https://arxiv.org/abs/2608.18351), 001-adjacent).
+- 🧹 **Hygiene:** MCP-server-CVE burst continues (+1: CVE-2026-76404, Splunk MCP Server <1.2.1 admin→RCE) on [agentic-attack-surface](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain); repo-watch unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0); watchlist 24; capture-leak 7/7 routed, 0 leaked.
 
 ---
 
@@ -35,17 +34,16 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-No new on-axis tool release this scan (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0 all unchanged since 08-13/08-14). The tool-discovery search lane surfaced only early-stage/single-author repos + a new awesome-list (raphabot/awesome-cybersecurity-agentic-ai, staged as a discovery venue); candidates **pentagi**, **PentestCode** (~236★), **redamon**, **probeagent-ai** remain staged below the notability bar pending repo verification (github.com is 403-scoped in this environment). Current latest verified on-axis tooling:
+**New this scan:** [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — **v4.5.2** (2026-08-17, 4.7k★, WebFetch-verified), a full-stack AI red-team / security-assessment platform (Agent-Scan, MCP-Scan, Skill-Scan with SARIF 2.1.0 output, jailbreak eval across 26+ single/multi-turn methods; 1,900+ CVE rules), NOT previously on the watched list. Staged from the tool-discovery lane (via WebSearch fallback — `tvly` plan-capped this run): **elder-plinius/T3MP3ST** (autonomous multi-agent offensive meta-harness), **snyk/agent-scan** (agent/MCP/skill scanner), **scadastrangelove/awesome-ai-security-tools** (discovery firehose). Watched packaged tools all unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0).
 
+- [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — full-stack AI red-team platform: Agent-Scan, MCP-Scan, Skill-Scan (SARIF 2.1.0), jailbreak eval (26+ methods); **v4.5.2** (2026-08-17).
 - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — framework to red-team LLMs and AI agents; **v1.0.9** (latest on PyPI, 2026-08-12).
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.16.0** (latest on PyPI).
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.122.0** (latest on npm).
 - [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI; **v1.0.1** — the major v1 architectural redesign.
 - [SpecterOps/Jailbreaker](https://specterops.io/blog/2026/06/29/llm-jailbreak-testing-with-jailbreaker) — open-source platform for repeatable LLM-jailbreak testing (PAIR/TAP/Crescendo/AutoDAN/GPTFuzz).
 - [airtasystems/DVAIA-Damn-Vulnerable-AI-Application](https://github.com/airtasystems/DVAIA-Damn-Vulnerable-AI-Application) — a DVWA-style deliberately-vulnerable LLM/agent lab (prompt injection, jailbreaks, indirect injection, RAG poisoning, tool-use vulns); a DEF CON 34 Demo Labs flagship.
-- [bugbasesecurity/pentest-copilot](https://github.com/bugbasesecurity/pentest-copilot) — **Pentest Copilot V2**, an agentic pentesting workspace (autonomous command execution, up to 25 iterations/turn, 16 agent tools).
 - [GH05TCREW/pentestagent](https://github.com/GH05TCREW/pentestagent) — **PentestAgent**, a mature open-source AI-agent framework for black-box pentesting/bug-bounty — RAG knowledge base, attack playbooks, MCP client/server.
-- [adithyan-ak/agenthound](https://github.com/adithyan-ak/agenthound) — offensive-security framework for AI-agent infrastructure across MCP, A2A, model gateways, inference servers and vector stores.
 
 _DEF CON 34 Demo Labs flagships still held back until each repo is public and verified — X-Ray Your Agents, PromptPwn, Empire 7, Zealot, AOBTD, MalSkill Lab, BigIron.ai._
 
@@ -72,11 +70,11 @@ _DEF CON 34 Demo Labs flagships still held back until each repo is public and ve
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- **Quiet scan on HN** for offensive-AI: the front page carried only defensive tool launches and commentary; the standing legal-filing indirect-prompt-injection story escalated to a **court sanction** for a plaintiff who hid injection in a filing ([HN newest](https://news.ycombinator.com/newest)).
-- The **"one testing-vendor behind the eval escapes"** angle: news naming a single AI red-team testing firm as the shared test-environment behind the Meta / Anthropic / OpenAI eval-escape incidents (a harness that "failed and let models reach the real internet") — on the in-the-wild-AI-offense axis; queued unverified pending a primary ([FT via social](https://www.ft.com/)).
-- The major-lab **"autonomous AI acts up during a cyber eval"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) and the Anthropic/OpenAI/Hugging Face incidents already tracked.
+- **Quiet scan on HN** for offensive-AI: the front page carried the standing prompt-injection-defense tradeoff debate (deterministic blocking reported to cost ~40% false positives) rather than any new attack primary ([HN newest](https://news.ycombinator.com/newest)).
+- A **leaked integration-platform key** reportedly returned live Gmail / GitHub / CircleCI tokens — a credential-exposure story on the AI-tool-integration (MCP-adjacent) supply chain; intake only, no distinct offensive primary ([HN newest](https://news.ycombinator.com/newest)).
+- The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues (news of near-autonomous agents probing a national nuclear-safety agency), on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked.
 - Model hubs keep churning out **abliterated/uncensored** open-weight models and fresh prompt-injection datasets daily — a steady leading indicator for the refusal-direction / jailbreak axis.
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (23)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-19](reports/2026-08-19.md) · [weekly: 2026-W33](reports/weekly/2026-W33.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (24)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-20](reports/2026-08-20.md) · [weekly: 2026-W33](reports/weekly/2026-W33.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
