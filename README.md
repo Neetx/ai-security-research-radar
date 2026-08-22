@@ -1,20 +1,19 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-24-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--21-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-24-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--22-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-20):**
-- 🚀 **[Agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) +1 (rotation):** Adversa's zero-click **[Cryptographic Context Injection](https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/)** on Grok — a webpage's AES-encrypted payload is decrypted inside Grok's own Python sandbox, so attacker instructions surface as *trusted runtime output* past the content filter, then exfiltrate the user's full chat history. First-party PoC, disclosed to xAI 2026-06-03, still unfixed.
-- 📈 **[Model extraction](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) +1 (rotation):** **[EchoCoT](https://arxiv.org/abs/2608.20055)** extracts hidden chain-of-thought near-verbatim from black-box frontier LRMs via a reasoning-replay surface between tool calls (up to 80% on unseen data; pulls a 33k-token trace from Gemini-2.5) — the 2nd independent group making concealed CoT a fragile IP boundary.
-- 🛠️ **New tool captured:** [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — a 1.9k★, 10.7k-commit open-source autonomous-pentest harness (13+ agents, 176 MCP tools, Ed25519-signed attack skills, OWASP/MITRE-aligned) the watched list missed.
-- 🧹 **Hygiene:** MCP/LLM-tooling CVE burst continues (Neo.mjs MCP cmd-injection, LangBot STDIO-MCP authz bypass, Banks prompt-template injection); repo-watch unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0); watchlist 24; capture-leak 5/5 routed, 0 leaked; `tvly` plan-capped (WebFetch/WebSearch fallback).
+**Since last scan (2026-08-21):** weekly recalibration W34.
+- 📈 **[Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) promoted seed→emerging:** the trend was due for its 21-day dormancy check — the mandated targeted axis check found a 6th independent group the standing sweep had missed, **[Hijacking Robots with a Piece of Paper](https://arxiv.org/abs/2608.05715)** (physical prompt injection in VLM-controlled robots, 2026-08-06). More active than the ledger showed, with a now-dominant device class → emerging (confidence held medium).
+- 🧭 **Promotion holds (verified, no new group):** economic/availability [DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) held seed (no 4th group) · [automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) held seed (no 5th) · [slopsquatting](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) held dormant (archive-watch to ~08-28).
+- 🧹 **Coverage & hygiene:** corrected a Phase-2 intake under-logging (the pulse/YouTube-curator/digest lane was collapsed into HN-only on most runs); pruned `study_shelf` picks older than 30 days; capture-leak sweep 0 genuine leaks; `tvly` plan-capped, WebFetch/WebSearch+curl heal in place.
 
 ---
 
 ## Trends
 
-🌱 3 · 📈 2 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
+🌱 2 · 📈 3 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -26,16 +25,16 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-08-03](https://arxiv.org/abs/2608.01639) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-08-20](https://arxiv.org/abs/2608.20055) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-08-07](https://arxiv.org/abs/2608.06862) |
+| [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 📈 emerging | [2026-08-06](https://arxiv.org/abs/2608.05715) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 🌱 seed | [2026-08-12](https://arxiv.org/abs/2608.12273) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 🌱 seed | [2026-08-12](https://arxiv.org/abs/2608.11878) |
-| [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 🌱 seed | [2026-08-01](https://arxiv.org/abs/2608.00747) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
 ---
 
 ## 🛠️ Tools & releases
 
-**New this scan:** [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — a 1.9k★ / 10,673-commit open-source (AGPL-3.0, npm `@cyberstrike-io/cyberstrike`) AI-augmented **autonomous-pentest harness** the watched list did NOT carry: 13+ specialized agents, 150+ LLM providers, 56 built-in + 176 MCP tools, an Ed25519-signed attack-skill library, OWASP-WSTG / MITRE-ATT&CK / CIS-aligned (GitHub-verified). Also staged from the tool-discovery lane (`tvly` plan-capped → WebSearch fallback): **samugit83/redamon** (agentic red-team framework, re-surfaced) and **yeyintminthuhtut/awesome-ai-offensive-security** (discovery list). Watched packaged tools all unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0).
+**No new tool discovered this weekly scan** (a recalibration pass); watched packaged tools all unchanged since last week (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0). The current on-axis tool set:
 
 - [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — autonomous-pentest harness (13+ agents, 176 MCP tools, Ed25519-signed skills, OWASP/MITRE/CIS-aligned); 1.9k★, npm `@cyberstrike-io/cyberstrike`.
 - [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — full-stack AI red-team platform: Agent-Scan, MCP-Scan, Skill-Scan (SARIF 2.1.0), jailbreak eval (26+ methods); **v4.5.2** (2026-08-17).
@@ -69,11 +68,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- **Zero-click data-theft on production AI chat** was the day's live signal — a browsing-agent asked to summarise a page decrypts and executes a hidden payload against its own user; now tracked as verified [agent-stack](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) evidence, not pulse.
-- The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked.
+- The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked — this week including reporting of near-autonomous agents probing a national nuclear-safety agency.
+- A recurring **prompt-injection-defense tradeoff** debate (deterministic blocking vs. false-positive cost) rather than a new attack primary ([HN newest](https://news.ycombinator.com/newest)).
+- **AI-integration credential leaks** (a leaked key returning live third-party tokens) keep surfacing as a practical agent-supply-chain exposure — follow to the primary before treating as more than intake.
 - Model hubs keep churning out **abliterated/uncensored** open-weight models and fresh prompt-injection datasets daily — a steady leading indicator for the refusal-direction / jailbreak axis.
-- HN/Reddit for offensive-AI stayed quiet: the standing prompt-injection-defense tradeoff debate rather than a new attack primary ([HN newest](https://news.ycombinator.com/newest)).
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (24)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-21](reports/2026-08-21.md) · [weekly: 2026-W33](reports/weekly/2026-W33.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (24)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-21](reports/2026-08-21.md) · [weekly: 2026-W34](reports/weekly/2026-W34.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
