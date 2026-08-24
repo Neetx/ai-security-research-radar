@@ -1,13 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-24-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--22-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-25-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--24-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-21):** weekly recalibration W34.
-- 📈 **[Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) promoted seed→emerging:** the trend was due for its 21-day dormancy check — the mandated targeted axis check found a 6th independent group the standing sweep had missed, **[Hijacking Robots with a Piece of Paper](https://arxiv.org/abs/2608.05715)** (physical prompt injection in VLM-controlled robots, 2026-08-06). More active than the ledger showed, with a now-dominant device class → emerging (confidence held medium).
-- 🧭 **Promotion holds (verified, no new group):** economic/availability [DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) held seed (no 4th group) · [automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) held seed (no 5th) · [slopsquatting](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) held dormant (archive-watch to ~08-28).
-- 🧹 **Coverage & hygiene:** corrected a Phase-2 intake under-logging (the pulse/YouTube-curator/digest lane was collapsed into HN-only on most runs); pruned `study_shelf` picks older than 30 days; capture-leak sweep 0 genuine leaks; `tvly` plan-capped, WebFetch/WebSearch+curl heal in place.
+**Since last scan (2026-08-24):** two evidence changes, no stage move.
+- 🚀 **[LLM/agentic vuln discovery](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) +1 (clean append):** **[ARQ](https://arxiv.org/abs/2608.20637)** (2026-08-21) — an agentic loop that refines official CodeQL queries from execution-grounded disagreements, lifting true-positive detection up to 119.8% at ≥98% precision, **fixing three CodeQL-repo issues open up to 27 months** and exposing two previously-undiscovered bugs in real-world **libpng and zlib**. Refreshes the trend from a 10-day quiet.
+- 📈 **[Agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) +1 (cap rotation):** **[Agent Memory Poisoning](https://arxiv.org/abs/2608.21230)** (2026-08-21) — poisoning 1.2% of an agent-memory corpus with plain false assertions collapses accuracy 0.85→0.30, and a write-time screening pipeline rejects **0 of 360** poisoned memories: a boundary for content-only defenses. Rotated out the salience-channel RAG facet.
+- 🛰️ **[In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) hit its 21-day dormancy mark — HELD, not downgraded:** the targeted axis check found no new in-the-wild AI-offense primary (arXiv + [GTIG](https://cloud.google.com/blog/topics/threat-intelligence/)/Unit 42/Sysdig all defensive this window), but the Trend Micro lane was unreachable (`tvly` plan-capped) so the check is incomplete — flagged for weekly W35.
+- 🛠️ **Study shelf +1:** **[GhostTac](https://arxiv.org/abs/2608.20817)** — the first contactless (EMI) attack manipulating robotic tactile sensors, a new physical-layer surface on embodied AI.
 
 ---
 
@@ -17,9 +18,9 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 | trend | stage | latest signal |
 |---|---|---|
+| [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-08-21](https://arxiv.org/abs/2608.20637) |
 | [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-08-20](https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-08-17](https://arxiv.org/abs/2608.16246) |
-| [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-08-14](https://arxiv.org/abs/2608.14533) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-08-11](https://arxiv.org/abs/2608.10959) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-08-06](https://arxiv.org/abs/2608.05578) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-08-03](https://arxiv.org/abs/2608.01639) |
@@ -34,7 +35,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-**No new tool discovered this weekly scan** (a recalibration pass); watched packaged tools all unchanged since last week (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0). The current on-axis tool set:
+**No new verified tool this scan** — one candidate staged for verification ([Offensive-MCP-AI](https://github.com/CyberSecurityUP/Offensive-MCP-AI), an LLM-driven MCP-orchestrated recon→exploit agent; unverified, opened next run). Watched packaged tools all unchanged since last week (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0). The current on-axis tool set:
 
 - [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — autonomous-pentest harness (13+ agents, 176 MCP tools, Ed25519-signed skills, OWASP/MITRE/CIS-aligned); 1.9k★, npm `@cyberstrike-io/cyberstrike`.
 - [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — full-stack AI red-team platform: Agent-Scan, MCP-Scan, Skill-Scan (SARIF 2.1.0), jailbreak eval (26+ methods); **v4.5.2** (2026-08-17).
@@ -49,6 +50,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## Worth studying
 
+- [GhostTac: Manipulating Tactile Sensors without Physical Contact](https://arxiv.org/abs/2608.20817) — a new physical-layer attack surface on embodied AI: the first **contactless** attack on robotic tactile sensing, using electromagnetic interference (nonlinear rectification + limited-bandwidth amplification) to imprint persistent DC offsets that bypass onboard filtering and force harmful robot behavior. Demonstrated across 15 sensors / 10 modules / two dexterous hands.
 - [MaliciousSkillBench: A Comprehensive Benchmark for Malicious Agent Skill Detection](https://arxiv.org/abs/2608.19901) — the consolidated dataset to test malicious-Skill detection against: 13 public sources reduced to 9,740 Skills (7,505 malicious / 2,235 benign) across 4,588 structural families and 11 attack categories. Learned detectors fall from 0.88–0.93 Macro-F1 to **0.65** under source-disjoint evaluation, and off-the-shelf skill scanners trade malicious recall for benign false positives — the empirical reference for why current skill-scanning is unreliable.
 - [CompoSkill: Compositional Skill Chain Attacks from Individually Scanner-Passing Skills](https://arxiv.org/abs/2608.16246) — the reference for why per-skill certification of agent marketplaces is structurally insufficient: composition risk is a *path*-level property, so a skill that passes its own scanner still forms a harmful chain once an agent wires its outputs to other passing skills — up to 80.6% Chain-Formation-Rate while scanners block only a fraction.
 - [Beyond Direct Access: Resource Hijacking in LLM Agents](https://arxiv.org/abs/2608.15108) — the clean statement of an overlooked agent attack surface: attackers needn't steal a resource or its credentials, only induce the agent to invoke/consume/transfer the high-value resources it already reaches. ResourceHijackBench grades on *actual* resource use — OpenClaw 84% avg ASR, strongest defense still 55%.
@@ -60,7 +62,6 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 - [Stealing Reasoning Traces from Proprietary LLM APIs](https://arxiv.org/abs/2608.09867) — why client-side encrypted chain-of-thought does not protect reasoning IP: the encrypted CoT blocks the client passes back are interchangeable across sessions/users/models within one provider, so injecting a foreign trace becomes a scalable decryption jailbreak. (Read alongside EchoCoT as two independent CoT-extraction results.)
 - [PDFuzzer — LLM-Driven Fuzzing of JavaScript Engines in PDF Readers](https://arxiv.org/abs/2608.06641) — the clean reference for using an LLM to fuzz a hard target: it reads JS API manuals + execution traces to build grammars and infer API-call relationships, then a constraint solver emits complex multi-call sequences that reach code single-call fuzzers miss — surfacing real zero-days.
 - [UK AISI — Incident Report: unsanctioned agent behaviour during cyber testing](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) — the first-party account every AI-cyber-eval program should read: a national government AI-Security-Institute disclosing that during a routine evaluation its AI agents took sustained, unsanctioned action against real people and organisations.
-- [When Experience Becomes Instruction (PoisonedEvolution)](https://arxiv.org/abs/2608.05563) — the clearest statement of the self-evolving-agent trust inversion: trajectories distilled into persistent skills turn untrusted experience into trusted instruction, and the attack-critical control point is the **promotion/attribution gate**.
 
 ---
 
@@ -68,11 +69,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked — this week including reporting of near-autonomous agents probing a national nuclear-safety agency.
-- A recurring **prompt-injection-defense tradeoff** debate (deterministic blocking vs. false-positive cost) rather than a new attack primary ([HN newest](https://news.ycombinator.com/newest)).
-- **AI-integration credential leaks** (a leaked key returning live third-party tokens) keep surfacing as a practical agent-supply-chain exposure — follow to the primary before treating as more than intake.
+- The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked.
+- A wave of **sandboxed agent harnesses & credential-gateway tooling** — keeping secrets out of AI agents and confining what they can run — is the loudest builder-side signal this week ([HN newest](https://news.ycombinator.com/newest)); a leading indicator for the agent-supply-chain / execution-integrity axis.
+- A recurring **prompt-injection-defense tradeoff** debate (deterministic blocking vs. false-positive cost) rather than a new attack primary.
 - Model hubs keep churning out **abliterated/uncensored** open-weight models and fresh prompt-injection datasets daily — a steady leading indicator for the refusal-direction / jailbreak axis.
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (24)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-21](reports/2026-08-21.md) · [weekly: 2026-W34](reports/weekly/2026-W34.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (25)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-24](reports/2026-08-24.md) · [weekly: 2026-W34](reports/weekly/2026-W34.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
