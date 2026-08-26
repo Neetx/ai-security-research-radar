@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-27-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--25-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-12-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-28-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--08--26-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-08-25):** one stage move, two study picks, a new standards taxonomy.
-- 📈 **[Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) promoted seed→emerging:** **[SkillBloat](https://arxiv.org/abs/2608.21929)** (2026-08-22) — a malicious agent skill abuses the trusted-instruction channel purely to inflate token consumption **5.4×–10.1×** with output correctness preserved. The 4th independent group (skill-channel token amplification) past the detour-hijack / MoE-router / persona-conditioning vectors already tracked.
-- 🛠️ **Study shelf +2:** **[AI Grinding for Cryptanalysis](https://arxiv.org/abs/2608.21986)** — an autonomous cryptanalysis agent lands **eight** published-construction breaks with exact witnesses (AI-for-offense reaches the crypto domain); and **[DarkBot](https://arxiv.org/abs/2608.23185)** — the first multi-agent LLM system for **active** CTI elicitation, deployed live on real underground forums.
-- 📐 **Standards:** the **[OWASP Agentic Skills Top 10](https://owasp.org/www-project-agentic-skills-top-10/)** (AST01 Malicious Skills → AST10 Cross-Platform Reuse) codifies the agent-skill/supply-chain and skill-scanner axes the radar already tracks (public-review v1 draft).
-- 🛰️ **[In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) at 22 days — HELD, not downgraded:** the in-the-wild lane is now fully checkable ([Trend Micro reached](https://www.trendmicro.com/en_us/research/26/g/autonomous-ransomware.html) — newest autonomous-AI-offense research is 07-24, pre-window), no new primary; the formal dormant-vs-hold call is reserved for weekly W35.
+**Since last scan (2026-08-26):** two evidence rotations across two trends; a fresh in-the-wild AI-malware report resolves a pending dormancy watch.
+- 🛰️ **[In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) refreshed — dormancy call mooted:** Unit 42's **[State of AI-Enabled Malware, August 2026](https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/)** (2026-08-25) measures the real footprint — of 405 AI-integrated samples, only ~12 (~3%) reached production; named families include FunkSec ransomware (7 LLM-assisted variants) and a trojanized AI app hitting 50+ orgs. AI-authored malware is real but still overwhelmingly pre-production.
+- 🧩 **[Attacks on the LLM-agent stack](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) +1 — a new MCP-server threat class:** **[TrustShiftProbe](https://arxiv.org/abs/2608.23763)** (2026-08-24) names *TrustShift* — a compromised MCP server that behaves benignly to build agent reliance, then defects once a trust horizon is crossed. The evasion is **temporal, not syntactic**, so pre-deployment static analysis sees only the honest phase (69.5% mean ASR).
+- 🛠️ **Release:** **[giskard 3.0.0](https://github.com/Giskard-AI/giskard)** shipped (2026-08-26), a major version of the watched red-team/eval tool pivoting to "evals, red teaming, and test generation for agentic systems."
+- 🌊 **Watch:** a 2nd independent group lands on **agentic-payment-protocol attacks** — [a systematic security analysis of Google's AP2](https://arxiv.org/abs/2608.23858) (48 threats, 8 High-band) beside the earlier Protocol-Level Attacks on Agentic Commerce; queued as a convergence watch (needs a 3rd group to seed).
 
 ---
 
@@ -18,12 +18,12 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 | trend | stage | latest signal |
 |---|---|---|
+| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-08-25](https://unit42.paloaltonetworks.com/ai-enabled-malware-analysis/) |
+| [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-08-24](https://arxiv.org/abs/2608.23763) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-08-21](https://arxiv.org/abs/2608.20637) |
-| [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-08-20](https://adversa.ai/blog/cryptographic-context-injection-grok-data-theft/) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-08-17](https://arxiv.org/abs/2608.16246) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-08-11](https://arxiv.org/abs/2608.10959) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-08-06](https://arxiv.org/abs/2608.05578) |
-| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-08-03](https://arxiv.org/abs/2608.01639) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 📈 emerging | [2026-08-22](https://arxiv.org/abs/2608.21929) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-08-20](https://arxiv.org/abs/2608.20055) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-08-07](https://arxiv.org/abs/2608.06862) |
@@ -35,8 +35,9 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-**No new verified tool this scan.** The 08-24-staged [Offensive-MCP-AI](https://github.com/CyberSecurityUP/Offensive-MCP-AI) was verified (27★ / 10 commits, early-stage PoC) → below the notability bar, not promoted. Newly surfaced on the automated-agent-redteam axis and staged for verification: [Decepticon](https://github.com/PurpleAILAB/Decepticon), [RedteamAgent](https://github.com/NeoTheCapt/RedteamAgent). Watched packaged tools all unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / giskard 2.19.2 / promptfoo 0.122.0). The current on-axis tool set:
+**[giskard 3.0.0](https://github.com/Giskard-AI/giskard)** (2026-08-26) is the new release this scan — a major version of the watched red-team/eval framework whose summary now reads "Evals, red teaming, and test generation for agentic systems" (2.x → 3.0). Watched packaged tools otherwise unchanged (garak 0.16.0 / PyRIT 1.0.1 / deepteam 1.0.9 / promptfoo 0.122.0). No new discrete public tool surfaced from the discovery lane (only known/awesome-list and already-staged candidates: [Offensive-MCP-AI](https://github.com/CyberSecurityUP/Offensive-MCP-AI), [Decepticon](https://github.com/PurpleAILAB/Decepticon), [RedteamAgent](https://github.com/NeoTheCapt/RedteamAgent)). The current on-axis tool set:
 
+- [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) — evals, red-teaming & test generation for LLM/agentic systems; **v3.0.0** (2026-08-26, major release).
 - [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — autonomous-pentest harness (13+ agents, 176 MCP tools, Ed25519-signed skills, OWASP/MITRE/CIS-aligned); 1.9k★, npm `@cyberstrike-io/cyberstrike`.
 - [Tencent/AI-Infra-Guard](https://github.com/Tencent/AI-Infra-Guard) — full-stack AI red-team platform: Agent-Scan, MCP-Scan, Skill-Scan (SARIF 2.1.0), jailbreak eval (26+ methods); **v4.5.2** (2026-08-17).
 - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — framework to red-team LLMs and AI agents; **v1.0.9** (latest on PyPI, 2026-08-12).
@@ -44,7 +45,6 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.122.0** (latest on npm).
 - [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI; **v1.0.1** — the major v1 architectural redesign.
 - [airtasystems/DVAIA-Damn-Vulnerable-AI-Application](https://github.com/airtasystems/DVAIA-Damn-Vulnerable-AI-Application) — a DVWA-style deliberately-vulnerable LLM/agent lab (prompt injection, jailbreaks, indirect injection, RAG poisoning, tool-use vulns).
-- [GH05TCREW/pentestagent](https://github.com/GH05TCREW/pentestagent) — **PentestAgent**, a mature open-source AI-agent framework for black-box pentesting/bug-bounty — RAG knowledge base, attack playbooks, MCP client/server.
 
 ---
 
@@ -69,12 +69,12 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 _Unverified intake — never evidence; follow to primary sources before acting._
 
-- Black Hat USA 34 retrospectives frame **AI-agent offense** as the dominant 2026 theme (~29% of briefings AI-security-relevant) — "prompt injection as a curiosity → agent exploitation as a discipline" ([HN newest](https://news.ycombinator.com/newest)).
-- The **OWASP Agentic Skills Top 10** release is circulating as the community consolidates on a shared vocabulary for agent-skill risk (malicious skills, supply-chain, over-privilege, poor scanning).
+- A new named black-box jailbreak, **"sockpuppeting"** (abusing assistant-prefill support to inject a fake compliant response), is circulating as reportedly effective across many major LLMs — unverified intake, to be confirmed against a primary ([HN newest](https://news.ycombinator.com/newest)).
+- Reports of a **~32% rise in malicious prompt-injection payloads embedded in web content** (late-2025 → early-2026) keep indirect-PI-via-the-open-web a live theme for agentic browsing.
 - The major-lab **"autonomous / near-autonomous AI agents act in a real intrusion"** cluster continues, on top of the [UK AISI incident report](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) already tracked.
-- A recurring **prompt-injection-defense tradeoff** debate (deterministic blocking vs. false-positive cost) rather than a new attack primary.
+- The **OWASP Agentic Skills Top 10** release keeps circulating as the community consolidates a shared vocabulary for agent-skill risk (malicious skills, supply-chain, over-privilege, poor scanning).
 - Model hubs keep churning out **abliterated/uncensored** open-weight models and fresh prompt-injection datasets — a steady leading indicator for the refusal-direction / jailbreak axis.
 
 ---
 
-[TRENDS.md](TRENDS.md) · [watchlist (27)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-25](reports/2026-08-25.md) · [weekly: 2026-W34](reports/weekly/2026-W34.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
+[TRENDS.md](TRENDS.md) · [watchlist (28)](TRENDS.md#observation_queue) · [reports/](reports/) · [latest daily: 2026-08-26](reports/2026-08-26.md) · [weekly: 2026-W34](reports/weekly/2026-W34.md) · [AGENTS.md](AGENTS.md) · [SOURCES.md](SOURCES.md)
