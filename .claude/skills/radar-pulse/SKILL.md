@@ -27,6 +27,20 @@ drop noise. Don't restrict yourself to a fixed roster.
    summarise the signal ("a widely-upvoted r/LocalLLaMA thread reports X").
    No handles in evidence/queue text beyond the bare URL.
 3. Opened-source rule still applies: only log what you actually fetched.
+4. **Per-channel coverage logging (APPLIED 2026-08-29, W35 — was W34 Proposal O, cooling
+   period held, signal persisted: the W34 coverage miss RECURRED on 08-24 when the daily
+   collapsed the whole Phase-2 lane into a single `PULSE (HN…)` line, and the strategy_notes
+   discipline note alone reverted on the first post-weekly Monday — so codify it in the loaded
+   skill):** the pulse lane's line in `logs/source_rotation.md` MUST enumerate EACH Phase-2
+   channel touched this run — HN, the Reddit sub-groups, each YouTube curator, each
+   digest/pointer blog (tldrsec, Simon Willison, Kai Greshake, Embrace The Red), Hugging Face —
+   BY NAME with `opened` or `degraded: <reason>`, exactly as the primary-feed lane logs each
+   feed. NEVER collapse the lane into one HN line: a Phase-2 channel absent from the log line is
+   a coverage lie identical to a missing primary feed (an unlogged degrade reads the same as a
+   forgotten source). Grouping several SAME-status channels in one sub-clause is fine
+   (`Reddit / tldrsec / Willison → degraded: tvly-plan-cap`) as long as each is NAMED; a bare
+   `PULSE (HN…)` line is not. This makes the coverage-discipline hard rule more precise; it
+   relaxes nothing.
 
 ## Method (best-effort via Tavily, no paid APIs)
 
