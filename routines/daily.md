@@ -23,7 +23,7 @@ skipped check.
   from your history; fetch and merge it (fast-forward preferred, never force) before work.
 - Read `TRENDS.md` in full.
 - Read the most recent report in `reports/` (skip if none yet).
-- Read `strategy_notes` and the recent tail (~7 days) of `logs/source_rotation.md` to
+- Read the recent tail (~10 entries) of `logs/strategy_notes.md` and the recent tail (~7 days) of `logs/source_rotation.md` to
   decide today's coverage.
 
 ## 2. Scan

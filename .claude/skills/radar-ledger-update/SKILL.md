@@ -15,7 +15,7 @@ structure is a contract.
   stage legend.
 - Sections, in this order: `## Active trends`, `## observation_queue`,
   `## source_rotation`, `## strategy_notes`, `## study_shelf`, `## calibration`.
-- `## source_rotation` and `## calibration` are POINTER stubs only: their real
+- `## source_rotation`, `## strategy_notes` and `## calibration` are POINTER stubs only: their real
   append-only content lives in `logs/source_rotation.md` and `logs/calibration.md`
   respectively. Keep the two stub headers (the section order is the contract) but
   NEVER inline log lines back into TRENDS.md — appends go to the `logs/` files.
@@ -59,8 +59,8 @@ structure is a contract.
   every removal is either a promotion or a recorded drop, shrinking the queue
   loses no knowledge. Re-date an item only if it is genuinely still worth watching.
 - Append one dated line per session to `logs/source_rotation.md` (the coverage
-  log; not the TRENDS.md stub). Append dated corrections to the `strategy_notes`
-  section of TRENDS.md; never delete curator entries.
+  log; not the TRENDS.md stub). Append dated corrections to `logs/strategy_notes.md`
+  (the strategy log; not the TRENDS.md stub); never delete curator entries.
 - `study_shelf`: newest first, format `date — [name](url) — one line of why`;
   single-artifact items allowed (the trend bar does not apply), opened primary
   sources only.
@@ -76,11 +76,15 @@ grep -n '^## ' TRENDS.md
 grep -c '^### \[id: ' TRENDS.md          # trend count matches expectations
 grep -nE '^  - [0-9]{4}-[0-9]{2}-[0-9]{2} — ' TRENDS.md | head -3   # evidence format
 grep -n '^Last updated:' TRENDS.md       # date is today
-# the two externalized logs must exist and only grow (append-only):
-test -f logs/source_rotation.md && tail -1 logs/source_rotation.md | head -c 80
-test -f logs/calibration.md && tail -1 logs/calibration.md | head -c 80
-# TRENDS.md must NOT have regrown a log body (the stubs stay one-line pointers):
-awk '/^## source_rotation/{n=0} /^## strategy_notes/{print "rotation stub lines:", n} {n++}' TRENDS.md
+# the three externalized logs must exist and only grow (append-only):
+for f in source_rotation strategy_notes calibration; do
+  test -f logs/$f.md && printf '%-16s ' $f && tail -1 logs/$f.md | head -c 70 && echo
+done
+# TRENDS.md must NOT have regrown a log body — all three stay short POINTER stubs.
+# A stub over ~10 lines means a run wrote the log INTO the ledger instead of logs/:
+awk '/^## /{if(s)printf "  %-16s %d lines%s\n",s,n,(n<10?"  ok":"  <- REGROWN, move it to logs/");s="";n=0}
+     /^## (source_rotation|strategy_notes|calibration)/{s=substr($0,4)} {n++}
+     END{if(s)printf "  %-16s %d lines%s\n",s,n,(n<10?"  ok":"  <- REGROWN, move it to logs/")}' TRENDS.md
 ```
 
 If a check fails, fix the file before committing. Commit and push per the

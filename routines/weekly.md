@@ -68,9 +68,9 @@ it — a source can sit `[verified]` for many weeks while structurally unreachab
 daily lane (DEF CON AI Village for 6 weeks, OWASP/ATLAS for 2), and the current-week-only
 diff cannot see that pattern by construction.
 Then compare the coverage log against the ledger: which sources produced evidence, which
-produced nothing repeatedly; are the scope priorities in `strategy_notes` actually covered?
+produced nothing repeatedly; are the scope priorities in `logs/strategy_notes.md` actually covered?
 Tunnel-vision check: if ALL of this week's new evidence landed on pre-existing trends,
-record an anchoring warning in `strategy_notes` and redirect next week's exploration.
+anchoring warning in `logs/strategy_notes.md` and redirect next week's exploration.
 Grow the curator/source lists (add recurring high-hit sources; drop noisy/dead ones).
 **Source discovery (drain the auto-staged candidates — the tool-author/vendor analog of curator
 scouting):** review SOURCES.md → "Discovered-source candidates", the tally the daily fills
@@ -88,7 +88,7 @@ genuinely single-artifact for months without the tally ever forcing a re-look):*
 the at-or-above-bar check, also re-open every staged candidate that has gone 2+ weeks since its
 last re-check (regardless of tally count) — a plain single-artifact source can still be worth a
 periodic look, and the tally alone will never trigger it if nothing re-names the org.
-Append a dated correction entry to `strategy_notes`.
+Append a dated correction entry to `logs/strategy_notes.md`.
 
 ## 5. Self-evaluation
 Follow `radar-self-eval`:

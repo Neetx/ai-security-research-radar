@@ -33,8 +33,9 @@ published history, never force-push.
 
 | Path | Contents | Edit policy |
 |---|---|---|
-| `TRENDS.md` | Trend ledger + `observation_queue`, `strategy_notes`, `study_shelf`; `source_rotation` and `calibration` are one-line pointer stubs | follow the `radar-ledger-update` skill |
+| `TRENDS.md` | Trend ledger + `observation_queue`, `study_shelf`; `source_rotation`, `strategy_notes` and `calibration` are one-line pointer stubs | follow the `radar-ledger-update` skill |
 | `logs/source_rotation.md` | Append-only daily coverage log (externalized to keep the ledger small); read only the recent tail | append-only; never edit/reorder past lines |
+| `logs/strategy_notes.md` | Append-only strategy log (externalized 2026-09-08 to keep the ledger small); read only the recent tail (~10 entries) | append-only; curator entries never edited |
 | `logs/calibration.md` | Append-only weekly self-evaluation log | append-only; written by weekly runs only |
 | `README.md` | THE output surface (repo landing page): badges, digest, clickable trend table, study shelf | fully derived — regenerate via the `radar-render-dashboard` skill; never edit by hand |
 | `SOURCES.md` | Agent-owned registry: primary feeds, watched tool repos, social channels, discovery venues | maintained by the radar itself |
@@ -87,7 +88,7 @@ published history, never force-push.
   new offensive work surfaces (arXiv cs.CR recent, security-tool trending) rather than
   re-querying tracked topics. Log it even when it yields nothing.
 - Weekly runs check for anchoring: a week where all new evidence lands on pre-existing
-  trends gets flagged in `strategy_notes`, and exploration is redirected.
+  trends gets flagged in `logs/strategy_notes.md`, and exploration is redirected.
 - Weekly runs self-evaluate (`radar-self-eval`): calibration metrics every week
   (including a `coverage` metric = registered sources vs the week's logs), a hit/miss
   retrospective monthly, and up to 3 proposed amendments handled per the policy below.
@@ -162,11 +163,11 @@ Because `routines/*.md` are the live operating instructions, they are amendable:
 - Every amendment must cite the calibration metric or retrospective that motivates it.
 - Cooling period: an amendment is PROPOSED in one weekly report and APPLIED on the next
   weekly run only if the motivating signal persists. Silence is consent; the curator
-  may veto with a dated entry in `strategy_notes`.
+  may veto with a dated entry in `logs/strategy_notes.md`.
 - One dedicated commit per applied amendment: `radar: amend <target> — <reason>`.
 - Auto-rollback: if calibration metrics worsen for two consecutive weeks after an
   amendment, `git revert` it and log the rollback in `calibration`.
-- Scope axes evolve the same way: a "radar-adopted" dated entry in `strategy_notes`
+- Scope axes evolve the same way: a "radar-adopted" dated entry in `logs/strategy_notes.md`
   may supersede an older axis. Curator entries are never deleted or edited.
 
 Immutable (curator-only): the Hard rules, Coverage discipline and this Self-amendment

@@ -21,7 +21,7 @@ commit:
 - **exploration compliance**: daily runs whose `logs/source_rotation.md` line
   contains a venue-exploration entry ÷ daily runs executed
 - **off-axis rate**: share of new queue items that do NOT match any axis in
-  `strategy_notes` (judgment call — name them)
+  `logs/strategy_notes.md` (judgment call — name them)
 - **discovery lag**: for each evidence item added this week, the days between
   its evidence-line date and the date it entered the ledger (commit date via
   `git log -p -- TRENDS.md`, or the daily reports). Report the median, split by
@@ -124,13 +124,13 @@ radar self-corrects the failure classes the curator used to catch by hand):
 Lifecycle:
 - **Week N**: propose — log in `calibration` and the weekly report.
 - **Week N+1**: apply IF the motivating signal persists AND no dated curator
-  veto appeared in `strategy_notes` (silence is consent). One dedicated commit
+  veto appeared in `logs/strategy_notes.md` (silence is consent). One dedicated commit
   per amendment. If the signal vanished, drop the proposal and say so.
 - **After applying**: if calibration metrics worsen for two consecutive weeks,
   `git revert` the amendment and log the rollback.
 
 Scope-axis changes are recorded as "radar-adopted" dated entries in
-`strategy_notes`, explicitly naming what they supersede. Curator entries are
+`logs/strategy_notes.md`, explicitly naming what they supersede. Curator entries are
 never deleted or edited — vetoes and mission input belong to the curator alone.
 The immutable sections listed in AGENTS.md are out of bounds: an amendment
 touching them is invalid.
