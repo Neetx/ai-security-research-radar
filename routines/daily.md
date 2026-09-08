@@ -140,6 +140,12 @@ is owed every run.
   weekly VERIFIES and PROMOTES. This is what lets the radar grow its own source coverage instead
   of waiting for the curator — an on-axis source that announces only on its own channel must
   surface as a staged candidate the first run any lane names it.
+- NOTE DISCIPLINE — the ledger is STATE, not a diary. Append a dated note to a trend ONLY when
+  something about that trend CHANGED this run: a stage/confidence move, an evidence append or cap
+  rotation, or a decision that binds a future run (a dormancy re-check date, an archive decision).
+  A run that checked a trend and found nothing new writes NOTHING into it — that non-event already
+  lives in today's report and in `logs/source_rotation.md`, and copying it into the trend is how a
+  ledger silently turns into a run-log. If a note would only say "checked, unchanged", omit it.
 - Stage moves: at most ONE stage up per trend per day, on new independent evidence. 21+
   days quiet → `dormant` (weekly archives at 45+). TARGETED-AXIS-CHECK BEFORE DORMANCY
   (APPLIED 2026-08-15, W33 — W32 Proposal N): before marking any trend `dormant` on the
