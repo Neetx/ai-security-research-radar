@@ -1,20 +1,20 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-13-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-21-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--11-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-14-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-12-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--12-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-09-11):** the 09-10 arXiv cs.CR batch landed; two clean evidence appends (both from capture branches), two convergences flagged for the weekly, a study pick on autonomous-pentest capability. No stage moves.
-- 📈 **Robots rejoin the radar — a fresh physical attack breaks 007's quiet:** the 21-day dormancy check's capture branch surfaced [Seeing is Not Believing](https://arxiv.org/abs/2609.08280), a ROS 2 attack where one env var runs a hook that injects telemetry + control signals before publish, hijacking a robot while spoofing its remote-attestation verifiers (87% vs an AI detector on a physical Franka arm; distributable via poisoned Docker packages) → held emerging on [physical-channel PI on embodied AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents).
-- 📈 **Valid signature, unbound decision:** [Whisper Attacks on AP2](https://arxiv.org/abs/2609.11757) steer a shopping agent into a protocol-valid cart that mismatches the user's request (90/56/73% across Google's default agents + 17 models + its consumer assistant) — the payment-protocol instance of [agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures); ships the A-VIP defense + AP2-WhisperBench.
-- 🔭 **Two convergences flagged for the weekly:** agentic-**commerce** / payment-protocol attacks now hold 3 disjoint groups ([2607.21824](https://arxiv.org/abs/2607.21824) + [2608.23858](https://arxiv.org/abs/2608.23858) + [Whisper/A-VIP](https://arxiv.org/abs/2609.11757)), and RAG knowledge-poisoning holds ≥3 attack groups ([CodePoisonRAG](https://arxiv.org/abs/2609.02774), [CamoDocs](https://arxiv.org/abs/2608.28389), [ToxicRAG](https://arxiv.org/abs/2609.11082)) — W37 decides seed-split vs absorption.
-- 🛠️ **Study pick:** [Big Enough to Break Out](https://arxiv.org/abs/2609.10780) — an autonomous PentestGPT on Claude Opus 4.8 solves all three public targets; the limiter looks like planning, not long-horizon memory, and the subtask metric is available to defenders.
+**Since last scan (2026-09-12) — weekly W37 recalibration:** one new seed, one convergence decided against on an author-independence check, a queue burndown, and one applied amendment. No promotions among existing trends.
+- 🌱 **New seed — RAG knowledge/document poisoning:** three independent attack groups on distinct retrieval surfaces — [CamoDocs](https://arxiv.org/abs/2608.28389) (QA-RAG document camouflage), [CodePoisonRAG](https://arxiv.org/abs/2609.02774) (code-RAG poisoning), [ToxicRAG](https://arxiv.org/abs/2609.11082) (single-doc narrative knowledge-update) — clear the bar for a new [RAG-poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) axis, distinct from agent-stack indirect PI and in-model backdoors.
+- 🔭 **Agentic-commerce — flagged as "3 groups", decided NOT to seed:** the author check collapses it to two — Yedidel Louck first-authored BOTH [Protocol-Level Attacks](https://arxiv.org/abs/2607.21824) and [Whisper/AP2](https://arxiv.org/abs/2609.11757) — so the only independent commerce group is the [AP2 security analysis](https://arxiv.org/abs/2608.23858) team; that analysis is absorbed into [agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) (which now spans 7 independent groups) rather than splitting a redundant trend.
+- 🧹 **Ledger hygiene:** [hallucination-squatting](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) held dormant (targeted axis check found no fresh primary; archive-watch ~10-08); the [watchlist](TRENDS.md#observation_queue) burned down 10 husks older than 14 days (28→12) and the study shelf shed nine picks older than 30 days.
+- 🛠️ **No new watched-tool releases** since the 09-10 daily (garak 0.17.0 / promptfoo 0.123.0 / PyRIT 1.1.0 / deepteam 1.0.9 / giskard 3.0.0 all unchanged).
 
 ---
 
 ## Trends
 
-🌱 0 · 📈 6 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
+🌱 1 · 📈 6 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -30,6 +30,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 📈 emerging | [2026-09-05](https://arxiv.org/abs/2609.05889) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-08-31](https://arxiv.org/abs/2608.30207) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-08-26](https://arxiv.org/abs/2608.25776) |
+| [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🌱 seed | [2026-09-10](https://arxiv.org/abs/2609.11082) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
 ---
@@ -71,9 +72,9 @@ No new watched-tool releases this cycle (garak 0.17.0, promptfoo 0.123.0, PyRIT 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
 - Practitioner attention on **prompt-injection against production coding agents/IDEs** stays high — recirculating "Google: attackers are using prompt injection against coding agents" framing plus general jailbreak how-tos on r/ClaudeAIJailbreak.
-- **Embodied / physical prompt injection** keeps its community name — "kinetic prompt injection" (robot-dogs / sleeper-agent framing) is still circulating; captured as an alias on the [embodied-physical-injection](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) trend (which also took a fresh robot attack this scan).
-- HN/Reddit this pass: general PI/jailbreak recirculation only (ASCII-smuggling→phishing crossover, a jailbreak-impossibility pdf, sandbox Show-HNs) — no offensive-AI earthquake, no new vocabulary.
+- **Embodied / physical prompt injection** keeps its community name — "kinetic prompt injection" (robot-dogs / sleeper-agent framing) is still circulating; captured as an alias on the [embodied-physical-injection](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) trend (which took a fresh robot attack this week).
+- HN/Reddit through the week: general PI/jailbreak recirculation only (ASCII-smuggling→phishing crossover, a jailbreak-impossibility pdf, sandbox Show-HNs) — no offensive-AI earthquake, no new vocabulary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~21)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-11](reports/2026-09-11.md) · 📅 weekly: [2026-W36](reports/weekly/2026-W36.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~12)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-11](reports/2026-09-11.md) · 📅 weekly: [2026-W37](reports/weekly/2026-W37.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
