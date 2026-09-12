@@ -41,6 +41,18 @@ drop noise. Don't restrict yourself to a fixed roster.
    (`Reddit / tldrsec / Willison → degraded: tvly-plan-cap`) as long as each is NAMED; a bare
    `PULSE (HN…)` line is not. This makes the coverage-discipline hard rule more precise; it
    relaxes nothing.
+   - **4a. Quiet/seasonal lanes are named EVEN WHEN they yield nothing (APPLIED 2026-09-12,
+     W37 — was W36 Proposal Q, cooling period held, signal PERSISTED and WORSENED: the
+     YouTube-curator lane (Microsoft Developer / Black Hat channels) dropped off the per-channel
+     pulse log on 2/5 dailies in W36 and 5/5 in W37 — a 3rd/4th consecutive-week Phase-2 miss
+     that rule 4 alone did not close, because the lane silently collapses precisely on QUIET days
+     when it has no on-axis item):** a lane that legitimately produces nothing is NOT thereby
+     excused from the log — a "no on-axis this run" lane and an "I forgot to check" lane read
+     identically if both are absent, which is the whole failure. So every run MUST emit a status
+     token for EACH YouTube curator and each seasonal showcase lane even on a quiet/off-season
+     day, drawn from exactly: `opened/no-on-axis`, `degraded: <reason>`, or `off-season (next:
+     <event/month>)`. Omission is a coverage lie; "quiet" is a status to LOG, never a reason to
+     drop the line.
 
 ## Method (best-effort via Tavily, no paid APIs)
 
