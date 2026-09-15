@@ -194,6 +194,11 @@ NON-GitHub tool channels (tools do NOT only live on GitHub — do not over-rely 
 - **Package-registry SEARCH** (discover NEW packaged tools, not just track known ones): `pypi.org/search/?q=<term>`
   + npm search for `llm security` / `prompt-injection` / `ai red team` → a tool shipping to a registry is
   findable by search; then confirm its repo.
+  HEAL 2026-09-15: the `pypi.org/search/?q=` HTML page returned an empty parse two consecutive passes
+  (09-14, 09-15 — JS-rendered results / snippet class-names not in the served HTML). WORKING METHOD:
+  `tvly search --include-domains pypi.org "<offensive terms>"` returns PyPI project hits with snippets
+  reliably; use it for the registry-SEARCH lane instead of scraping the search page. (npm search still
+  via its own registry/HTML as before.)
   DISTINCT FROM THE REPO-WATCH USE OF THE SAME HOST — log it under its own name (`registry SEARCH: …`),
   never folded into the `REPO WATCH: PyPI/npm [<known tools>]` line. Repo-watch answers "did a tool I
   already track ship a version?"; this answers "did a tool I have never heard of appear?" — the second

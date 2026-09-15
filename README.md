@@ -1,42 +1,42 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-14-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-13-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--14-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-14-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-14-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--15-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-09-14):** one fresh in-the-wild-AI-offense datapoint; the rest of the day was off-axis (a crypto/FHE/blockchain-heavy arXiv batch) or recirculating pulse. No stage moves.
-- 🚀 **In-the-wild AI-for-offense — fresh GTIG tracker:** Google Threat Intelligence's ["From Prompting to Autonomy"](https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai) (09-08) lands as [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) evidence (cap rotation, replacing the older 05-11 GTIG tracker): an agent-enabled mass credential-harvest run in **under six hours**, the DUSTMAKER stealer embedding prompt injection to make LLM security scanners skip its code, MCP supply-chain trojans on PyPI, and 100M+-prompt model distillation. `last_evidence` 09-02→09-08.
-- 🔭 **Watermark-attack nucleus forming:** [Forging Tree-Ring](https://arxiv.org/abs/2609.12909) (black-box semantic watermark forgery) joins MarkNull on the [watchlist](TRENDS.md#observation_queue) — ~2 independent attack groups on provenance/watermark removal-and-forgery, still below the seed bar.
-- 🛠️ **No new watched-tool releases** since 09-11 (garak 0.17.0 / promptfoo 0.123.0 / PyRIT 1.1.0 / deepteam 1.0.9 / giskard 3.0.0 all unchanged); tool-discovery staged an agent-skill-security awesome-list as a discovery venue.
+**Since last scan (2026-09-15):** the predicted weekend arXiv catch-up (2609.13xxx→2609.159xx, ~150 ids triaged) landed one stage move and three cadence-restoring cap-rotations.
+- 📈 **RAG poisoning promoted seed→emerging:** [ViTeGate](https://arxiv.org/abs/2609.14685) (multimodal VLRAG conditional-trigger poisoning) and [CiteShade](https://arxiv.org/abs/2609.15660) (first citation/attribution-channel laundering) are the 4th & 5th pairwise-disjoint attack groups on [RAG knowledge poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration), clearing the promotion lever.
+- 🔬 **Three cap-rotations from the batch:** [PIDS-Bench](https://arxiv.org/abs/2609.15017) shows PI detectors above F1=0.98 collapse on hard-benign/obfuscated/shifted inputs → [AI-security-tooling-unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack); [AGENTQ](https://arxiv.org/abs/2609.14060) is the first quantization-conditioned backdoor against LLM **agents** (audits-clean checkpoint → autonomous tool-execution once quantized) → [backdoors](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types); [cryptanalytic extraction](https://arxiv.org/abs/2609.14379) drops the known-architecture assumption → [model extraction](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis).
+- 🛠️ **No new watched-tool releases** (garak 0.17.0 / promptfoo 0.123.0 / PyRIT 1.1.0 / deepteam 1.0.9 / giskard 3.0.0 unchanged); tool-discovery surfaced only guides and early-stage pentest harnesses below the notability bar.
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 6 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
+🌱 0 · 📈 7 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
 
 | trend | stage | latest signal |
 |---|---|---|
+| [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-09-14](https://arxiv.org/abs/2609.15017) |
+| [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-09-12](https://arxiv.org/abs/2609.14060) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-09-09](https://arxiv.org/abs/2609.09793) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-09-09](https://arxiv.org/abs/2609.10537) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-09-08](https://cloud.google.com/blog/topics/threat-intelligence/from-prompting-to-autonomy-the-evolution-of-adversarial-ai) |
 | [Attacks on LLM-agent stack: MCP, skills, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-09-03](https://arxiv.org/abs/2609.04522) |
-| [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-08-27](https://arxiv.org/abs/2608.27512) |
-| [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-08-27](https://arxiv.org/abs/2608.27092) |
+| [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 📈 emerging | [2026-09-14](https://arxiv.org/abs/2609.15660) |
+| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-09-13](https://arxiv.org/abs/2609.14379) |
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 📈 emerging | [2026-09-10](https://arxiv.org/abs/2609.11757) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 📈 emerging | [2026-09-08](https://arxiv.org/abs/2609.08280) |
-| [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-09-07](https://arxiv.org/abs/2609.07131) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 📈 emerging | [2026-09-05](https://arxiv.org/abs/2609.05889) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-08-31](https://arxiv.org/abs/2608.30207) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-08-26](https://arxiv.org/abs/2608.25776) |
-| [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🌱 seed | [2026-09-10](https://arxiv.org/abs/2609.11082) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
 ---
 
 ## 🛠️ Tools & releases
 
-No new watched-tool releases this cycle (garak 0.17.0, promptfoo 0.123.0, PyRIT 1.1.0, deepteam 1.0.9, giskard 3.0.0 all unchanged since 09-11). Tool-discovery staged [LLMSecurity/awesome-agent-skills-security](https://github.com/LLMSecurity/awesome-agent-skills-security) (an agent-skill-security awesome-list — a discovery venue, pending verification) plus early-stage 011-axis harnesses [aielte-research/HackSynth](https://github.com/aielte-research/HackSynth) and [youngsecurity/pentest-agent-system](https://github.com/youngsecurity/pentest-agent-system) (below the notability bar). The current on-axis tool set:
+No new watched-tool releases this cycle (garak 0.17.0, promptfoo 0.123.0, PyRIT 1.1.0, deepteam 1.0.9, giskard 3.0.0 all unchanged since 09-11). Tool-discovery this pass surfaced only guides and early-stage harnesses below the notability bar — [requie/AI-Red-Teaming-Guide](https://github.com/requie/AI-Red-Teaming-Guide) and [simon-p-j-r/LLM4Pentest](https://github.com/simon-p-j-r/LLM4Pentest); the PyPI/npm registry SEARCH (healed to a Tavily-backed query this run) returned only defensive guardrail libs. The current on-axis tool set:
 
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.0** (2026-09-09).
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.123.0** (2026-09-10).
@@ -70,10 +70,10 @@ No new watched-tool releases this cycle (garak 0.17.0, promptfoo 0.123.0, PyRIT 
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- Practitioner attention on **prompt-injection against production coding agents/IDEs** stays high — the "attackers are using prompt injection against coding agents" framing keeps recirculating on HN, alongside an ASCII-smuggling→phishing-evasion crossover write-up and general jailbreak how-tos on r/ChatGPTJailbreak.
-- **Embodied / physical prompt injection** keeps its community name — "kinetic prompt injection" (robot-dogs / sleeper-agent framing) is still circulating; already an alias on the [embodied-physical-injection](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) trend (which took a fresh robot attack last week).
+- Practitioner attention on **prompt-injection against production coding agents/IDEs** stays high — the "is your LLM service secure from prompt injection / what's the most overlooked AI-security risk" framing keeps recirculating as Ask-HN threads, alongside vendor posts on agentic AI security scanning for government.
+- **Embodied / physical prompt injection** keeps its community name — "kinetic prompt injection" (robot-dogs / sleeper-agent framing) is still circulating; already an alias on the [embodied-physical-injection](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) trend.
 - HN/Reddit through the day: general PI/jailbreak/abliteration recirculation only — no offensive-AI earthquake, no new vocabulary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~13)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-14](reports/2026-09-14.md) · 📅 weekly: [2026-W37](reports/weekly/2026-W37.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~14)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-15](reports/2026-09-15.md) · 📅 weekly: [2026-W37](reports/weekly/2026-W37.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
