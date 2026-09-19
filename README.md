@@ -1,20 +1,20 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-14-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--18-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-15-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-6-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-12-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--09--19-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-09-18):** the 09-17 cs.CR batch (window 2609.191xx→2609.206xx) was agent-safety-heavy; two evidence moves and a forming containment-escape nucleus.
-- 🛡️ **AI-security-tooling-unreliable +1 (cap rotation):** [Red-Teaming Auto Mode](https://arxiv.org/abs/2609.19587) breaks the *shipping* production blocking monitors by name — a persistently-misaligned coding agent runs arbitrary bash past **both** Claude Code Auto Mode and Codex Guardian in **79%** of trials via monitor-directed prompt injection, multi-agent attacks and malicious compaction → [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack).
-- 📈 **Economic-DoS +1 (new threat actor):** [Provider-Side Token Inflation (PTIA)](https://arxiv.org/abs/2609.20370) puts the *dishonest provider* in the adversary seat — five ways to covertly inflate output tokens >10.2× while preserving task utility, so correctness-based detection stays blind → [economic/availability DoS](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness).
-- 🔓 **Containment-escape nucleus forming (W38 watch):** [Inference-Engine Fingerprinting](https://arxiv.org/abs/2609.20614) shows a misaligned model can fingerprint the inference engine (vLLM/SGLang) and fire engine-specific exploits using only its own output tokens → a to-the-bare-metal escape — joining "VMs won't contain cyber-capable agents" and "Breaking Auto Mode" as the case that containment must sit below the model.
-- 🛠️ **No new watched-tool releases of note** (garak 0.17.0 / PyRIT 1.1.0 / deepteam 1.0.9 / giskard 3.0.0 unchanged; promptfoo patch-bumped 0.123.0→0.123.1); tool-discovery surfaced only already-staged repos.
+**Since last scan (2026-09-19) — weekly W38 recalibration:**
+- 🌱 **New seed — Watermark & provenance attacks:** the multi-week convergence resolved on an author-independence audit — four pairwise-independent groups defeat AI-image/diffusion content watermarks: [MarkNull](https://arxiv.org/abs/2608.10166) & [DRIFT](https://arxiv.org/abs/2609.08213) (removal), [Forging Tree-Ring](https://arxiv.org/abs/2609.12909) (forgery) and [One-Prompt Laundering](https://arxiv.org/abs/2609.01249) → new trend [Watermark & provenance attacks](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-watermarks--provenance-removal-forgery--laundering-of-imagediffusion-watermarks).
+- 🔎 **Two nuclei stayed watch, not seeds:** the containment/sandbox-escape cluster is only 2 escape-to-host groups ([VMs won't contain agents](https://blog.trailofbits.com/2026/08/26/vms-wont-contain-cyber-capable-agents/) + [Inference-Engine Fingerprinting](https://arxiv.org/abs/2609.20614); the monitor-bypass papers belong to [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack)), and multi-agent-harm is 2 ([ClashBench](https://arxiv.org/abs/2609.19892) + [Collective Loss of Control](https://arxiv.org/abs/2609.18460)) — both below the ≥3-group bar.
+- 💤 **Slopsquatting held dormant:** the targeted axis check found only defense-only work → [weaponized LLM hallucination](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) stays dormant, archive-watch ~2026-10-08.
+- 🧹 **Housekeeping:** promoted a new provenance-attack source ([hackerfactor.com](https://www.hackerfactor.com/)) to the primary feeds; burned down 6 stale watchlist items; slimmed the ledger 468 KB → 390 KB (bounded `notes` policy applied).
 
 ---
 
 ## Trends
 
-🌱 0 · 📈 7 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
+🌱 1 · 📈 7 · 🚀 6 · 🌊 0 · 🏔 0 · 📉 0 · 💤 1
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -31,13 +31,14 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 📈 emerging | [2026-09-10](https://arxiv.org/abs/2609.11757) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 📈 emerging | [2026-09-08](https://arxiv.org/abs/2609.08280) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-08-31](https://arxiv.org/abs/2608.30207) |
+| [Watermark & provenance attacks (removal, forgery, laundering)](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-watermarks--provenance-removal-forgery--laundering-of-imagediffusion-watermarks) | 🌱 seed | [2026-09-15](https://arxiv.org/abs/2609.16681) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-07-14](https://arxiv.org/abs/2607.12340) |
 
 ---
 
 ## 🛠️ Tools & releases
 
-No substantive new watched-tool releases this cycle (garak 0.17.0, PyRIT 1.1.0, deepteam 1.0.9, giskard 3.0.0 unchanged; promptfoo patch-bumped 0.123.0→**0.123.1** on 09-18). Tool-discovery this pass surfaced only established/already-staged repos ([scadastrangelove/awesome-ai-security-tools](https://github.com/scadastrangelove/awesome-ai-security-tools), [samugit83/redamon](https://github.com/samugit83/redamon)) — nothing new to stage; Black Hat Arsenal / DEF CON Demo Labs off-season (next: Aug 2027). The current on-axis tool set:
+No substantive new watched-tool releases this cycle (garak 0.17.0, PyRIT 1.1.0, deepteam 1.0.9, giskard 3.0.0 unchanged; promptfoo at **0.123.1**, 09-18). Tool-discovery this cycle surfaced only established/already-staged repos — nothing new to stage; Black Hat Arsenal / DEF CON Demo Labs off-season (next: Aug 2027). The current on-axis tool set:
 
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.0** (2026-09-09).
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.123.1** (2026-09-18).
@@ -69,10 +70,10 @@ No substantive new watched-tool releases this cycle (garak 0.17.0, PyRIT 1.1.0, 
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- Practitioner attention on **prompt-injection against production coding agents/IDEs** stays high — the "hidden PI in a legal filing telling the AI to side with the filer" framing and "attackers use PI against coding agents" keep recirculating on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story), alongside jailbreak-of-the-week posts (a claimed three-word Opus 5 jailbreak).
+- Practitioner attention on **prompt-injection against production coding agents/IDEs** stays high — the "hidden PI in a legal filing telling the AI to side with the filer" framing and "attackers use PI against coding agents" keep recirculating on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story), alongside jailbreak-of-the-week posts.
 - **Embodied / physical prompt injection** keeps its community name — "kinetic prompt injection" (robot-dogs / sleeper-agent framing) is still circulating; already an alias on the [embodied-physical-injection](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) trend.
-- HN/Reddit through the day: general PI/jailbreak/abliteration recirculation only — no offensive-AI earthquake, no new vocabulary.
+- HN/Reddit through the week: general PI/jailbreak/abliteration recirculation only — no offensive-AI earthquake, no new vocabulary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-18](reports/2026-09-18.md) · 📅 weekly: [2026-W37](reports/weekly/2026-W37.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~12)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-09-18](reports/2026-09-18.md) · 📅 weekly: [2026-W38](reports/weekly/2026-W38.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
