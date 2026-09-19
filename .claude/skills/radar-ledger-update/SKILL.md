@@ -37,6 +37,21 @@ structure is a contract.
   prose only is a routing failure.
 - Max 10 evidence items per trend — drop the oldest. Keep `last_evidence` equal
   to the newest evidence date.
+- **`notes` is STATE, not an archive (bounded — APPLIED 2026-09-19, W38, was W37
+  Proposal R; cooling period held, signal persisted: TRENDS.md reached ~468 KB with
+  the single largest `notes` field ~55 KB (agentic-attack-surface-001), a full
+  day-by-day running narrative that bloats every future run's context although its
+  substance is already preserved write-once in the daily/weekly reports + git).** A
+  trend's `notes` holds only: (1) the seed/promotion rationale (why it is a trend and
+  its current stage), (2) the last ~6–8 dated appends, and (3) open promotion levers +
+  current rotate-candidates. When appending would push `notes` past this — as a soft
+  guide, keep a single `notes` field under ~4 KB — COMPRESS: drop the oldest dated
+  narrative (the citable artifacts already live in `evidence:`; the full day-by-day
+  story lives in the reports) and replace it with a one-line pointer ("full append
+  narrative in the daily/weekly reports + git history"). Compressing `notes` this way
+  is CURATION of a state field, not rewriting published history (which applies to
+  `evidence:` lines, ARCHIVE.md and the append-only logs — those are never rewritten).
+  Trim a bloated `notes` on the next run that touches that trend.
 - Stage moves: at most ONE stage up per trend per day, only on new independent
   evidence, justified in `notes`. Demotions are always allowed. 21+ days without
   evidence → `dormant`; at 45+ days the weekly pass moves the entry to
