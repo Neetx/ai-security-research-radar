@@ -83,7 +83,17 @@ Like `radar-lab-sweep`, this skill does NOT name individual channels/blogs in it
 prose; the data lives in `SOURCES.md` and you execute ALL of it. The lists to
 iterate every run:
 - `SOURCES.md` → "Social & community channels" (Reddit subs, Hacker News, X/IG).
-- `SOURCES.md` → "YouTube — TRUSTED-CURATOR POINTER LANE" (one feed per channel).
+- `SOURCES.md` → "YouTube — TRUSTED-CURATOR POINTER LANE". FEEDS.XML RETIRED (APPLIED 2026-09-26,
+  W39 — was W38 Proposal S, cooling period held, signal persisted: the `youtube.com/feeds/videos.xml`
+  endpoints have been structurally 404 from this environment for ~6 weeks (since 08-03, confirmed
+  against Google's own channel_id), and Proposal Q's per-run status token did not stop the lane
+  silently collapsing on the dailies). The lane is now a single best-effort `tvly search
+  --include-domains youtube.com "<channel> AI security"` per SURVIVING curator (the method already
+  recorded working for the Black Hat channel), logged with a rule-4a status token every run.
+  Microsoft Developer was DROPPED (heal-or-REMOVE: its feed is dead AND the working search method
+  yields only generic dev content — many weeks with zero on-axis item; its AI-Red-Teaming-101
+  content, if any, is already covered by the swept Microsoft Security blog lane). "Don't list what
+  you won't sweep."
 - `SOURCES.md` → "Curated digests + explainer/aggregator blogs" (the pointer/digest
   blogs — fetch each by its recorded method: feed, or `tvly extract` of its index
   for feed-less ones).
