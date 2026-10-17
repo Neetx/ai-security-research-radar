@@ -1,14 +1,14 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-17-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-7-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--16-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-17-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-7-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-12-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--17-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-10-15):**
-- 💤→📈 **In-the-wild AI-for-offense revives from dormancy** → [LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) ← Unit 42's [AI-powered espionage campaign against government Linux infrastructure](https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/) (CL-UNK-1211): the attackers' PHP/shell payloads carry operator-facing step-by-step reasoning notes consistent with AI-assisted code generation — a fresh disclosed case inside the archive window, so the trend moves dormant→emerging.
-- 💤 **Automated red-teaming of AI agents goes dormant** → [automated agent red-team](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge): 21 days quiet since [AgentXploit](https://arxiv.org/abs/2609.31318); the pre-dormancy targeted-axis check found nothing fresh in the silent window (archive-watch ~11-09).
-- 📈 New evidence: [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) ← [Screwtape](https://arxiv.org/abs/2610.20941) edits real Claude Code/Codex transcripts to evade action-only monitors; [RAG poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) ← [Poisoning the Neighborhood](https://arxiv.org/abs/2610.21464), the first deployment-scale attack on HNSW/ANN retrieval indexes.
-- 📚 Study shelf +2: [DIB-Bench](https://arxiv.org/abs/2610.21135) (stronger LLM judges accept *more* tampered deployments — output-only evaluation is blind to runtime-stack integrity) and [BiShield-TEE](https://arxiv.org/abs/2610.21565) (unilateral TEE weight-obfuscation of on-device LLMs is breakable → weight IP theft).
+**Since last scan (2026-10-16) — weekly recalibration W42:**
+- 🔁 **No new stage moves this week**; recalibration confirms the week's three moves: [agent skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) emerged, [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) revived from dormancy, [automated agent red-team](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) went dormant.
+- 🧹 **Watchlist cleaned** → [observation queue](TRENDS.md#observation_queue): the 14+-day backlog burned down and the lone live item (a Mindgard guardrail-bypass summary) dropped as already covered by [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) evidence ([BRANCH](https://arxiv.org/abs/2610.10742) / [Screwtape](https://arxiv.org/abs/2610.20941)).
+- 🔭 **Source-discovery:** adopted [kagnlp/Awesome-Agentic-Security](https://github.com/kagnlp/Awesome-Agentic-Security) as a tool-discovery venue (260+ survey-backed resources); dropped a stale below-bar PoC. [Study shelf](TRENDS.md#study_shelf) trimmed to 34 (pruned >30-day picks).
+- ⚠️ **Coverage note:** OpenAI /news and MSRC were under-logged across the week — [swept and clear this session](SOURCES.md) (OpenAI 0 on-axis), flagged for the dailies to name every run.
 
 ---
 
@@ -81,4 +81,4 @@ No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARC
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-16](reports/2026-10-16.md) · 📅 weekly: [2026-W41](reports/weekly/2026-W41.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~12)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-16](reports/2026-10-16.md) · 📅 weekly: [2026-W42](reports/weekly/2026-W42.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
