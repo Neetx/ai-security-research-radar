@@ -286,6 +286,10 @@ miss a usable tool the week it ships; never surface a vaporware repo as if it we
 
 ## Discovered-source candidates (staged by the daily OR named as a manual `[candidate]` above — ONE reviewed list; the weekly verifies & promotes)
 
+VENUE-MOVE EXCEPTION (2026-10-19): a candidate whose domain belongs to an organization ALREADY in a
+swept list is that organization publishing somewhere new — promote it into that source's entry
+(feed + diff target) in the SAME run, never leave it staged (`radar-source-sweep` → VENUE MOVES).
+
 MERGED 2026-07-18 (W29, applying W28 Proposal H): this auto-staged tally and the manually-tracked
 `[candidate]` entries under Primary feeds above are now treated as ONE review process each
 weekly — a candidate can enter via either lane, but promotion/drop decisions are made together
