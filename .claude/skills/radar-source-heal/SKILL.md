@@ -62,6 +62,25 @@ missing → heal → SOURCES.md method → next iteration succeeds.
 - Fall back to the built-in web tools if Tavily keeps failing on that source.
 - Find the shape that returns clean, parseable data.
 
+## A search is not a feed (recency is not guaranteed)
+
+A topic SEARCH (`tvly search "<terms>" --include-domains <site>`) returns what RANKS, not what
+is NEWEST. Used as the access method for a feed-less or JS-rendered site it produces confident
+false negatives — "checked, nothing fresh" while the site published on-scope posts the query
+did not rank. A search is fine as an EXTRACT aid; it can never be the CHECK that discharges a
+coverage promise. Heal such a source with a method that ENUMERATES what the site published,
+in this order:
+1. its feed (find it as in Class A), else
+2. the sitemap diff (`sitemap_diff.py <host>`, bundled with the sweep skill: URLs new since
+   the last run), else
+3. the index diff (`sitemap_diff.py index:<section index url>`: the article links in the
+   index page's raw HTML), else
+4. a rendered copy of the index (`tvly extract`, or a reader proxy) diffed against the URLs
+   already in the repo.
+Only if all four fail is the source search-only: log it `search-only (recency not
+guaranteed)` — never `opened`/`checked` — and keep it on the heal worklist. Re-check every
+"healed" source whose recorded method is a search: it was never actually healed.
+
 ## Record the fix (this is the durable part)
 
 Write the WORKING access method back into `SOURCES.md` next to that source,

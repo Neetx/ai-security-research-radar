@@ -104,3 +104,8 @@ awk '/^## /{if(s)printf "  %-16s %d lines%s\n",s,n,(n<10?"  ok":"  <- REGROWN, m
 
 If a check fails, fix the file before committing. Commit and push per the
 conventions in AGENTS.md.
+
+The expected section order above IS the file contract. When a check finds a section
+missing or out of order, RESTORE that section in TRENDS.md — never edit this list, or any
+check in this block, to match the broken file. A check rewritten to accept a defect is how
+a lost section stays lost: every later run validates clean against it.

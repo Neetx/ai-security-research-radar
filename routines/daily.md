@@ -21,6 +21,17 @@ skipped check.
 ## 1. Load state
 - Recover orphaned state first: check for any branch holding a `radar:` commit missing
   from your history; fetch and merge it (fast-forward preferred, never force) before work.
+- Verify the previous runs COMPLETED: for every `radar: daily update` / `radar: weekly
+  recalibration` commit of the last 7 days, its report exists (`reports/YYYY-MM-DD.md`,
+  `reports/weekly/YYYY-Wnn.md`). A run can commit its work and die before writing its report —
+  then its commits exist, its report does not, and nothing downstream notices. Open today's
+  report with an INCOMPLETE-RUN warning naming what is missing. For a missing WEEKLY report,
+  write it now as `reports/weekly/YYYY-Wnn.md`, headed "RECONSTRUCTED <today> — the weekly
+  run did not write its report", built ONLY from that run's own commit messages and diffs and
+  its `logs/calibration.md` / `logs/source_rotation.md` lines — state explicitly any amendment
+  proposal found there, so its cooling-period clock is not lost; invent nothing. If the same
+  kind of run was incomplete twice in a row, send the curator a push notification: that is a
+  run that keeps dying, not a blip.
 - Read `TRENDS.md` in full.
 - Read the most recent report in `reports/` (skip if none yet).
 - Read the recent tail (~10 entries) of `logs/strategy_notes.md` and the recent tail (~7 days) of `logs/source_rotation.md` to
@@ -39,6 +50,11 @@ intake-vs-evidence distinction governs what you DO with a hit, not whether you C
   `SOURCES.md → "Primary feeds"` + `"Research venues"` lists; fetch each, open posts/
   papers newer than the last scan, filter for OFFENSIVE relevance. Primary sources are
   citable evidence.
+- **In-the-wild threat-intel & incident lane (MANDATORY every run)** — iterate `SOURCES.md →
+  "In-the-wild threat-intel & incident disclosures"`: the vendor feeds + their sitemap/index
+  diff, then the security-news pointer outlets (intake only → follow to the primary). Filter
+  for AI relevance. This lane is where the in-the-wild axis is actually reported — a quiet
+  arXiv day says nothing about it.
 - **Community pulse (every run, intake only)** — `radar-pulse`: iterate the social/
   curator lists; multi-channel earthquake check; feeds `observation_queue` unverified +
   the pulse note. Never evidence; never name individuals.
@@ -146,6 +162,18 @@ is owed every run.
   A run that checked a trend and found nothing new writes NOTHING into it — that non-event already
   lives in today's report and in `logs/source_rotation.md`, and copying it into the trend is how a
   ledger silently turns into a run-log. If a note would only say "checked, unchanged", omit it.
+- DORMANCY PROBE — silence must be MEASURED where the trend's evidence lives, never assumed.
+  Before moving any trend to `dormant` (or archiving it), probe its silent window
+  (`last_evidence` → today) on the channels its OWN evidence comes from: read the hosts and
+  lane types of its current evidence list (lab or vendor blogs, threat-intel, advisories/CVEs,
+  repos, arXiv, journals…) and check those — by feed or sitemap/index diff where possible —
+  PLUS one independent news search over the window
+  (`tvly search "<trend terms>" --topic news --start-date <last_evidence>`, intake only).
+  A probe on a channel the trend's evidence never came from (e.g. arXiv-only for an in-the-wild,
+  product or policy trend) proves nothing. Any on-scope hit dated inside the window is a
+  CAPTURE failure, not silence: capture it (verify on the primary) and keep the stage. Only an
+  empty probe allows the move; record the channels probed and the newest result found in the
+  trend's notes — a decision that binds future runs, so a legitimate note.
 - Stage moves: at most ONE stage up per trend per day, on new independent evidence. 21+
   days quiet → `dormant` (weekly archives at 45+). TARGETED-AXIS-CHECK BEFORE DORMANCY
   (APPLIED 2026-08-15, W33 — W32 Proposal N): before marking any trend `dormant` on the

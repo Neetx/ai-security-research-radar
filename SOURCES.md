@@ -59,7 +59,7 @@ never claim the feed-based sweep failed when curl covered it.
   - Horizon3.ai attack research — https://horizon3.ai/attack-research/ **[verified 2026-07-16; HTML → `tvly extract`]** — NodeZero (AI-assisted autonomous pentest) CVE/exploit disclosures, dated; filter the AI-driven items from classic-pentest CVEs.
   - **[candidate]** HiddenLayer research (https://hiddenlayer.com/research/) — real adversarial-ML / AI-threat research but the page skews product; filter hard, HTML→tvly. Zenity (https://zenity.io/blog) — genuine agentic-AI attack research (Copilot/agent exploits) but plain `tvly extract` returns nav-only → use `--extract-depth advanced`. Gray Swan (https://www.grayswan.ai/news) — jailbreak arenas, but `/news` is product-heavy → confirm it carries attack writeups before promoting.
   - (agent: scout Mindgard, Lakera, SplxAI, Pillar Security, Repello, Dreadnode (`/research`, not `/blog`) via source-discovery — verify offensive research vs marketing before adding.)
-- Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence — RSS `/rss` returns only the channel title, no items (JS-filtered blog), so the raw feed alone is `degraded: feed-not-itemized`. HEAL CONFIRMED (2026-07-04): `tvly search "<topic>" --include-domains cloud.google.com --depth advanced` reliably surfaces dated `cloud.google.com/blog/products/identity-security/...` articles, and `tvly extract` on the returned URL yields full body text. **CORRECTION (2026-07-11, W28): this pipeline sat UNUSED for 6 straight daily passes (07-05→07-10) — each just re-logged the old `degraded: feed-not-itemized` label instead of running the confirmed search+extract heal.** Running the raw RSS check and calling it "checked" does NOT satisfy this source's coverage promise — the search+extract pipeline (query terms: "AI agent security", "AI threat detection", rotate) IS the required method every run; only mark `degraded` if THAT pipeline itself returns nothing. Re-run this session (2026-07-11): no on-axis result (all AI-threat-defense/product content).
+- Google Threat Intelligence (GTIG) — https://cloud.google.com/blog/topics/threat-intelligence — **[METHOD REPLACED 2026-10-19, curator: the `tvly search` heal below is SEARCH-ONLY (recency not guaranteed) and missed this blog's own posts; access method is now the index diff `index:https://cloud.google.com/blog/topics/threat-intelligence` — verified 11 article links in the raw HTML; see radar-source-heal → "A search is not a feed"]** RSS `/rss` returns only the channel title, no items (JS-filtered blog), so the raw feed alone is `degraded: feed-not-itemized`. HEAL CONFIRMED (2026-07-04): `tvly search "<topic>" --include-domains cloud.google.com --depth advanced` reliably surfaces dated `cloud.google.com/blog/products/identity-security/...` articles, and `tvly extract` on the returned URL yields full body text. **CORRECTION (2026-07-11, W28): this pipeline sat UNUSED for 6 straight daily passes (07-05→07-10) — each just re-logged the old `degraded: feed-not-itemized` label instead of running the confirmed search+extract heal.** Running the raw RSS check and calling it "checked" does NOT satisfy this source's coverage promise — the search+extract pipeline (query terms: "AI agent security", "AI threat detection", rotate) IS the required method every run; only mark `degraded` if THAT pipeline itself returns nothing. Re-run this session (2026-07-11): no on-axis result (all AI-threat-defense/product content).
 - Protect AI — huntr disclosures **[verified 2026-06-30; PROMOTED candidate→swept 2026-07-11, W28]** (live AI/ML vuln disclosures). Access method: `tvly extract "https://huntr.com/bounties/hacktivity" --extract-depth advanced` (HTML, JS-rendered — plain curl/HTTP 200 also reachable but Tavily renders the itemized list); NO RSS (`https://huntr.com/feed` → 404). PROMOTION EVIDENCE (2026-07-11): the hacktivity page returned three dated, on-axis ML-framework CVEs from the prior week alone — CVE-2026-12481 (Keras Lambda-layer deserialization RCE, 07-03, queued on TRENDS.md), CVE-2026-8147 (MLflow trace-endpoint authz bypass, 07-02), CVE-2026-12252 (nltk incomplete fix, 07-04) — a live, itemized, dated disclosure feed, not stale. Blog feed https://protectai.com/blog/rss.xml remains STALE (latest 2025-08-15) — do not sweep that URL, use the hacktivity page only. DEGRADED-WATCH (2026-07-13): `tvly extract` on the hacktivity page returned only nav chrome + a banner reading **"This page is sunsetting soon"** and an EMPTY itemized list (the JS-rendered bounty list did not render this pass) — first failure since promotion. The "sunsetting" notice suggests the URL/format is changing; if the empty-list result recurs, find the replacement disclosure surface (huntr may be migrating under Palo Alto/Prisma AIRS) before re-logging degraded. **HEALED/DEMOTED 2026-07-16 (Pass 2):** confirmed via `tvly search --include-domains huntr.com` — the migration FAQ + platform pages now state **"Open source vulnerability submissions are currently closed"**; only **Model File Format (MFV)** reports remain open, "Supported by Palo Alto Networks and Prisma AIRS." So the general itemized OSS/AI-ML-framework hacktivity disclosure feed the 07-11 promotion relied on is genuinely SUNSET, not transiently broken — DEMOTE huntr from "swept every run (general disclosures)" to **model-file-format-only** (a niche off-axis surface: model-serialization/deserialization vulns, below the agent/MCP layer 001 tracks). The general ML-framework CVE stream (Keras/MLflow/nltk-class) now falls to the already-swept **NVD + GHSA** advisory lanes — no separate huntr sweep needed for it. Do not re-log huntr "degraded" for the empty OSS list; that list is intentionally closed. Filter unchanged: any MFV item is ML-framework/model-supply-chain (off-axis-adjacent), queue only if a dedicated model-supply-chain-vuln nucleus forms.
 - Meta — Llama / AI security https://ai.meta.com/blog/ **[RESOLVED-OFF-AXIS 2026-07-18, W29 — DROPPED from candidate chase]** — extraction now WORKS (`tvly extract --extract-depth advanced` returns a fully itemized dated post list, unlike the nav-only results of 06-27/07-04/07-11), but every visible post is product/model-launch content (Muse Image/Video, SAM 3.1, TRIBE v2 brain model, Segment Anything) — zero security posts across the listing. Not a broken source, a wrong one: this URL is not where Meta publishes AI-security research (if it exists elsewhere, it is not this blog). Stop chasing; revisit only if a future lane names a specific ai.meta.com/engineering.fb.com security post.
 - NCC Group research blog **[candidate]** — `research.nccgroup.com` returned zero search hits as of 2026-07-11 (W28) — still unresolved; not re-attempted this week (Bishop Fox, its co-listed candidate, healed — see Primary feeds above).
@@ -80,6 +80,43 @@ Method: open each URL directly every run and diff against the last noted revisio
 - OWASP GenAI / LLM Top 10 — https://genai.owasp.org/llm-top-10/ **[verified 2026-06-23; re-checked 2026-07-11]** — still "LLM TOP 10 FOR 2025", no 2026 revision.
 - MITRE ATLAS — https://atlas.mitre.org/ **[verified 2026-06-23; re-checked 2026-07-11]** — matrix page loads; no dated changelog to diff against, eyeball the tactics/techniques list for new entries.
 - NIST AI RMF / adversarial-ML taxonomy **[candidate]**.
+
+## In-the-wild threat-intel & incident disclosures (swept EVERY run — COVERAGE-GAP FIX 2026-10-19, curator-directed)
+
+Why this lane exists: the in-the-wild axis (AI used in real attacks; attacks on deployed AI
+systems) is reported by threat-intel vendors and incident responders, not on arXiv. An
+independent recall audit (2026-10-19) found the month's main in-the-wild AI-offense
+disclosures — an AI-agent mass-exploitation campaign, an autonomous-agent breach of a
+vulnerability-disclosure organization, an active MCP supply-chain campaign, a threat-intel
+trends report — all absent from the ledger while the in-the-wild trend was being demoted as
+"quiet". Filter every item for AI relevance (AI as the attacker's tool, or an AI system as the
+target); skip the rest. Each source is logged opened OR `degraded: <reason>` every run.
+
+Primary (citable evidence) — feed first, then the sitemap/index diff (`radar-lab-sweep` →
+"Off-index publications"):
+- GreyNoise — https://www.greynoise.io/blog/rss.xml **[verified 2026-10-19: 200, 100 items]** · diff: `www.greynoise.io` (include `/blog/`)
+- Pillar Security — no feed **[verified 2026-10-19: `/blog/rss.xml` 404]** · diff: `www.pillar.security` (include `/blog/`) **[verified 2026-10-19: sitemap dated]**
+- DIVD (Dutch Institute for Vulnerability Disclosure) — no feed · diff: `csirt.divd.nl` (cases, CVEs, statements) + `divd.nl` (newsroom) **[verified 2026-10-19: sitemaps dated]**
+- Cisco Talos — https://blog.talosintelligence.com/rss/ **[verified 2026-10-19]**
+- CrowdStrike — https://www.crowdstrike.com/en-us/blog/feed **[verified 2026-10-19]**
+- SentinelLabs — https://www.sentinelone.com/labs/feed/ **[verified 2026-10-19]**
+- Check Point Research — https://research.checkpoint.com/feed/ **[verified 2026-10-19]**
+- ESET WeLiveSecurity — https://feeds.feedburner.com/eset/blog **[verified 2026-10-19]**
+- Kaspersky Securelist — https://securelist.com/feed/ **[verified 2026-10-19]**
+- Huntress — https://www.huntress.com/blog/rss.xml **[verified 2026-10-19]**
+- Wiz Research — https://www.wiz.io/feed/rss.xml **[verified 2026-10-19]**
+- Socket (package supply chain) — https://socket.dev/api/blog/feed.atom **[verified 2026-10-19]**
+- Volexity — https://www.volexity.com/feed/ **[verified 2026-10-19]**
+- (Google Threat Intelligence, Palo Alto Unit 42, Microsoft, Sysdig, Trend Micro stay under
+  "Primary feeds" above — this lane adds the vendors that were missing, it does not move them.)
+
+Security-news pointer outlets (INTAKE ONLY — never evidence; follow every AI-relevant item to
+the vendor / victim / CVE primary and cite that, exactly as for the digest lane):
+- BleepingComputer — https://www.bleepingcomputer.com/feed/ **[verified 2026-10-19]**
+- The Hacker News — https://feeds.feedburner.com/TheHackersNews **[verified 2026-10-19]**
+- SecurityWeek — https://www.securityweek.com/feed/ **[verified 2026-10-19]**
+- The Record — https://therecord.media/feed **[verified 2026-10-19]**
+- Help Net Security — https://www.helpnetsecurity.com/feed/ **[verified 2026-10-19]**
 
 ## Research venues — arXiv & security conferences (primary)
 

@@ -31,6 +31,38 @@ conditional on a genuinely new entry.
 4. Log the sweep in `logs/source_rotation.md` every run, even when nothing is new
    ("lab-sweep: no new posts").
 
+## Off-index publications — the sitemap / index diff (EVERY run, after the feeds)
+
+A feed or index page lists only what the publisher put THERE. Organizations also publish
+on other paths and subdomains (a new research subdomain, top-level report slugs, a section
+the feed does not carry), and some sites expose no usable feed at all — such posts are
+invisible to the feed step no matter how faithfully it runs. So after the feeds, run the
+bundled diff over EVERY host in the primary-source lists, in ONE call:
+
+    python3 .claude/skills/radar-lab-sweep/sitemap_diff.py --write --since <last scan date> <host> [<host> ...]
+
+It reads each host's sitemap (robots.txt `Sitemap:` lines; indexes and .gz followed) and
+prints only the URLs that were NOT in that host's snapshot last run (`state/sitemaps/`,
+grow-only, committed with the run). A `NEW` line is a new page wherever it was published:
+triage it exactly like a feed entry (its own date, relevance; open only on-scope ones).
+`BASELINE` lines appear the first time a host is diffed — not proven new; triage each by
+the post's own date. On a host's FIRST diff pass `--since` 30 days back (not the last scan date): the
+baseline is the one chance to surface recent off-index posts the feed step already missed —
+once a URL is in the snapshot it can never come back as `NEW`. For a site whose sitemap lists only section pages, diff the section's
+index instead: `index:<index url>` (the article links in its raw HTML — most JS-rendered
+blogs still server-render the links). Record the working target next to each source in
+SOURCES.md (`diff: <host>` or `diff: index:<url>`); a host whose sitemap is blocked or empty
+and has no working index target is `degraded: no-diff` → heal it (`radar-source-heal`).
+Log one line in `logs/source_rotation.md`:
+`sitemap-diff: <n> targets, <m> NEW (<k> routed), degraded: <list or none>`.
+
+VENUE MOVES. When ANY lane surfaces a page on a host or path that SOURCES.md does not list,
+but that belongs to an organization already in the primary lists, that is the organization
+publishing somewhere new — not a new source awaiting the weekly's verification. Add the new
+host as a diff target (and its feed, if it has one) of that same source IN THIS RUN, and log
+it. Apply the same test to every entry already sitting in the discovered-candidates list:
+a staged candidate owned by an already-tracked organization is promoted now, not left staged.
+
 ## Source list
 
 The lists live in `SOURCES.md` → "Primary feeds — vendor/lab security blogs &
