@@ -1,10 +1,10 @@
 ---
 name: radar-render-dashboard
 description: |
-  Regenerate README.md, the repo's landing page and only output surface: badges, a 3-4 bullet "since last scan" digest with inline links, a clickable trend table, the study shelf, and an output map. Use after every change to TRENDS.md, in the same commit. README.md is fully derived and never edited by hand: if it disagrees with TRENDS.md, TRENDS.md wins — regenerate.
+  Regenerate README.md, the repo's landing page and only output surface: badges, a 3-4 bullet "since last scan" digest with inline links, a clickable trend table, the study shelf, and an output map. Use after every change to TRENDS.md, in the same commit. README.md is fully derived and never edited by hand: if it disagrees with TRENDS.md, TRENDS.md wins — regenerate. On daily runs it also overwrites SUMMARY.md — the run's results in at most 6 one-line linked bullets, no process detail.
 ---
 
-# Render the dashboard (README.md)
+# Render the dashboard (README.md) and the daily summary (SUMMARY.md)
 
 `README.md` is what GitHub renders on the repo home page — it IS the radar's
 output surface. It is fully derived from `TRENDS.md`; regenerate it from scratch
@@ -63,6 +63,56 @@ on every run, never patch it. Design goal: one screen, everything clickable.
 10. **Output map** — one line of links: TRENDS.md, watchlist (queue count) →
    `TRENDS.md#observation_queue`, `reports/` + newest daily, newest weekly
    ("weekly: none yet" if absent), AGENTS.md, SOURCES.md.
+
+## SUMMARY.md — the daily summary page (daily runs only)
+
+A second derived page, for a reader who wants the run's RESULTS in ten seconds. Write it
+on EVERY daily run, in the same commit as README.md, OVERWRITING the previous version
+(history lives in `reports/`). Weekly runs do not touch it. It states the same facts as
+today's report and README digest — no new claims; every link must already be in TRENDS.md
+or today's report.
+
+Exact shape — nothing above, between or below these lines:
+
+```
+# AI Security Radar — YYYY-MM-DD
+
+- **New trend** · [<trend label>](TRENDS.md#<anchor>) — <what it is>.
+- **Stage** · [<trend label>](TRENDS.md#<anchor>) <old> → <new> — [<source title>](<url>): <what it shows>.
+- **New** · [<source title>](<url>) — <what it shows> (→ [<trend label>](TRENDS.md#<anchor>)).
+- **Study pick** · [<source title>](<url>) — <why it is worth reading>.
+
+[Full report](reports/YYYY-MM-DD.md) · [Dashboard](README.md)
+```
+
+Rules:
+- At most 6 bullets, most significant first. Only the four kinds above; any may be absent,
+  any may repeat. One line each; the text after the dash is ≤ 15 words (the `(→ trend)`
+  link not counted).
+- RESULTS ONLY — what was found, never how it was found or what the radar did with it.
+  Nothing about the radar's own machinery: no sweeps, lanes, passes, sources checked or
+  degraded, heals, queue/watchlist counts or moves, cap swaps, capture-leak, diffs,
+  convergence flags, "Nth independent group" counts, unchanged repos, amendments, dormancy
+  rescues, backfills, next steps.
+- Verified results only: new trends, stage moves, new evidence, study picks. Unverified queue
+  signals are not results — leave them out. Do not list the same item twice (a study pick
+  already listed as **New** is not repeated).
+- No narrative: no evaluative adjectives (striking, genuine, major, finally, notable, real),
+  no scene-setting, no "a sign that…" interpretation. State the fact. A result that is a
+  claim not yet vetted keeps a one-word tag at the end: `(claim)` or `(preprint)`.
+- Trends by their README short label (never a bare id or number); sources by their own
+  title, cut at its colon when the title is long.
+- A run with no ledger change writes exactly one bullet: `- Nothing new in this run.`
+
+Check before commit (a hit is allowed only inside a source's own title or a trend label):
+
+```bash
+test "$(grep -c '^- ' SUMMARY.md)" -le 6 || echo "TOO MANY BULLETS"
+grep '^- ' SUMMARY.md | grep -v '](' | grep -v 'Nothing new in this run' && echo "BULLET WITHOUT LINK"
+grep -q "^# .* — $(date +%F)$" SUMMARY.md || echo "WRONG DATE"
+grep -niwE 'sweeps?|swept|lanes?|pass(es)?|queued?|watchlist|cap-swaps?|capture-leak|degraded|heal(ed)?|sitemap|diff|coverage|convergence|repo-watch|amendments?|dormancy|backfill|triage|flagged' SUMMARY.md && echo "PROCESS WORDS — rewrite"
+grep -niE '[0-9]+(st|nd|rd|th) (independent )?(group|org|organi[sz]ation)' SUMMARY.md && echo "INTERNAL COUNT — drop it"
+```
 
 ## Anchor rule (GitHub heading slugs)
 

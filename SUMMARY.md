@@ -1,0 +1,7 @@
+# AI Security Radar — 2026-10-22
+
+- **Stage** · [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) emerging → accelerating — [Next Exploit Opportunities](https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/): a threat actor used jailbroken LLMs as advisors for telecom fraud, exfiltration and WordPress attacks.
+- **New** · [Black-Box Red-Teaming of Multi-Agent Systems via RL](https://arxiv.org/abs/2610.28966) — attack policies learned by reinforcement learning against black-box multi-agent systems (→ [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge)).
+- **Study pick** · [Compaction Laundering](https://arxiv.org/abs/2610.29869) — context compaction lets untrusted content re-enter a coding agent as trusted.
+
+[Full report](reports/2026-10-22.md) · [Dashboard](README.md)

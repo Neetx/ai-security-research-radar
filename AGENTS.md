@@ -39,6 +39,7 @@ published history, never force-push.
 | `state/sitemaps/` | Machine snapshots for the sitemap/index diff: the set of page URLs seen per source host | written only by `sitemap_diff.py --write`; grow-only; never edited by hand, never read as part of a run |
 | `logs/calibration.md` | Append-only weekly self-evaluation log | append-only; written by weekly runs only |
 | `README.md` | THE output surface (repo landing page): badges, digest, clickable trend table, study shelf | fully derived — regenerate via the `radar-render-dashboard` skill; never edit by hand |
+| `SUMMARY.md` | Daily summary page: the latest daily run's results in ≤ 6 one-line linked bullets — results only, no process detail | fully derived — overwritten by every daily run via `radar-render-dashboard` → *SUMMARY.md*; never edited by hand |
 | `SOURCES.md` | Agent-owned registry: primary feeds, watched tool repos, social channels, discovery venues | maintained by the radar itself |
 | `ARCHIVE.md` | Archived trends, one-line post-mortems | append-only |
 | `reports/YYYY-MM-DD.md` | Daily reports | write once, never edit old ones |
