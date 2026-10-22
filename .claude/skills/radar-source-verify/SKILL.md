@@ -1,7 +1,7 @@
 ---
 name: radar-source-verify
 description: |
-  Verify a signal or evidence candidate for the AI Radar ledger: open primary sources, pin exact dates and authors, check source independence, and classify the result as citable evidence or an unverified observation_queue item. Use whenever adding evidence to TRENDS.md, promoting a queue item, or fact-checking a claim found in search results.
+  Verify a signal or evidence candidate for the AI Security Radar ledger: open primary sources, pin exact dates and authors, check source independence, and classify the result as citable evidence or an unverified observation_queue item. Use whenever adding evidence to TRENDS.md, promoting a queue item, or fact-checking a claim found in search results.
 ---
 
 # Verify a source for the ledger

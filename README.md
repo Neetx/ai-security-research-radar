@@ -1,4 +1,4 @@
-# AI Radar
+# AI Security Radar
 
 ![trends](https://img.shields.io/badge/trends-17-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--22-2f9e44?style=flat-square)
 

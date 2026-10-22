@@ -12,7 +12,7 @@ on every run, never patch it. Design goal: one screen, everything clickable.
 
 ## Layout (exactly these blocks, in this order)
 
-1. **Title** — `# AI Radar`.
+1. **Title** — `# AI Security Radar` (this radar's own name — never another radar's).
 2. **Badge row** — four shields.io static badges, style `flat-square`:
    `trends-<total>-3266ad`, `accelerating-<n>-e8590c`,
    `watchlist-<queue count>-6c757d`, `updated-<YYYY--MM--DD>-2f9e44`
