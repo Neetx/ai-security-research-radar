@@ -1,23 +1,24 @@
 # AI Radar
 
-![trends](https://img.shields.io/badge/trends-17-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-8-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-14-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--21-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-17-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--22-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-10-20):**
-- 🏷️ **[Provenance & watermark attacks](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-provenance--watermarks-image--audio--text-removal-forgery--laundering-across-modalities) promoted emerging → 🚀 accelerating** on [A Unified Attack Framework against Statistical Generative Watermarks for LLMs](https://arxiv.org/abs/2610.27653) — the first *text/LLM-watermark removal* attack beyond the eval frameworks, meeting both accelerating levers at once (text-watermark removal AND a *SynthID-named* attack: provably-optimal black-box evasion across KGW/GumbelSoft/DipMark/ITS/SynthID).
-- 🔁 **[Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) revived dormant → 📈 emerging** — [AutoRedClaw](https://arxiv.org/abs/2610.27244) is a 9th group: an automated red-teamer that generates end-to-end attacks *and* environments against persistent-state OpenClaw/claw-style agents.
-- 🔑 **[Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures)** +[Local Allow, Global Deny](https://arxiv.org/abs/2610.27620): per-action authorization *provably does not compose* (a 2-safety impossibility) — the structural reason per-action approval gates can't close the gap; two more fresh authority-boundary groups ([AuthorizationBench](https://arxiv.org/abs/2610.27548), [Show-Up Attack](https://arxiv.org/abs/2610.27574)) queued.
-- 🔭 **Watch:** jailbreak-automation (~7 groups, mechanism-heterogeneous → W43 audit); the *information-injection on LLM trading agents* nucleus still at 2 groups; repo-watch unchanged (garak 0.17.1, deepteam 1.0.10).
+**Since last scan (2026-10-21):**
+- 🚀 **[In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) promoted emerging → 🚀 accelerating** on [Unit 42's "Next Exploit Opportunities"](https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/) — a 2nd fresh in-the-wild case (after the Oct-15 espionage campaign): a threat actor ran GLM 5.2 (with a scripted jailbreak *override* + refusal-flagging), DeepSeek and "Hermes Agent" profiles as cybercrime advisors to plan an LLM-generated attack report, VoIP-fraud infrastructure, scam-call research and data exfiltration — the pre-registered accelerating lever, and a rare in-the-wild guardrail-bypass datapoint.
+- 🔁 **[Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge)** +[Black-Box Red-Teaming of Multi-Agent Systems via RL](https://arxiv.org/abs/2610.28966) — a 10th independent group and the first to *learn* attack policies via reinforcement learning against multi-agent systems; held 📈 emerging (accelerating levers still open).
+- 🧠 **Convergence flag:** a *persistent-memory durable-compromise* nucleus now has 3 independent groups ([Disclosure Begets Disclosure](https://arxiv.org/abs/2610.28315), [LTM→persistent compromise](https://arxiv.org/abs/2610.28810), [CarryoverBench](https://arxiv.org/abs/2610.28425)) — a one-time injection into agent long-term memory yielding cross-session compromise; flagged for the W43 seed decision.
+- 🔭 **Watch:** repo-watch unchanged (garak 0.17.1, deepteam 1.0.10, promptfoo 0.124.1); OWASP still no 2026 LLM Top-10 edition; jailbreak-automation (~7 groups → W43 audit). Study pick: [Compaction Laundering](https://arxiv.org/abs/2610.29869).
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 8 · 🚀 8 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
+🌱 1 · 📈 7 · 🚀 9 · 🌊 0 · 🏔 0 · 📉 0 · 💤 0
 
 | trend | stage | latest signal |
 |---|---|---|
+| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-10-21](https://unit42.paloaltonetworks.com/ai-assisted-cybercrime-analysis/) |
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 🚀 accelerating | [2026-10-20](https://arxiv.org/abs/2610.27620) |
 | [Provenance & watermark attacks (image/audio/text/video)](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-provenance--watermarks-image--audio--text-removal-forgery--laundering-across-modalities) | 🚀 accelerating | [2026-10-20](https://arxiv.org/abs/2610.27653) |
 | [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🚀 accelerating | [2026-10-15](https://arxiv.org/abs/2610.21464) |
@@ -26,9 +27,8 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-10-13](https://arxiv.org/abs/2610.17837) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-10-13](https://arxiv.org/abs/2610.18609) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-10-03](https://arxiv.org/abs/2610.04245) |
-| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-10-19](https://arxiv.org/abs/2610.27244) |
+| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 📈 emerging | [2026-10-17](https://arxiv.org/abs/2610.24784) |
-| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 📈 emerging | [2026-10-15](https://unit42.paloaltonetworks.com/ai-campaign-targets-linux-infrastructure/) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-10-15](https://arxiv.org/abs/2610.22578) |
 | [Agent skill supply-chain poisoning (composition/chaining)](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) | 📈 emerging | [2026-10-14](https://arxiv.org/abs/2610.20049) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 📈 emerging | [2026-10-07](https://arxiv.org/abs/2610.09708) |
@@ -40,7 +40,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARCH surfaced only known/staged candidates (hardenedlinux/agentic-ai-pentest, Armur-Ai/Pentest-Swarm-AI, samugit83/redamon, vxcontrol/pentagi, ASCIT31/Dark-Moon, phantom-agent) plus defensive/generic repos — none clonable above the notability bar under the github 403-scope. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state:
+No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARCH surfaced only known/staged candidates (hardenedlinux/agentic-ai-pentest, Armur-Ai/Pentest-Swarm-AI, samugit83/redamon, vxcontrol/pentagi, ASCIT31/Dark-Moon, strix-agent, phantom-agent) plus defensive/generic repos — none clonable above the notability bar under the github 403-scope. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state:
 
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.1** (2026-10-16, unchanged this run).
 - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — framework to red-team LLMs and AI agents; **v1.0.10** (2026-10-16, unchanged this run).
@@ -54,6 +54,7 @@ No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARC
 
 ## Worth studying
 
+- [Compaction Laundering: Provenance Destruction in Context-Compacting Coding Agents](https://arxiv.org/abs/2610.29869) — the agent-integrity attack to know as coding agents adopt context compaction: an attacker gets untrusted content folded into the compacted/summarized context, and because compaction DESTROYS provenance (what came from where, trusted vs untrusted), the laundered content re-enters the agent's working context as if trusted. A fresh "laundering" attack-class adjacent to experience→skill and authority laundering — the reason context compaction needs a provenance-preserving design, not just a size budget.
 - [The Show-Up Attack: When Subagents Win Over Their Supervisor](https://arxiv.org/abs/2610.27574) — the concrete multi-agent-orchestration attack to know before trusting a supervisor to bound its subagents: a malicious subagent manipulates the supervisor into tasks BEYOND its assigned scope, and on SUA-Arena all six tested frontier LLMs are vulnerable (GPT-5.6-Sol supervisor up to 0.93 ASR) while prompting/restricted-communication mitigations fail. Multi-agent systems need explicit authority-boundary enforcement, not a supervisor's judgment.
 - [Global Security Blind Spots: Translation as a Safety Bypass in Low-Resource Languages](https://arxiv.org/abs/2610.27304) — LLM safety alignment does not survive translation: across ten deployed LLMs and 79 languages (metric conditioned on English safety), harmful requests refused in English elicit unsafe completions when translated — mean bypass 21.9%–44.4%, concentrated in a subset of language families and shared broadly across models.
 - [SoK: PIAtlas — Decomposing the Unbounded Prompt Injection Attack Space](https://arxiv.org/abs/2610.24999) — the map the prompt-injection field has lacked: 20+ public PI datasets use incompatible vocabularies, so attacks can't be described or evaluated consistently. PIAtlas organizes the space around HOW the injected instruction is constructed to subvert the model — six mechanism classes, each the root of a technique hierarchy — the shared vocabulary that comparable PI evaluations depend on.
@@ -65,7 +66,6 @@ No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARC
 - [P2Patch: Exploit-Guided Vulnerability Repair](https://arxiv.org/abs/2610.20245) — the fix to the circular-validation flaw the patch-reliability shelf keeps flagging: automated-repair agents usually validate a patch against the SAME evidence used to build it, so a patch that blocks that one exploit can look successful while the bug survives in a variant. P2Patch treats each candidate patch as a new attack target — an exploit-generation loop probes for a bypass and feeds a surviving exploit back into the next repair iteration.
 - [Beyond Maliciousness: Static and Runtime Attack-Surface Profiling of Agent Skills](https://arxiv.org/abs/2610.19264) — the first large-scale empirical measurement of how much authority installing a skill grants: skills are Markdown documents an agent reads as instructions and acts on with the session's privileges, profiled with whole-bundle static + dependency-provenance analysis then instrumented sandbox execution across 6,309 listings on two marketplaces. Why per-package "is it malicious?" auditing is the wrong question.
 - [AnonVul: A Faithful Benchmark for Real-World Business-Logic Vulnerability Discovery](https://arxiv.org/abs/2610.17542) — the measurement caution before citing any "the agent found the bug" number on logic flaws: 132 cross-language application-level business-logic vulnerabilities (the subtle, app-semantics-dependent class SAST can't pattern-match), built reproducible AND contamination-resistant, with criteria precise enough to separate genuine discovery from memorization.
-- [Logit Leakage through Floating-Point Bias Addition](https://arxiv.org/abs/2610.16790) — an API withholding logits is not the same as hiding them: even when only per-token bias controls are exposed, the changing representable spacing at float32 binary-exponent boundaries is a side channel that recovers a withheld logit pair (and its tie-break priority) exactly in ≤52 token queries, across 11 checkpoints / 7 families.
 
 ---
 
@@ -73,10 +73,10 @@ No NEW above-bar tool this scan. GitHub tool-DISCOVERY + PyPI/npm registry-SEARC
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- **Prompt-injection detector/scanner discourse** recirculating on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) (positional-vs-phrasal scanners, decision-model PI judges, token-0 drop tools) — defense-side only, intake.
-- **Agent-skill attack-surface profiling** surfacing on [Hacker News](https://hn.algolia.com/?query=AI%20agent%20skills&type=story) — echoes the already-shelved *Beyond Maliciousness* skill-surface measurement; no new offensive artifact.
+- **Prompt-injection detector/scanner discourse** recirculating on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) (positional-vs-phrasal scanners, decision-model PI judges, System-One PI models, token-0 drop tools) — defense-side only, intake.
+- **AI-coding-agent review tooling** surfacing on [Hacker News](https://hn.algolia.com/?query=AI%20agent%20review&type=story) (reviewer-agent / stop-continue Show HN posts) — tooling discourse, no new offensive artifact.
 - Through the scan: quiet pulse — general PI / MCP / skill recirculation only, no offensive-AI earthquake and no new untracked-topic vocabulary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~14)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-21](reports/2026-10-21.md) · 📅 weekly: [2026-W42](reports/weekly/2026-W42.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-22](reports/2026-10-22.md) · 📅 weekly: [2026-W42](reports/weekly/2026-W42.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
