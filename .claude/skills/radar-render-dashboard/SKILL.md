@@ -81,8 +81,6 @@ Exact shape — nothing above, between or below these lines:
 - **Stage** · [<trend label>](TRENDS.md#<anchor>) <old> → <new> — [<source title>](<url>): <what it shows>.
 - **New** · [<source title>](<url>) — <what it shows> (→ [<trend label>](TRENDS.md#<anchor>)).
 - **Study pick** · [<source title>](<url>) — <why it is worth reading>.
-
-[Full report](reports/YYYY-MM-DD.md) · [Dashboard](README.md)
 ```
 
 Rules:
