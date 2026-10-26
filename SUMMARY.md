@@ -1,6 +1,5 @@
-# AI Security Radar — 2026-10-23
+# AI Security Radar — 2026-10-26
 
-- **New** · [CrowdStrike: New Agentic AI Campaigns](https://www.crowdstrike.com/en-us/blog/crowdstrike-uncovers-new-agentic-ai-campaigns/) — threat actors ran agentic-AI attack campaigns, one a PentestGPT-derived autonomous pentest harness (→ [In-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
-- **New** · [Amplifying Latency and Cost of LLM Inference via Rowhammer Attack](https://arxiv.org/abs/2610.30798) — a bit-flip slows LLM inference while keeping outputs correct (→ [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness)). (preprint)
-- **Study pick** · [Data-Void Exploits in Web-Searching LLMs](https://arxiv.org/abs/2610.30365) — disinformers seed sparse search spaces so web-search LLMs cite them.
-- **Study pick** · [Beyond End-to-End Recovery: LLM Steganography via Rolewise Decomposition](https://arxiv.org/abs/2610.30516) — end-to-end recovery undercounts LLM covert-channel capacity.
+- **New** · [PHP2Shell: AI uncovers critical RCE](https://www.wiz.io/blog/php2shell-php-rce) — AI-found core-PHP-engine RCE affecting ~70% of the web (→ [LLM/agentic vuln discovery](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code)).
+- **Study pick** · [On Task, Off Track (NTBench)](https://arxiv.org/abs/2610.32531) — near-target prompt injection that keeps answers plausible but wrong.
+- **Study pick** · [Ulysses](https://arxiv.org/abs/2610.31831) — multi-agent harness that synthesizes verifiable web exploits as Proofs of Exploitability.
