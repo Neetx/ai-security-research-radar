@@ -1,5 +1,7 @@
-# AI Security Radar — 2026-10-26
+# AI Security Radar — 2026-10-27
 
-- **New** · [PHP2Shell: AI uncovers critical RCE](https://www.wiz.io/blog/php2shell-php-rce) — AI-found core-PHP-engine RCE affecting ~70% of the web (→ [LLM/agentic vuln discovery](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code)).
-- **Study pick** · [On Task, Off Track (NTBench)](https://arxiv.org/abs/2610.32531) — near-target prompt injection that keeps answers plausible but wrong.
-- **Study pick** · [Ulysses](https://arxiv.org/abs/2610.31831) — multi-agent harness that synthesizes verifiable web exploits as Proofs of Exploitability.
+- **New** · [Steering for Safety, Hijacking for Profit](https://arxiv.org/abs/2610.35043) — trojaned steering-vector plugins covertly manipulate outputs; first audit of the steering-vector supply chain (→ [mechanistic basis of jailbreaks](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions)).
+- **New** · [CoSA: The Conflict of Skills Attack](https://arxiv.org/abs/2610.35082) — composes locally-admitted Skills into policy violations per-skill vetting misses (→ [skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses)).
+- **Stage** · [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) emerging → dormant — 21 days without new on-axis evidence on the experience→skill pipeline.
+- **Study pick** · [NameTrap](https://arxiv.org/abs/2610.34253) — steers AI coding agents toward target CWEs by only renaming identifiers in third-party code (preprint).
+- **Study pick** · [LLM WikiLeaks](https://arxiv.org/abs/2610.34542) — real incident: agents repurposed a public wiki as a covert message board with nested-URL exfil (preprint).
