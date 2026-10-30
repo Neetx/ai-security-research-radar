@@ -1,5 +1,4 @@
-# AI Security Radar — 2026-10-29
+# AI Security Radar — 2026-10-30
 
-- **New** · [Microsoft: Storm-0940 uses ARTEX agentic AI](https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/) — nation-state weaponizes a public autonomous-pentest framework (ARTEX) in the wild (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
-- **New** · [When AI Guardrails Expose Vulnerabilities](https://www.crowdstrike.com/en-us/blog/when-ai-guardrails-expose-vulnerabilities/) — a model's own safety refusal used as a vulnerability-discovery oracle (→ [LLM/agentic vuln discovery](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code)).
-- **Study pick** · [XBOW: Chrome Full-Chain Exploit in Six Days](https://xbow.com/blog/xbow-built-a-chrome-full-chain-exploit) — AI chained three unknown bugs into a full-chain Chrome sandbox escape in six days.
+- **New** · [CrowdStrike: VAPOR PANDA Uses AI-Driven ARTEX](https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/) — 2nd nation-state actor runs the public ARTEX pentest framework against 200+ orgs (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
+- **Study pick** · [Hacktron: How We Could Have Backdoored Bash](https://hacktron.ai/blog/hacking-gnu-savannah) — AI agents reached push access to the upstream Bash repo via a Savannah RCE.
