@@ -1,19 +1,19 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-10-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--30-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-11-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-11-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--10--31-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-10-29):**
-- 🚀 **New evidence — [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2):** [CrowdStrike: VAPOR PANDA Uses AI-Driven ARTEX](https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/) — a **2nd** China-nexus nation-state actor (CrowdStrike states it is **separate from Storm-0940**) weaponizing the same **public autonomous-pentest framework ARTEX** against **200+ orgs in ≥14 countries over 11 days**, mainly DeepSeek-driven (~1.4B input tokens/intrusion), BLOODALCHEMY backdoor + full post-exploitation at nine orgs — a second independent actor adopting the same public tool.
-- 🔭 **Study pick:** [Hacktron: How We Could Have Backdoored Bash](https://hacktron.ai/blog/hacking-gnu-savannah) — Hacktron's AI agents found a shell-injection RCE on GNU Savannah (the FSF forge hosting GNU), escalated to root and reached **push access to the upstream Bash repo**, then helped the FSF fix 26 forge vulns — AI reaching a supply-chain chokepoint, humans directing + responsible disclosure.
-- 📝 **Queued (below bar) — [agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain):** [CrowdStrike: New Prompt Injection Techniques Cover Agent-Planning Attacks](https://www.crowdstrike.com/en-us/blog/new-prompt-injection-techniques-cover-agent-planning-attacks/) — PI aimed at the agent's **planning** stage ("secure the plan, not just the prompt"); taxonomy-only (now 222 techniques), no demonstrated results yet.
+**Since last scan (2026-10-31, weekly W44):**
+- 🚀 **Stage move — [agent skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) emerging → accelerating:** 9 pairwise-independent author groups over four weeks with a dense near-weekly cadence, most recently [CoSA: the Conflict of Skills Attack](https://arxiv.org/abs/2610.35082) — breadth that reads as accelerating velocity; confidence held medium pending a first in-the-wild poisoned-skill-marketplace case.
+- 🧭 **Held (not seeded) — the AI-phishing nucleus:** author-disjoint but split across two theses — [PhishGen](https://arxiv.org/abs/2610.30226) (LLMs *generating* phishing sites) vs [AgentPhishing](https://arxiv.org/abs/2610.31404) + [SSE](https://arxiv.org/abs/2610.33411) (phishing *targeting* agents, adjacent to the [agent-stack](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) / [authorization-integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) trends) — so ≥3 groups on one coherent axis is unmet.
+- 🌐 **Source registry:** promoted [prompt.security/blog](https://www.prompt.security/blog) into the swept Primary feeds (≥3 first-party agent-attack research posts verified); the Aviatrix threat-research-center was rejected as an aggregator.
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 4 · 🚀 10 · 🌊 0 · 🏔 0 · 📉 0 · 💤 3
+🌱 1 · 📈 3 · 🚀 11 · 🌊 0 · 🏔 0 · 📉 0 · 💤 3
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -21,13 +21,13 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-10-28](https://www.crowdstrike.com/en-us/blog/when-ai-guardrails-expose-vulnerabilities/) |
 | [Attacks on LLM-agent stack: MCP, memory, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-10-27](https://aviatrix.ai/threat-research-center/in-the-wild-attack-ai-agents-trust-markdown) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-10-26](https://arxiv.org/abs/2610.35043) |
+| [Agent skill supply-chain poisoning (composition/chaining)](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) | 🚀 accelerating | [2026-10-26](https://arxiv.org/abs/2610.35082) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 🚀 accelerating | [2026-10-22](https://arxiv.org/abs/2610.30798) |
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 🚀 accelerating | [2026-10-20](https://arxiv.org/abs/2610.27620) |
 | [Provenance & watermark attacks (image/audio/video/text)](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-provenance--watermarks-image--audio--video--text-removal-forgery--laundering-across-modalities) | 🚀 accelerating | [2026-10-20](https://arxiv.org/abs/2610.27653) |
 | [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🚀 accelerating | [2026-10-15](https://arxiv.org/abs/2610.21464) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-10-14](https://arxiv.org/abs/2610.20941) |
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-10-13](https://arxiv.org/abs/2610.18609) |
-| [Agent skill supply-chain poisoning (composition/chaining)](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) | 📈 emerging | [2026-10-26](https://arxiv.org/abs/2610.35082) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-10-24](https://arxiv.org/abs/2610.33671) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-10-15](https://arxiv.org/abs/2610.22578) |
@@ -40,7 +40,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-No new above-bar **verified** tool this cycle. Tool-DISCOVERY (WebSearch under a tvly plan-cap) staged four new unverified offensive MCP/agent red-team candidates for weekly verification — [thinkTanck/mcproof](https://github.com/thinkTanck/mcproof) (MCP-agent red-team vs the OWASP Top-10 for Agentic Applications 2026, per-model robustness leaderboard; ex-MCPwn), [pvcomms/mcp-red-team](https://github.com/pvcomms/mcp-red-team) (canary command-injection / path-traversal / typosquat / PI scanner for MCP servers), `bappisinsane/mcp-redteamer` (local-LLM indirect-PI + parameter-manipulation in Docker) and `KeyValueSoftwareSystems/agent-opfor` (adversary emulation for agents + MCP) — joining last run's `renfield`, PyPI `offensive-ai` v3.0.0 and `agentsploit` v1.7.0; none clonable above the notability bar / stars-unverifiable under the github 403-scope. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state (all unchanged this run):
+No new above-bar **verified** tool this weekly. The source-discovery drain promoted a research feed (prompt.security/blog), not a tool; the carried offensive MCP/agent red-team candidates stay unverified under the github 403-scope (stars/activity not confirmable) — [thinkTanck/mcproof](https://github.com/thinkTanck/mcproof) (MCP-agent red-team vs the OWASP Top-10 for Agentic Applications 2026; ex-MCPwn), [pvcomms/mcp-red-team](https://github.com/pvcomms/mcp-red-team) (canary command-injection / path-traversal / typosquat / PI scanner), `bappisinsane/mcp-redteamer`, `KeyValueSoftwareSystems/agent-opfor`, `renfield`, PyPI `offensive-ai` v3.0.0 and `agentsploit` v1.7.0 — none clonable above the notability bar. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state (all unchanged):
 
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.125.1** (npm).
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.1**.
@@ -73,9 +73,9 @@ No new above-bar **verified** tool this cycle. Tool-DISCOVERY (WebSearch under a
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
 - **In-the-wild agentic-offense** across [security-news pointers](https://thehackernews.com/) — the ARTEX autonomous-pentest campaigns (now a 2nd nation-state actor, VAPOR PANDA, separate from Storm-0940) continue to dominate the in-the-wild AI-offense cycle; followed to the vendor primaries and cited on the in-the-wild trend.
-- **AI-agent PI discourse** on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) — low-signal items (stored prompt injection through an API gateway; a defense-contractor giving an AI agent access to a Pentagon system; a "prompt-injection techniques every red teamer should test" listicle); no new offensive artifact, no new attack-class vocabulary.
+- **AI-agent PI discourse** on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) — low-signal items (stored prompt injection through an API gateway; detection-language for AI-agent attacks); no new offensive artifact, no new attack-class vocabulary.
 - Quiet pulse otherwise — no offensive-AI earthquake in the last few days.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-30](reports/2026-10-30.md) · 📅 weekly: [2026-W43](reports/weekly/2026-W43.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~11)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-10-30](reports/2026-10-30.md) · 📅 weekly: [2026-W44](reports/weekly/2026-W44.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
