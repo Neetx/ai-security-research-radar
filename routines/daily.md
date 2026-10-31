@@ -45,6 +45,18 @@ today's `logs/source_rotation.md` line as opened OR `degraded: <reason>`. Listin
 convenient subset and silently dropping the rest is a coverage lie. A feed-less source
 gets a healed access method recorded (`radar-source-heal`), never dropped. The
 intake-vs-evidence distinction governs what you DO with a hit, not whether you CHECK it.
+ENUMERATE, do not roll up (APPLIED 2026-10-31, W44 — was the W43 proposal, cooling held,
+signal persisted three weeks running on QUIET/DEDICATED swept lanes: W42 under-logged
+OpenAI/MSRC, W43 the in-the-wild TI lane + DEF CON AI Village + tldrsec/Simon Willison,
+W44 still tldrsec/Simon Willison named only 1 of 5 days AND Pillar Security + DIVD named
+on 0 of 5 days — a repeat of W43's EXACT miss). The lanes that go quiet must be named
+SOURCE-BY-SOURCE every run, never folded into a roll-up or a bare "swept the lane":
+specifically EACH in-the-wild threat-intel source (GreyNoise, Pillar, DIVD, Talos,
+CrowdStrike, SentinelLabs, Check Point, ESET, Securelist, Huntress, Wiz, Socket,
+Volexity + the 5 news pointers), DEF CON AI Village, and the curated digests (tldrsec,
+Simon Willison, Kai Greshake) appears on its own as opened / `degraded:` / `off-season`
+— including the quiet ones that yield nothing, since a quiet source that yields nothing
+is exactly the one a roll-up silently drops.
 
 - **Primary-feed sweep (MANDATORY every run)** — `radar-lab-sweep`: iterate the full
   `SOURCES.md → "Primary feeds"` + `"Research venues"` lists; fetch each, open posts/
