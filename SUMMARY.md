@@ -1,4 +1,5 @@
-# AI Security Radar — 2026-10-30
+# AI Security Radar — 2026-11-02
 
-- **New** · [CrowdStrike: VAPOR PANDA Uses AI-Driven ARTEX](https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/) — 2nd nation-state actor runs the public ARTEX pentest framework against 200+ orgs (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
-- **Study pick** · [Hacktron: How We Could Have Backdoored Bash](https://hacktron.ai/blog/hacking-gnu-savannah) — AI agents reached push access to the upstream Bash repo via a Savannah RCE.
+- **New** · [Wiz — "Black October" for AI Developer Platforms](https://www.wiz.io/blog/black-october-for-ai-developer-platforms) — ≥9 AI dev platforms breached in October via agent-swarm attacks → LLMjacking at scale (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
+- **New** · [Wiz — The Rise of Agentic Attacks](https://www.wiz.io/blog/the-rise-of-agentic-attacks) — names Hermes as a 2nd in-the-wild agentic framework beyond ARTEX (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
+- **Study pick** · [Check Point — ChatGPT cross-account hidden channel](https://blog.checkpoint.com/research/chatgpt-let-attackers-read-victims-gmail-through-a-hidden-channel-between-accounts) — covert channel between two accounts' ChatGPT containers read a victim's Gmail.
