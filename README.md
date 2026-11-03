@@ -1,13 +1,13 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-11-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-12-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--02-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-11-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-13-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--03-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-02):**
-- 🚀 **New in-the-wild evidence — [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2):** Wiz's ["Black October" for AI Developer Platforms](https://www.wiz.io/blog/black-october-for-ai-developer-platforms) documents ≥9 AI dev platforms breached across October (Fireworks, Lightning, Railway, Warp, Zeabur [shut down]…) via "agent swarm" attacks hunting stored AI credentials → LLMjacking-at-scale + model distillation — a new mass in-the-wild facet distinct from the ARTEX/Hermes nation-state cluster.
-- 🔎 **Corroboration:** Wiz's [The Rise of Agentic Attacks: From ARTEX to Hermes](https://www.wiz.io/blog/the-rise-of-agentic-attacks) names Hermes as a 2nd in-the-wild agentic framework beyond ARTEX; Anthropic's monthly misuse-report cadence has still not resumed (latest "September 2026").
-- 📚 **Study pick:** [Check Point — ChatGPT cross-account hidden channel](https://blog.checkpoint.com/research/chatgpt-let-attackers-read-victims-gmail-through-a-hidden-channel-between-accounts) — a covert two-way channel between two accounts' ChatGPT code-execution containers (via a shared internal Artifactory) let a crafted instruction read a victim's connected Gmail; OpenAI decommissioned the service.
+**Since last scan (2026-11-03):**
+- 🚀 **New in-the-wild evidence — [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2):** Kaspersky Securelist's ["CyberStrikeAI in the wild"](https://securelist.com/cyberstrikeai-attacks/121715/) documents an open-source **LLM-orchestrated C2 framework** used in a real campaign — the LLM runs on the C2 server and plans/selects-tools/generates commands via MCP while an AI-free implant executes — carrying an intrusion from recon to full domain compromise against education-sector orgs in Africa/Latin America ("one of the first public descriptions of a compromise involving an LLM in the wild"). A new facet distinct from the ARTEX nation-state cluster and the Black-October LLMjacking facet, and a tool↔in-the-wild convergence (CyberStrikeAI = the staged [CyberStrike](https://github.com/CyberStrikeus/CyberStrike) tool).
+- 🔎 **Corroboration (queued):** Wiz's [From Phishing to LLMjacking](https://www.wiz.io/blog/from-phishing-to-llmjacking) (phishing→fake-GCP-login→cloud-billing-account LLMjacking) extends the Black-October LLMjacking facet; Anthropic's monthly misuse-report cadence is still paused (latest "September 2026").
+- ⏸ **Dormancy held — [adversarial trigger & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types):** the 21-day dormancy probe was inconclusive (arXiv API/search both down this run, so the window could not be measured) — held accelerating, re-probe next run; [EvolvAttack](https://arxiv.org/abs/2610.15244) (self-evolving VLM-agent backdoor) queued.
 
 ---
 
@@ -17,7 +17,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 | trend | stage | latest signal |
 |---|---|---|
-| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-10-30](https://www.wiz.io/blog/black-october-for-ai-developer-platforms) |
+| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-11-02](https://securelist.com/cyberstrikeai-attacks/121715/) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-10-28](https://www.crowdstrike.com/en-us/blog/when-ai-guardrails-expose-vulnerabilities/) |
 | [Attacks on LLM-agent stack: MCP, memory, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-10-27](https://aviatrix.ai/threat-research-center/in-the-wild-attack-ai-agents-trust-markdown) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-10-26](https://arxiv.org/abs/2610.35043) |
@@ -40,7 +40,9 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-No new above-bar **verified** tool this scan. The tool-discovery lane (AI-malware-generation + deepfake/voice-clone offense topics) surfaced only topic pages, reference lists and known/staged repos; the carried offensive MCP/agent red-team candidates stay unverified under the github 403-scope — [thinkTanck/mcproof](https://github.com/thinkTanck/mcproof) (MCP-agent red-team vs the OWASP Top-10 for Agentic Applications 2026; ex-MCPwn), [pvcomms/mcp-red-team](https://github.com/pvcomms/mcp-red-team) (canary command-injection / path-traversal / typosquat / PI scanner), `bappisinsane/mcp-redteamer`, `KeyValueSoftwareSystems/agent-opfor`, `renfield`, PyPI `offensive-ai` v3.0.0 and `agentsploit` v1.7.0 — none clonable above the notability bar. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state (all unchanged):
+- [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — open-source (AGPL-3.0) AI-augmented autonomous-pentest / LLM-orchestrated-C2 framework (Go, 176 MCP tools, OWASP-WSTG + MITRE ATT&CK-aligned); **documented in-the-wild this scan** by Kaspersky as "CyberStrikeAI" in a real education-sector campaign (→ in-the-wild AI-for-offense evidence).
+
+No other new above-bar **verified** tool this scan. The tool-discovery lane (AI-phishing-generation + deepfake/voice-clone offense topics) surfaced only awesome-lists and known/staged repos; carried offensive MCP/agent red-team candidates stay unverified under the github 403-scope — [thinkTanck/mcproof](https://github.com/thinkTanck/mcproof), [pvcomms/mcp-red-team](https://github.com/pvcomms/mcp-red-team), `bappisinsane/mcp-redteamer`, `KeyValueSoftwareSystems/agent-opfor`, `renfield`, PyPI `offensive-ai` v3.0.0 and `agentsploit` v1.7.0. Black Hat Arsenal / DEF CON Demo Labs off-season (next: Black Hat Europe Dec 2026). Watched-repo state (all unchanged):
 
 - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.125.1** (npm).
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.1**.
@@ -72,10 +74,10 @@ No new above-bar **verified** tool this scan. The tool-discovery lane (AI-malwar
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- **In-the-wild PI incident** via [Hacker News](https://hn.algolia.com/?query=prompt%20injection%20court%20filing&type=story) — a Brazilian court sanctioned lawyers for hiding a prompt injection in a court filing to manipulate AI-assisted review; a document-PI case in the wild (queued as 001 intake).
-- **Agentic-offense wave** across [security-news pointers](https://thehackernews.com/) — the "Black October" AI-dev-platform LLMjacking campaign and the ARTEX→Hermes agentic-framework intrusions dominate the cycle; followed to the vendor primaries and cited on the in-the-wild trend.
-- **AI-agent PI discourse** on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) — PI-scanner/defense threads + echoes of the already-captured AGENTS.md "Markdown-as-exe" story and Cisco's Project Quarry detection tool; no new offensive artifact, no new attack-class vocabulary.
+- **In-the-wild AI-offense** across [security-news pointers](https://thehackernews.com/) — Kaspersky's CyberStrikeAI in-the-wild campaign plus the ongoing "Black October" AI-dev-platform LLMjacking wave dominate the cycle; followed to the vendor primaries and cited on the in-the-wild trend.
+- **In-the-wild PI incident** via [Hacker News](https://hn.algolia.com/?query=prompt%20injection%20court%20filing&type=story) — a Brazilian court sanctioned lawyers for hiding a prompt injection in a court filing to manipulate AI-assisted review; a document-PI case in the wild (queued as agent-stack intake).
+- **AI-agent PI discourse** on [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) — PI-scanner/defense threads + echoes of the already-captured AGENTS.md "Markdown-as-exe" story; no new offensive artifact, no new attack-class vocabulary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~12)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-02](reports/2026-11-02.md) · 📅 weekly: [2026-W44](reports/weekly/2026-W44.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~13)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-03](reports/2026-11-03.md) · 📅 weekly: [2026-W44](reports/weekly/2026-W44.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
