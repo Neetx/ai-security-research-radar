@@ -1,25 +1,24 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-11-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--06-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-10-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-10-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--07-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-05):**
-- 🚀 **ARTEX from the operators' side — [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2):** Check Point's ["Hacking on Autopilot"](https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/) shows the autonomous-pentest framework ARTEX from the **operator consoles** — 1,800+ publicly exposed instances, mostly **fully-autonomous, financially-motivated commodity cybercrime** (mostly Deepseek-Flash), agents abusing web-RCE and running supply-chain attacks — reframing ARTEX from a nation-state tool into a widely-deployed criminal platform.
-- 🚀 **OpenAI's anti-exfiltration guardrail bypassed — [attacks on the LLM-agent stack](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain):** Check Point's ["ChatGPT Lockdown Mode Bypass"](https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/) defeats the setting OpenAI built specifically to stop prompt-injection exfiltration — silent exfiltration of the entire chat history, credential-phishing and malware delivery, **zero user interaction** in ChatGPT Classic (independently corroborated via The Hacker News).
-- 🚀 **The only cryptanalytic-extraction defense broken — [model extraction](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis):** ["Breaking TraintoDefend"](https://arxiv.org/abs/2611.07370) defeats the sole dedicated defense against cryptanalytic model extraction (NeurIPS-2025) via adaptive neuron-clustering; and [agent authorization integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) gains ["Signed but Not Safe"](https://arxiv.org/abs/2611.07483) — signed HMAC requirement-manifests cut unsafe commits across multi-agent handoffs 69.4%→9.0%.
-- 📚 **Study pick:** ["Beyond Instruction Override"](https://arxiv.org/abs/2611.07640) redefines indirect prompt injection by **authority** — planted content is an attack when it decides something its source was not authorized to decide (task-tampering, not just task-redirection) across 90 validated cases / 3 environments.
+**Since last scan (2026-11-06):** *weekly recalibration W45*
+- 🌊 **In-the-wild AI-for-offense → mainstreaming** (the week's one stage move): [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) promoted accelerating → **mainstreaming** — it is now standard practice across the threat-intel industry: ARTEX autonomous-pentest deployed at [1,800+ instances](https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/), an industrialized [LLMjacking economy](https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models) (≥9 platforms breached in October, >$1M/org), and near-weekly disclosures from ≥8 independent vendors.
+- 🔭 **Recalibration:** +2 sources promoted — [Varonis Threat Labs](https://www.varonis.com/blog/category/threat-research) → Primary feeds (recurring Copilot/agentic-browser offensive-research series) and [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) → Watched repositories (in-the-wild-validated). LLMjacking seed **held** at 2 orgs (below the ≥3-group bar); watchlist trimmed to ~10, study shelf to 28.
+- 🚀 **Strongest evidence this week:** OpenAI's ["A thousand fewer paths to root"](https://openai.com/index/a-thousand-fewer-paths-to-root) — an autonomous discover→exploit→patch pipeline produced 948 working Linux LPE exploits in one run ([vuln discovery](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code)); and OpenAI's anti-exfiltration guardrail was [defeated zero-click](https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/) ([agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain)).
+- 📚 **Study pick:** ["Beyond Instruction Override"](https://arxiv.org/abs/2611.07640) redefines indirect prompt injection by **authority** — planted content is an attack when it decides something its source was not authorized to decide (task-tampering, not just task-redirection), across 90 validated cases / 3 environments.
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 3 · 🚀 11 · 🌊 0 · 🏔 0 · 📉 0 · 💤 3
+🌱 1 · 📈 3 · 🚀 10 · 🌊 1 · 🏔 0 · 📉 0 · 💤 3
 
 | trend | stage | latest signal |
 |---|---|---|
 | [Attacks on LLM-agent stack: MCP, memory, supply chain](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) | 🚀 accelerating | [2026-11-05](https://research.checkpoint.com/2026/chatgpt-lockdown-mode-bypass-phishing-malware-delivery-and-silent-data-exfiltration/) |
-| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🚀 accelerating | [2026-11-05](https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/) |
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 🚀 accelerating | [2026-11-05](https://arxiv.org/abs/2611.07483) |
 | [LLM/agentic vuln discovery, repair & AI-written code](TRENDS.md#id-ai-vuln-discovery-002-llmagentic-vulnerability-discovery-repair--the-insecurity-of-ai-written-code) | 🚀 accelerating | [2026-11-04](https://openai.com/index/a-thousand-fewer-paths-to-root) |
 | [AI-security tooling unreliable: scanners, guards, judges](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) | 🚀 accelerating | [2026-11-04](https://arxiv.org/abs/2611.06585) |
@@ -33,6 +32,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-10-27](https://arxiv.org/abs/2610.37984) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [Persistent-memory durable compromise](TRENDS.md#id-persistent-memory-durable-compromise-018-durable-compromise-of-llm-agent-persistentlong-term-memory-injected-or-leaked-state-that-survives-deletion-carries-over-after-the-attacker-leaves-and-self-reinforces) | 🌱 seed | [2026-10-22](https://arxiv.org/abs/2610.31366) |
+| [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🌊 mainstreaming | [2026-11-05](https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09708) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09264) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 💤 dormant | [2026-10-06](https://arxiv.org/abs/2610.07645) |
@@ -41,13 +41,13 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-- No new **verified** offensive tool this scan. The tool-discovery search surfaced [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) — an autonomous MCP/AI red-team framework exposing offensive tooling to AI agents — staged as a candidate (repo maturity/adoption not yet verified under the github 403-scope; weekly confirms). Check Point's ARTEX report also re-surfaced **VulnClaw** (Chinese-community pentest agent), still repo-unresolved and name-only.
+- **Newly watched (promoted this week):** [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — open-source AI-powered offensive-security harness (Go; LLM attack-orchestrator + built-in C2, 176+ MCP tools, 13+ agents, ~1.9k★, **v1.1.14**). In-the-wild validated: [Kaspersky](https://securelist.com/cyberstrikeai-attacks/121715/) documented CyberStrikeAI in a real education-sector campaign.
+- Tool-discovery search also staged [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) (autonomous MCP/AI red-team framework) — repo maturity/adoption pending verification under the github 403-scope.
 - Watched-repo state (all unchanged this scan):
   - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.125.1** (npm).
   - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.1**.
   - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — framework to red-team LLMs and AI agents; **v1.0.10**.
   - [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI; **v1.1.0**.
-  - [Giskard-AI/giskard](https://github.com/Giskard-AI/giskard) — evals, red-teaming & test generation for LLM/agentic systems; **v3.0.1**.
   - [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) — a Dockerized collection of 38 offensive-security MCP servers / 300+ tools (Nmap, Ghidra, Nuclei, SQLMap, Hashcat, …).
 
 ---
@@ -74,10 +74,10 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
 - **ChatGPT Lockdown Mode bypass** led the [security-news pointers](https://thehackernews.com/) this cycle — followed to Check Point's vendor primary and cited on the agent-stack trend.
-- **AI-package supply-chain compromises** on [Socket's research](https://socket.dev/blog) — LiteLLM and MemTensor packages compromised to steal cloud/AI credentials; followed to the vendor primaries (queued as agent-stack-adjacent intake, pending a possible dedicated nucleus at the weekly).
+- **AI-package supply-chain compromises** on [Socket's research](https://socket.dev/blog) — LiteLLM and MemTensor packages compromised to steal cloud/AI credentials; followed to the vendor primaries (queued as agent-stack-adjacent intake, pending a possible dedicated nucleus).
 - **The attacker-defender automation gap** framed across [curated security digests](https://tldrsec.com/) — commentary that attackers chase working exploits faster than defenders can push changes through approvals; defense-side opinion, no new offensive artifact.
 - No new attack-class vocabulary this cycle; [Hacker News](https://hn.algolia.com/?query=prompt%20injection&type=story) quiet on new offensive artifacts.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-06](reports/2026-11-06.md) · 📅 weekly: [2026-W44](reports/weekly/2026-W44.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (~10)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-06](reports/2026-11-06.md) · 📅 weekly: [2026-W45](reports/weekly/2026-W45.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
