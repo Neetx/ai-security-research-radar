@@ -1,20 +1,20 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-10-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-11-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--09-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-10-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-12-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--10-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-07):**
-- 📈 **Two trends moved up:** [self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) revived dormant → **emerging** on a 10th independent group poisoning the reference-feedback channel of skill optimization ([When Feedback Becomes a Backdoor](https://arxiv.org/abs/2611.09348)); and [persistent-memory durable compromise](TRENDS.md#id-persistent-memory-durable-compromise-018-durable-compromise-of-llm-agent-persistentlong-term-memory-injected-or-leaked-state-that-survives-deletion-carries-over-after-the-attacker-leaves-and-self-reinforces) promoted seed → **emerging** on a 5th group — a cross-architecture benchmark tracing poisoned info through agent memory ([MemoryDojo](https://arxiv.org/abs/2611.09721)).
-- 🔑 **New evidence — agent authorization:** [Authorization Drift in LLM Agents](https://arxiv.org/abs/2611.09113) (ADB) shows agents exceed their authorization boundaries with **no adversary** — greater model capability drives greater drift (648 samples / 13 LLMs / 25,207 trajectories) → [agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures).
-- 🧠 **New injection channel:** [Thought Injection Attacks on Reasoning Agents](https://arxiv.org/abs/2611.08811) feeds untrusted text posing as the model's own chain-of-thought back to production reasoning models → [agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain).
-- 🌊 **In-the-wild watch:** LLMjacking stays at two independent orgs (Wiz + GTIG) — below the seed-split bar; the autonomous-cybercrime story remains anchored on [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2).
+**Since last scan (2026-11-09):**
+- 💤 **A trend went dormant:** [automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) emerging → **dormant** — a 21-day targeted-axis probe on its own channel (arXiv) plus an independent news search found no fresh autonomous-agent-red-team group; the field's cadence has paused since mid-October.
+- 🌊 **New in-the-wild case:** [BOSSAI: Inside the AI attack mesh](https://www.acronis.com/en/tru/posts/bossai-inside-the-ai-attack-mesh-that-targeted-taiwans-emergency-services) — a lone Taiwan-based operator ran a mesh of **12 AI agents** (infrastructure builder + scanner + attacker) against hundreds of orgs across 11 countries → [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2).
+- 🕵️ **Framework abuse confirmed in IR:** [GTIG "ARTEX and Friends"](https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks) reports multiple threat actors weaponizing the open-source agentic-pentest frameworks ARTEX, Hexstrike and CAIRN in real Mandiant incident-response engagements since late August → [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2).
+- 🌊 **Watch:** LLMjacking stays at two independent orgs (Wiz + GTIG) — below the seed-split bar — and OWASP's [GenAI LLM Top-10](https://genai.owasp.org/llm-top-10/) still shows no 2026 edition.
 
 ---
 
 ## Trends
 
-🌱 0 · 📈 5 · 🚀 10 · 🌊 1 · 🏔 0 · 📉 0 · 💤 2
+🌱 0 · 📈 4 · 🚀 10 · 🌊 1 · 🏔 0 · 📉 0 · 💤 3
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -28,12 +28,12 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-10-27](https://arxiv.org/abs/2610.37741) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 🚀 accelerating | [2026-10-26](https://arxiv.org/abs/2610.35043) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 🚀 accelerating | [2026-10-22](https://arxiv.org/abs/2610.30798) |
-| [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-11-06](https://arxiv.org/abs/2611.09348) |
 | [Persistent-memory durable compromise](TRENDS.md#id-persistent-memory-durable-compromise-018-durable-compromise-of-llm-agent-persistentlong-term-memory-injected-or-leaked-state-that-survives-deletion-carries-over-after-the-attacker-leaves-and-self-reinforces) | 📈 emerging | [2026-11-06](https://arxiv.org/abs/2611.09721) |
+| [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-11-06](https://arxiv.org/abs/2611.09348) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-11-05](https://arxiv.org/abs/2611.07370) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-10-27](https://arxiv.org/abs/2610.37984) |
-| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🌊 mainstreaming | [2026-11-05](https://research.checkpoint.com/2026/hacking-on-autopilot-inside-artex-cybercrime-campaigns/) |
+| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 💤 dormant | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09708) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09264) |
 
@@ -41,7 +41,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
-- No new verified tools this scan. Staged for verification: [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) (autonomous MCP/AI red-team framework) and [tmylla/Awesome-LLM4Cybersecurity](https://github.com/tmylla/Awesome-LLM4Cybersecurity) (discovery venue) — maturity/adoption pending verification under the github 403-scope.
+- **In-the-wild validated this scan:** [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) — autonomous MCP/AI red-team framework (an MCP server exposing 150+ offensive tools to AI agents) — named by [GTIG "ARTEX and Friends"](https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks) as one of the open-source agentic-pentest frameworks abused by threat actors in real IR; repo maturity/adoption pending verification under the github 403-scope.
 - Recently watched: [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — open-source AI-powered offensive-security harness (Go; LLM attack-orchestrator + built-in C2, 176+ MCP tools, ~1.9k★, **v1.1.14**), in-the-wild validated by [Kaspersky](https://securelist.com/cyberstrikeai-attacks/121715/).
 - Watched-repo state (all unchanged this scan):
   - [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.125.1** (npm).
@@ -73,11 +73,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- **Claude Code's "Don't Ask Again" secret exposure** led [Hacker News](https://news.ycombinator.com/) and the [security-news pointers](https://thehackernews.com/) this cycle — commands containing API keys/passwords saved verbatim to a project settings file and committed to public repos; an agent-config-hygiene issue, no novel attack technique.
-- **Browser-extension → agent code execution** circulated via the [pointer outlets](https://thehackernews.com/) — a re-surfaced disclosure that a script-injecting browser extension can abuse an AI desktop agent's auto-approve path to run commands; intake only (primary not a tracked first-party this cycle).
-- **AI-package supply-chain compromises** on [Socket's research](https://socket.dev/blog) — LiteLLM and MemTensor packages compromised to steal cloud/AI credentials; followed to vendor primaries (queued as agent-stack-adjacent, pending a possible dedicated nucleus).
-- No new attack-class vocabulary this cycle; [Reddit](https://www.reddit.com/r/ChatGPTJailbreak/) quiet on new offensive artifacts.
+- **Containment & monitoring, not model capability, dominated the AI-hacking debate** on [Hacker News](https://news.ycombinator.com/) this cycle — commentary arguing the recent autonomous-intrusion reports trace to containment/monitoring failures rather than a capability jump.
+- **OpenAI's "GPT-6 Cyber" / Aardvark security-researcher launch** echoed across [Reddit](https://www.reddit.com/) and the pointer outlets — a defensive autonomous vuln-finder; intake only, dedups with the AI-vuln-discovery line.
+- **AI-dev-package supply-chain churn** on [Socket's research](https://socket.dev/blog) — fresh npm compromises weaponizing AI CLI tooling; queued as agent-stack-adjacent, pending a possible dedicated nucleus.
+- No new attack-class vocabulary this cycle; the curated digests ([tldr sec](https://tldrsec.com/), Simon Willison, Embrace The Red) surfaced no new offensive primary.
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (11)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-09](reports/2026-11-09.md) · 📅 weekly: [2026-W45](reports/weekly/2026-W45.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (12)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-10](reports/2026-11-10.md) · 📅 weekly: [2026-W45](reports/weekly/2026-W45.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
