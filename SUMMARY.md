@@ -1,4 +1,4 @@
-# AI Security Radar — 2026-11-10
+# AI Security Radar — 2026-11-11
 
-- **Stage** · [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) emerging → dormant — no new autonomous-agent-red-team work since mid-October.
-- **New** · [BOSSAI: Inside the AI attack mesh that targeted Taiwan's emergency services](https://www.acronis.com/en/tru/posts/bossai-inside-the-ai-attack-mesh-that-targeted-taiwans-emergency-services) — a lone operator ran a mesh of 12 AI agents across 11 countries (→ [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2)).
+- **New** · [StealthyPoison](https://arxiv.org/abs/2611.12155) — corrupts a third-party skill's decision-critical rules to force wrong outcomes while keeping its function intact (→ [skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses)).
+- **Study pick** · [BypassGym](https://arxiv.org/abs/2611.13684) — first benchmark for whether an AI agent's payload can evade a deployed EDR.
