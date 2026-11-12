@@ -1,4 +1,4 @@
-# AI Security Radar — 2026-11-11
+# AI Security Radar — 2026-11-12
 
-- **New** · [StealthyPoison](https://arxiv.org/abs/2611.12155) — corrupts a third-party skill's decision-critical rules to force wrong outcomes while keeping its function intact (→ [skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses)).
-- **Study pick** · [BypassGym](https://arxiv.org/abs/2611.13684) — first benchmark for whether an AI agent's payload can evade a deployed EDR.
+- **New** · [Beyond Max Tokens: Stealthy Resource Amplification via Tool Calling Chains](https://aclanthology.org/2026.emnlp-main.2090) — inflates an agent's inference cost via unnecessary tool-call chains; task still completes (→ [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness)).
+- **Study pick** · [OWASP Top 10 for LLM Applications 2026 + Agent Control Standard](https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members) — flagship LLM-security standard's 2026 revision, plus a new agentic-systems control standard.
