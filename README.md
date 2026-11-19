@@ -1,20 +1,20 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-14-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--18-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--19-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-18):**
-- 📈 **Mechanistic-jailbreak line revived** — [refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) moved dormant → emerging: a [multimodal refusal-direction localization](https://arxiv.org/abs/2611.19826) (11-15) lands inside the window yesterday's dormancy probe missed, so the move was premature.
-- 🧩 **In-the-wild agent-framework supply-chain compromise** — Wiz found a [credential stealer added to Microsoft's `agent-framework` PyPI package](https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi) (v1.26.1/1.26.2, ~200k downloads/month, since quarantined) → [agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain) — the first direct package-registry poisoning of a first-party AI-agent framework.
-- 🚀 **Agent-authorization / guardrail / skill-composition batch** — a ~4-day arXiv catch-up refreshed [tooling-unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack) (frozen [guardrail probes fail when the backbone updates](https://arxiv.org/abs/2611.19216)), [authorization integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) ([limits of multi-agent authorization](https://arxiv.org/abs/2611.19598)) and [skill supply-chain poisoning](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) ([compositional exploits chaining individually-harmless tools](https://arxiv.org/abs/2611.19764)).
-- 🖋 **Watermark forgery by transplantation** — [TetherMark](https://arxiv.org/abs/2611.22345) exposes cross-instance transplantation (valid watermark evidence lifted onto a different image) → [provenance & watermark attacks](TRENDS.md#id-watermark-provenance-attack-015-defeating-generative-ai-content-provenance--watermarks-image--audio--video--text-removal-forgery--laundering-across-modalities).
+**Since last scan (2026-11-19):**
+- 📈 **Automated agent red-teaming revived** — [red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) moved dormant → emerging on an 11th independent group: [AutoPI](https://arxiv.org/abs/2611.24313) red-teams prompt injection in LLM agents around a taxonomy, arguing attack COVERAGE (not success rate) is what measures robustness.
+- 🧩 **The MCP vetting tool is itself RCE-able** — Pillar found a [remote code execution in the official MCP Inspector](https://www.pillar.security/blog/inspecting-the-inspector-rce-in-mcps-official-debugging-tool) (`@modelcontextprotocol/inspector` ≤2.11.0, 768k weekly downloads): a malicious remote MCP server returns an OAuth endpoint with a PowerShell subexpression that runs unescaped during login → [agent-stack attacks](TRENDS.md#id-agentic-attack-surface-001-attacks-on-the-llm-agent-stack-prompt-injectionrce-malicious-skills-agent-supply-chain).
+- 🔑 **KV-cache obfuscation is not confidentiality** — [When Shuffling Fails](https://arxiv.org/abs/2611.24276) recovers tokens from shuffle-obfuscated KV caches exposed to serving-stack operators and co-tenants, breaking the b!-permutation security argument (study pick; a forming KV-cache-attack watch).
+- 🛠 New tool release: [promptfoo v0.126.0](https://github.com/promptfoo/promptfoo); new offensive tool candidates staged (Wallbreaker, ModelFang).
 
 ---
 
 ## Trends
 
-🌱 0 · 📈 5 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 3
+🌱 0 · 📈 6 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 2
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -27,13 +27,13 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) | 🚀 accelerating | [2026-11-14](https://arxiv.org/abs/2611.19598) |
 | [Economic/availability DoS on LLM systems](TRENDS.md#id-llm-resource-exhaustion-dos-012-economicavailability-dos-on-llm-systems-resource-amplification--cost-inflation-attacks-that-preserve-output-correctness) | 🚀 accelerating | [2026-11-12](https://aclanthology.org/2026.emnlp-main.2090) |
 | [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🚀 accelerating | [2026-11-04](https://arxiv.org/abs/2611.06498) |
+| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-11-18](https://arxiv.org/abs/2611.24313) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-11-16](https://arxiv.org/abs/2611.16928) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 📈 emerging | [2026-11-15](https://arxiv.org/abs/2611.19826) |
 | [Self-evolving-agent skill poisoning](TRENDS.md#id-self-evolving-agent-poisoning-010-poisoning-the-experienceskill-promotion-pipeline-of-self-evolving-agents-untrusted-experience-laundered-into-trusted-persistent-skills) | 📈 emerging | [2026-11-06](https://arxiv.org/abs/2611.09348) |
 | [Persistent-memory durable compromise](TRENDS.md#id-persistent-memory-durable-compromise-018-durable-compromise-of-llm-agent-persistentlong-term-memory-injected-or-leaked-state-that-survives-deletion-carries-over-after-the-attacker-leaves-and-self-reinforces) | 📈 emerging | [2026-11-06](https://arxiv.org/abs/2611.09721) |
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-11-05](https://arxiv.org/abs/2611.07370) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🌊 mainstreaming | [2026-11-16](https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold) |
-| [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 💤 dormant | [2026-10-20](https://arxiv.org/abs/2610.28966) |
 | [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09708) |
 | [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09264) |
 
@@ -41,11 +41,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## 🛠️ Tools & releases
 
+- [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.126.0** (npm, 2026-11-18).
 - [microsoft/PyRIT](https://github.com/microsoft/PyRIT) — Python Risk Identification Tool for generative AI (offensive red-team framework); **v1.2.1** (PyPI, 2026-11-16).
 - [0x4m4/hexstrike-ai](https://github.com/0x4m4/hexstrike-ai) — autonomous MCP/AI red-team framework: an MCP server exposing 150+ offensive tools to AI agents (MIT, 12.8k★/2.6k forks); named by [GTIG](https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold) among frameworks seen in real intrusions.
 - [AntiFox-AI/antifox](https://github.com/AntiFox-AI/antifox) — multi-agent autonomous-pentest platform (ARTEX-derivative; recon→exploitation→report, ~474★); tied by Arctic Wolf Labs to a real AWS production-secret theft.
 - [CyberStrikeus/CyberStrike](https://github.com/CyberStrikeus/CyberStrike) — open-source AI-powered offensive-security harness (Go; LLM attack-orchestrator + built-in C2, 176+ MCP tools, ~1.9k★, **v1.1.14**), in-the-wild validated by [Kaspersky](https://securelist.com/cyberstrikeai-attacks/121715/).
-- [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) — prompt/agent/RAG red-teaming & pentesting; **v0.125.1** (npm).
 - [NVIDIA/garak](https://github.com/NVIDIA/garak) — the LLM vulnerability scanner; **v0.17.1**.
 - [confident-ai/deepteam](https://github.com/confident-ai/deepteam) — framework to red-team LLMs and AI agents; **v1.0.10**.
 - [FuzzingLabs/mcp-security-hub](https://github.com/FuzzingLabs/mcp-security-hub) — a Dockerized collection of 38 offensive-security MCP servers / 300+ tools (Nmap, Ghidra, Nuclei, SQLMap, Hashcat, …).
@@ -54,6 +54,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ## Worth studying
 
+- [When Shuffling Fails: Token Recovery from Obfuscated KV Caches](https://arxiv.org/abs/2611.24276) — the LLM-serving-confidentiality result to internalize: production systems store, offload and SHARE KV caches, exposing token-level representations to infrastructure operators and co-tenants, and a popular defense shuffles/obfuscates them claiming security from the b! possible permutations. This shows that argument is wrong — input symmetry invalidates the counting bound — and recovers tokens anyway. "We shuffle the KV cache" is not confidentiality.
 - [Stopping Is Not the Limit: Long-Horizon Vulnerability Exploitation](https://arxiv.org/abs/2611.22888) — the offensive-agent-capability datapoint to know: on ExploitBench, LM agents that develop working exploits from known flaws routinely STOP with test-time budget remaining, and eliciting continued execution past the first stop yields additional VERIFIED exploits — so a measured exploitation ceiling is partly a function of the agent's stopping behavior, not just the model.
 - [Can LLMs Write Backdoors? An Empirical Security Study of Weight-Space Programming](https://arxiv.org/abs/2611.17395) — the model-weight-integrity escalation: weight-space programming lets an LLM directly EDIT another network's weights from natural-language instructions with no gradient training, and this shows a general-purpose LLM can exploit it to INJECT backdoors (MLP, ResNet-18, Qwen2.5-0.5B) with no task-specific data or gradients. The next step beyond Lazare's hand-crafted sleeper: the attacker no longer designs the edit — the LLM performs it from a prompt.
 - [OWASP Top 10 for LLM Applications 2026 + Agent Control Standard](https://genai.owasp.org/2026/09/01/owasp-genai-security-project-unveils-2026-top-10-for-llm-applications-new-agent-control-standard-and-sponsors-as-community-tops-30000-members) — the flagship LLM-security standard's first major revision is now published (10,000+ downloads in 48h), alongside a NEW Agent Control Standard — the first OWASP artifact aimed specifically at the agentic surface the agent-stack / authorization / skill-poisoning trends cover. The axis-3 standards anchor that codifies the attack classes this radar tracks.
@@ -65,7 +66,6 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 - [ChatGPT Let Attackers Read Victims' Gmail Through a Hidden Channel Between Accounts](https://blog.checkpoint.com/research/chatgpt-let-attackers-read-victims-gmail-through-a-hidden-channel-between-accounts) — Check Point found a covert two-way channel between the code-execution containers of two separate ChatGPT conversations under DIFFERENT accounts, via a shared internal JFrog Artifactory service — a crafted instruction made a victim's session quietly run an attacker's second stream (e.g. read connected Gmail). The real-world cross-account realization of the covert-channel line.
 - [Securing Internet-Critical Software: How We Could Have Backdoored Bash](https://hacktron.ai/blog/hacking-gnu-savannah) — Hacktron's autonomous agents found a shell injection that gave code execution on GNU Savannah (the FSF forge hosting GNU), escalated to root, and reached PUSH access to the upstream Bash repo — then helped the FSF fix 26 forge vulnerabilities. AI now reaches the supply-chain chokepoints.
 - [Fuzzers vs. AI: Comparing Fuzzilli and BigSleep on JavaScript Engines](https://projectzero.google/2026/10/fuzzing-v-AI.html) — Google Project Zero ran its JS-engine fuzzer (Fuzzilli) and its LLM bug-finder (BigSleep) against Chrome's V8 for six months: BigSleep found MORE vulnerabilities (45 vs 37), only ~25% overlap. First at-scale first-party head-to-head showing an LLM agent out-finding a mature fuzzer on real production code — yet complementary, so run both.
-- [NameTrap: Steering AI Coding Agents Toward Security Vulnerabilities via Variable Names](https://arxiv.org/abs/2610.34253) — because agents read third-party source as context, an attacker steers the code they WRITE toward a target CWE by only RENAMING identifiers — bait with no instructions and no vulnerable statements, across six agents / ten models / four CWEs.
 
 ---
 
@@ -73,10 +73,11 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 *Unverified sentiment (Phase-3 intake, link-only) — never trend evidence.*
 
-- The cycle's top AI items on the [Hacker News front page](https://news.ycombinator.com/) were a frontier-model launch and coding-agent harness / code-review discussion — no offensive-security disclosure.
-- No new attack-class vocabulary coined this cycle; the curated digests ([tldr sec](https://tldrsec.com/), Simon Willison, [Embrace The Red](https://embracethered.com/blog/)) surfaced no new offensive primary.
-- The scan's in-the-wild signal came from vendor threat-intel (an [AI-agent-framework package compromise](https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi)), not community chatter.
+- The cycle's top AI items on the [Hacker News front page](https://news.ycombinator.com/) were frontier-model launches and LLM-assisted reverse-engineering — no offensive-security disclosure.
+- Researchers demonstrated an [AI-model-hub account takeover](https://www.bleepingcomputer.com/news/security/researchers-hijack-hugging-face-account-for-popular-kokoro-ai-model/) by reclaiming a lapsed donate-domain to reset a popular model's publisher password — an ownership-verification weakness, not an in-the-wild attack (intake, single outlet).
+- A front-page item on [LLM inversion for prompt reconstruction](https://news.ycombinator.com/) surfaced as a model-inversion research pointer; no new attack-class vocabulary coined this cycle.
+- The curated digests ([tldr sec](https://tldrsec.com/), Simon Willison, [Embrace The Red](https://embracethered.com/blog/)) surfaced no new offensive primary; the scan's in-the-wild signal came from vendor research (the MCP-Inspector RCE).
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (14)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-18](reports/2026-11-18.md) · 📅 weekly: [2026-W46](reports/weekly/2026-W46.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-19](reports/2026-11-19.md) · 📅 weekly: [2026-W46](reports/weekly/2026-W46.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
