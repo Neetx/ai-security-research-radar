@@ -42,6 +42,12 @@ breadth of orgs, presence in tools/standards).
   evidence thins or is mostly vendor-reported.
 - After recalibration, regenerate `README.md` (`radar-render-dashboard`).
 
+AXIS FLOOR REVIEW: from this week's dailies' per-axis lines, compute each axis's share of routed
+items and record it in the calibration line (`axes: 1 n · 2 n · …`). Resolve every UNDER FLOOR flag
+(real silence → note it; crowding-out → probe the axis's venues and capture what was missed). An
+axis below half its fair share (1 / number of axes) for 2 consecutive weeks is a calibration signal
+for an amendment — this is the metric that makes attention balance amendable.
+
 ## 3. Clean the observation queue
 Items older than 14 days — verify now and either promote, drop (one-line reason in the
 report), or re-date stating what is still missing. HARD CAP ~25 live items: resolve the

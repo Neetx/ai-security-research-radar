@@ -109,3 +109,8 @@ The expected section order above IS the file contract. When a check finds a sect
 missing or out of order, RESTORE that section in TRENDS.md — never edit this list, or any
 check in this block, to match the broken file. A check rewritten to accept a defect is how
 a lost section stays lost: every later run validates clean against it.
+
+Collection trends (BATCH PRODUCERS, routines/daily.md): a batch producer's collection is an
+ordinary trend block — same fields, same 10-item evidence cap. Its notes point to the producer's
+section in `logs/results_catalog.md`, where the individual items live one line each; an item is
+promoted out to its own block only when it clears the bar by itself.

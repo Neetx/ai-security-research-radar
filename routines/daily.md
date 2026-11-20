@@ -32,12 +32,23 @@ skipped check.
   proposal found there, so its cooling-period clock is not lost; invent nothing. If the same
   kind of run was incomplete twice in a row, send the curator a push notification: that is a
   run that keeps dying, not a blip.
+  Also check that the most recent daily report has its `Axes:` block (AXIS FLOOR); if it is
+  missing, say so at the top of today's report — the floor was skipped, not satisfied.
 - Read `TRENDS.md` in full.
 - Read the most recent report in `reports/` (skip if none yet).
 - Read the recent tail (~10 entries) of `logs/strategy_notes.md` and the recent tail (~7 days) of `logs/source_rotation.md` to
   decide today's coverage.
 
 ## 2. Scan
+
+AXIS FLOOR (every run): every axis of the `Scope, in priority order` list below gets its own
+attention in this run — not only its sources' CHECK. Start the triage with the axis that had the
+FEWEST routed items over the last 7 days of reports, and give every axis its own triage pass
+before working through any single source's batch: a high-volume axis or producer must not consume
+the run. The report carries one line per axis (`Axis <n> <name>: <items routed> — <what, or
+"nothing new">`), even when empty. An axis with zero routed items for 3 consecutive dailies is
+flagged UNDER FLOOR in the report; the weekly decides whether that is real silence or crowding-out
+(probe its venues as in the DORMANCY PROBE).
 
 Coverage honesty (applies to EVERY sweep): a source listed in `SOURCES.md` under a
 "swept every run" heading is a coverage PROMISE — every such source must appear in
@@ -174,6 +185,15 @@ is owed every run.
   A run that checked a trend and found nothing new writes NOTHING into it — that non-event already
   lives in today's report and in `logs/source_rotation.md`, and copying it into the trend is how a
   ledger silently turns into a run-log. If a note would only say "checked, unchanged", omit it.
+- BATCH PRODUCERS — volume is not significance. A source that releases many on-scope results
+  at once or at sustained volume (≥10 in 7 days: a lab's results repository, a venue for
+  machine-generated work, a vendor's bulk disclosure) does NOT seed one trend per item. It gets
+  ONE collection trend (create it the first time; evidence = the producer's own releases plus
+  independent commentary on them), and its individual items are listed one line each in
+  `logs/results_catalog.md` under that producer. An item leaves the collection for its own trend
+  only when it clears this radar's trend/seed bar on its own merits (AGENTS.md). Per run, triage
+  at most 5 of a producer's new items individually — most significant first — and record the rest
+  as one bundled line in the catalog.
 - DORMANCY PROBE — silence must be MEASURED where the trend's evidence lives, never assumed.
   Before moving any trend to `dormant` (or archiving it), probe its silent window
   (`last_evidence` → today) on the channels its OWN evidence comes from: read the hosts and
@@ -218,6 +238,9 @@ benchmark. The trend bar does NOT apply (a single strong artifact qualifies) but
 evidence rules do (opened primary sources). Add to `study_shelf` (newest first). Zero is fine.
 
 ## 6. Write the daily report
+REQUIRED in every report: the `Axes:` block — one line per scope axis (AXIS FLOOR), even when an
+axis routed nothing. A report without it means the run skipped the floor: the next run's
+completion check treats it like a missing report section and the weekly flags it.
 Create `reports/YYYY-MM-DD.md` (under ~60 lines): ledger changes (evidence per trend,
 stage moves, queue promotions/drops); Top 3 of the day (one line + link each); study picks;
 `capture-leak: N ids checked / M queued` (required every run, even at 0);
