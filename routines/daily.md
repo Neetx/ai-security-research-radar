@@ -63,8 +63,8 @@ is exactly the one a roll-up silently drops.
   papers newer than the last scan, filter for OFFENSIVE relevance. Primary sources are
   citable evidence.
 - **In-the-wild threat-intel & incident lane (MANDATORY every run)** — iterate `SOURCES.md →
-  "In-the-wild threat-intel & incident disclosures"`: the vendor feeds + their sitemap/index
-  diff, then the security-news pointer outlets (intake only → follow to the primary). Filter
+  "In-the-wild threat-intel & incident disclosures"`: the vendor feeds (index pages for the
+  feed-less ones), then the security-news pointer outlets (intake only → follow to the primary). Filter
   for AI relevance. This lane is where the in-the-wild axis is actually reported — a quiet
   arXiv day says nothing about it.
 - **Community pulse (every run, intake only)** — `radar-pulse`: iterate the social/
@@ -178,7 +178,7 @@ is owed every run.
   Before moving any trend to `dormant` (or archiving it), probe its silent window
   (`last_evidence` → today) on the channels its OWN evidence comes from: read the hosts and
   lane types of its current evidence list (lab or vendor blogs, threat-intel, advisories/CVEs,
-  repos, arXiv, journals…) and check those — by feed or sitemap/index diff where possible —
+  repos, arXiv, journals…) and check those — by feed or index page where possible —
   PLUS one independent news search over the window
   (`tvly search "<trend terms>" --topic news --start-date <last_evidence>`, intake only).
   A probe on a channel the trend's evidence never came from (e.g. arXiv-only for an in-the-wild,

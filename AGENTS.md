@@ -36,7 +36,6 @@ published history, never force-push.
 | `TRENDS.md` | Trend ledger + `observation_queue`, `study_shelf`; `source_rotation`, `strategy_notes` and `calibration` are one-line pointer stubs | follow the `radar-ledger-update` skill |
 | `logs/source_rotation.md` | Append-only daily coverage log (externalized to keep the ledger small); read only the recent tail | append-only; never edit/reorder past lines |
 | `logs/strategy_notes.md` | Append-only strategy log (externalized 2026-09-08 to keep the ledger small); read only the recent tail (~10 entries) | append-only; curator entries never edited |
-| `state/sitemaps/` | Machine snapshots for the sitemap/index diff: the set of page URLs seen per source host | written only by `sitemap_diff.py --write`; grow-only; never edited by hand, never read as part of a run |
 | `logs/calibration.md` | Append-only weekly self-evaluation log | append-only; written by weekly runs only |
 | `README.md` | THE output surface (repo landing page): badges, digest, clickable trend table, study shelf | fully derived — regenerate via the `radar-render-dashboard` skill; never edit by hand |
 | `SUMMARY.md` | Daily summary page: the latest daily run's results in ≤ 6 one-line linked bullets — results only, no process detail | fully derived — overwritten by every daily run via `radar-render-dashboard` → *SUMMARY.md*; never edited by hand |

@@ -71,13 +71,11 @@ did not rank. A search is fine as an EXTRACT aid; it can never be the CHECK that
 coverage promise. Heal such a source with a method that ENUMERATES what the site published,
 in this order:
 1. its feed (find it as in Class A), else
-2. the sitemap diff (`sitemap_diff.py <host>`, bundled with the sweep skill: URLs new since
-   the last run), else
-3. the index diff (`sitemap_diff.py index:<section index url>`: the article links in the
-   index page's raw HTML), else
-4. a rendered copy of the index (`tvly extract`, or a reader proxy) diffed against the URLs
-   already in the repo.
-Only if all four fail is the source search-only: log it `search-only (recency not
+2. its index page: list the article links in the page's raw HTML (most JS-rendered blogs
+   still server-render them) — or in a rendered copy (`tvly extract`, a reader proxy) — and
+   compare them with the URLs already cited in the repo; the links not yet seen are the new
+   posts. Record the index URL as the source's method in SOURCES.md.
+Only if both fail is the source search-only: log it `search-only (recency not
 guaranteed)` — never `opened`/`checked` — and keep it on the heal worklist. Re-check every
 "healed" source whose recorded method is a search: it was never actually healed.
 
