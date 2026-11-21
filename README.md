@@ -1,20 +1,19 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-19-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-15-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--20-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-18-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-10-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--21-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-20):**
-- 🌱 **New trend: attacks on the LLM serving infrastructure** — a third independent group ([BlockJack](https://arxiv.org/abs/2611.25945), cross-tenant fault redirection of vLLM's paged KV-cache address translation) joins [bit-flips in a shared KV-cache block](https://arxiv.org/abs/2611.22243) and [token recovery from obfuscated KV caches](https://arxiv.org/abs/2611.24276), seeding [LLM serving-infra / KV-cache attacks](TRENDS.md#id-llm-serving-infra-attack-019-attacks-on-the-llm-servinginference-infrastructure-kv-cache-confidentiality-fault-injection--cross-tenant-isolation-failures-in-the-paged-serving-layer) — the KV-cache/paged-serving layer is itself an attack surface (confidentiality, integrity, cross-tenant isolation).
-- 🛡 **A weaker guardrail can't screen a stronger model** — Check Point's [Gatekeeper Asymmetry Doom / PuzzleMask](https://research.checkpoint.com/2026/30-years-of-gatekeeper-asymmetry-doom-the-paradox-that-makes-powerful-llms-more-vulnerable/) hides a policy-violating payload in prose a weak LLM pre-filter misses but the capable target model still acts on → [AI-security tooling unreliable](TRENDS.md#id-ai-defense-tooling-unreliable-003-the-ai-security-tooling-layer-itself-is-unreliableattackable-skill-scanners-prompt-injection-detectors--jailbreak-judges-fail-under-attack).
-- 💳 **Agents sign more authority than the mandate shows** — [Signed but Unbound](https://arxiv.org/abs/2611.25821) measures the gap between agent-commerce mandates and what the wallet signature actually permits (31,800 trials on Coinbase's deployed Commerce Payments Protocol) → [agent authorization & identity integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures).
-- 🧰 **Study picks**: [Living off the Local Model](https://arxiv.org/abs/2611.25086) abuses browser-embedded LLMs (Gemini Nano) as signed, network-invisible post-exploitation engines; [a SoK on LLM vuln-research capability](https://arxiv.org/abs/2611.26601) rates autonomous-exploitation claims on a driving-automation-style autonomy scale.
+**Since last scan (2026-11-21):**
+- 📈 **Embodied-AI perception attacks were not dormant — revived** — a weekly archive check surfaced a fresh three-group burst the standing sweep had missed: [RefCloth](https://arxiv.org/abs/2611.22736) (transferable adversarial tablecloth), [ExecGap](https://arxiv.org/abs/2611.23714) (command-execution-gap patch, validated on a physical robot) and [DMT-Attack](https://arxiv.org/abs/2611.25695) (detector-evading diffusion-prior texture) all attack vision-language-action robots through the camera — [physical-channel PI on embodied AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) revived dormant → emerging.
+- 🗄 **Slopsquatting trend retired** — weaponized-LLM-hallucination (predictable package-name hallucination pre-registered as a supply-chain attack) is [archived](ARCHIVE.md) after 45 days quiet: the targeted probe found no fresh offensive work and no in-the-wild registered-and-installed hallucinated package beyond recycled explainers.
+- 🔭 **Recalibration** — 18 active trends, all other velocities sound; watchlist trimmed to 10 and the study shelf pruned; no new anchoring (the week also seeded [serving-infra / KV-cache attacks](TRENDS.md#id-llm-serving-infra-attack-019-attacks-on-the-llm-servinginference-infrastructure-kv-cache-confidentiality-fault-injection--cross-tenant-isolation-failures-in-the-paged-serving-layer) and revived two more trends off-axis).
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 6 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 2
+🌱 1 · 📈 7 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 0
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -27,6 +26,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Adversarial trigger implantation & backdoor attacks](TRENDS.md#id-adversarial-trigger-backdoor-004-adversarial-trigger-implantation-and-backdoor-attacks-across-ml-model-types) | 🚀 accelerating | [2026-11-16](https://www.crowdstrike.com/en-us/blog/supply-chain-risk-from-backdoored-lora-models/) |
 | [Agent skill supply-chain poisoning (composition/chaining)](TRENDS.md#id-skill-supply-chain-poisoning-017-agent-skill-supply-chain-poisoning-malicious-skills-and-the-composition-chaining-of-individually-vetted-skills-into-behavior-per-skill-vetting-misses) | 🚀 accelerating | [2026-11-15](https://arxiv.org/abs/2611.19764) |
 | [RAG knowledge/document poisoning](TRENDS.md#id-rag-knowledge-poisoning-014-knowledgedocument-poisoning-of-retrieval-augmented-generation-rag-malicious-corpus-documents-steer-retrievalgeneration) | 🚀 accelerating | [2026-11-04](https://arxiv.org/abs/2611.06498) |
+| [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 📈 emerging | [2026-11-19](https://arxiv.org/abs/2611.25695) |
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-11-18](https://arxiv.org/abs/2611.24313) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-11-16](https://arxiv.org/abs/2611.16928) |
 | [Mechanistic basis of jailbreaks: refusal & harmfulness directions](TRENDS.md#id-refusal-direction-mechanics-005-the-mechanisticrepresentation-basis-of-jailbreaks-refusal--harmfulness-as-manipulable-linear-directions) | 📈 emerging | [2026-11-15](https://arxiv.org/abs/2611.19826) |
@@ -35,8 +35,6 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Model extraction, distillation & fingerprinting](TRENDS.md#id-model-extraction-fingerprinting-006-model-extraction-capability-distillation--fingerprinting-under-restrictive-apis) | 📈 emerging | [2026-11-05](https://arxiv.org/abs/2611.07370) |
 | [LLM serving-infra / KV-cache attacks](TRENDS.md#id-llm-serving-infra-attack-019-attacks-on-the-llm-servinginference-infrastructure-kv-cache-confidentiality-fault-injection--cross-tenant-isolation-failures-in-the-paged-serving-layer) | 🌱 seed | [2026-11-19](https://arxiv.org/abs/2611.25945) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🌊 mainstreaming | [2026-11-16](https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold) |
-| [Physical-channel PI on embodied & wearable AI](TRENDS.md#id-embodied-physical-injection-007-physical--perception-channel-prompt-injection-against-embodied--wearable-ai-agents) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09708) |
-| [Weaponized LLM hallucination (slopsquatting supply chain)](TRENDS.md#id-hallucination-squatting-008-weaponized-llm-hallucination-predictable-resource-name-hallucination-pre-registered-as-an-ai-supply-chain-attack-slopsquatting) | 💤 dormant | [2026-10-07](https://arxiv.org/abs/2610.09264) |
 
 ---
 
@@ -80,4 +78,4 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (15)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-20](reports/2026-11-20.md) · 📅 weekly: [2026-W46](reports/weekly/2026-W46.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (10)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-20](reports/2026-11-20.md) · 📅 weekly: [2026-W47](reports/weekly/2026-W47.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
