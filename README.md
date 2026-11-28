@@ -1,19 +1,20 @@
 # AI Security Radar
 
-![trends](https://img.shields.io/badge/trends-20-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-34-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--27-2f9e44?style=flat-square)
+![trends](https://img.shields.io/badge/trends-21-3266ad?style=flat-square) ![accelerating](https://img.shields.io/badge/accelerating-9-e8590c?style=flat-square) ![watchlist](https://img.shields.io/badge/watchlist-33-6c757d?style=flat-square) ![updated](https://img.shields.io/badge/updated-2026--11--28-2f9e44?style=flat-square)
 
 Autonomous tracker of the **offensive AI-security frontier** — AI for offense and attacks against AI — for a security researcher; generated from [TRENDS.md](TRENDS.md).
 
-**Since last scan (2026-11-27):**
-- 🌐 **Nation-state & crime groups are adopting the ARTEX autonomous-pentest framework** — Microsoft names six state-sponsored and financially-motivated groups (Storm-0940/-3358, Onyx Sleet, Pearl Sleet, Crystal Typhoon, Salt Typhoon) running intrusions on ARTEX ([Microsoft Threat Intelligence](https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/)) → [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2).
-- 🔎 **Agentic offensive frameworks carry a forensic fingerprint** — ARTEX/Cairn harnesses leak incrementing "Intent ID" counters into victim logs ([Wiz](https://www.wiz.io/blog/agentic-offensive-frameworks-intent-ids-artex-cairn)), and a real OpenAI-model "agentic swarm" built its own recon/exfil pipeline out of public web services ([Talos](https://blog.talosintelligence.com/the-great-escape-tradecraft-insights-from-an-agentic-swarm/)).
-- 🧠 **Commercial AI agents leak memory even after deletion** — an audit of five shipped agents (Copilot/Claude/Gemini) finds non-zero post-deletion leakage of health/sensitive attributes plus a stealth memory-injection technique ([FORGETMENOT](https://arxiv.org/abs/2611.29804)) → held [persistent-memory durable compromise](TRENDS.md#id-persistent-memory-durable-compromise-018-durable-compromise-of-llm-agent-persistentlong-term-memory-injected-or-leaked-state-that-survives-deletion-carries-over-after-the-attacker-leaves-and-self-reinforces) off dormancy.
+**Since last scan (2026-11-28, weekly W48):**
+- 🌱 **New seed — hardware bit-flip / rowhammer corruption of model weights** — three independent groups in one week implant backdoors or targeted faults into deployed LLM/VLA/VLM weights via rowhammer, EMFI and pre-deployment parameter-layout manipulation, with no training ([FlipVLA](https://arxiv.org/abs/2611.33810), [RegionAlign](https://arxiv.org/abs/2611.33370), [BridgeHammer](https://arxiv.org/abs/2611.34684)) → new [weight-fault-injection / bit-flip](TRENDS.md#id-weight-fault-injection-bitflip-022-inference-time-hardware-weight-corruption-of-llmsvlasvlms-rowhammer-emfi--parameter-layout-fault-injection-that-implants-backdoors-or-targeted-faults-in-deployed-model-weights-without-training) seed.
+- 🌐 **The week's dominant thread stays in-the-wild AI-for-offense** — Microsoft names six state/crime groups abusing the ARTEX agentic-pentest framework and AWS confirms Cairn agents found a zero-day autonomously ([Microsoft Threat Intelligence](https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/)) → [in-the-wild AI-for-offense](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2).
+- 🔑 **Coding-agent authorization breaks kept clustering** — a permission reply that deletes an operator deny-rule, compatible tool updates that silently widen authority, and tool-call smuggling ([When Answering Is Administering](https://arxiv.org/abs/2611.32195)) keep [agent authorization integrity](TRENDS.md#id-agent-authorization-integrity-013-agent-authorization--identity-state-integrity-endogenous-authorization-laundering-self-issued-authority--effect-closure-failures) among the most active axes.
+- 🧹 **Ledger hygiene** — the watchlist was burned down to its ~25 cap (7 aged run-log husks incl. a W47-leaked 11-04, plus the 10 oldest-over-cap signals dispositioned) and 6 [study-shelf](TRENDS.md#study_shelf) picks older than 30 days were pruned.
 
 ---
 
 ## Trends
 
-🌱 1 · 📈 9 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 0
+🌱 2 · 📈 9 · 🚀 9 · 🌊 1 · 🏔 0 · 📉 0 · 💤 0
 
 | trend | stage | latest signal |
 |---|---|---|
@@ -36,6 +37,7 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 | [Automated red-teaming of AI agents](TRENDS.md#id-automated-agent-redteam-011-autonomousagentic-red-teaming-systems-that-recon-and-attack-other-production-ai-agents-building-reusable-attack-knowledge) | 📈 emerging | [2026-11-18](https://arxiv.org/abs/2611.24313) |
 | [Undetectable covert channels & agent collusion](TRENDS.md#id-covert-channel-collusion-016-undetectable-covert-channels-in-llm-systems-steganographic-multi-agent-collusion--activation-level-exfiltration-that-defeat-transcriptmonitor-auditing) | 📈 emerging | [2026-11-16](https://arxiv.org/abs/2611.16928) |
 | [LLM-authored weight-space backdoors](TRENDS.md#id-weight-space-backdoor-programming-020-llmagent-authored-backdoors-via-weight-space-programming-a-model-reads-and-rewrites-another-networks-weights-from-a-natural-language-spec-implanting-persistent-backdoors-with-no-gradient-training) | 🌱 seed | [2026-11-20](https://arxiv.org/abs/2611.27425) |
+| [Hardware bit-flip / rowhammer weight corruption](TRENDS.md#id-weight-fault-injection-bitflip-022-inference-time-hardware-weight-corruption-of-llmsvlasvlms-rowhammer-emfi--parameter-layout-fault-injection-that-implants-backdoors-or-targeted-faults-in-deployed-model-weights-without-training) | 🌱 seed | [2026-11-25](https://arxiv.org/abs/2611.33810) |
 | [In-the-wild AI-for-offense: LLM malware dev & C2](TRENDS.md#id-ai-offensive-operations-009-in-the-wild-ai-for-offense-llms-weaponized-to-develop-malware-and-automate-offensive-operations-c2) | 🌊 mainstreaming | [2026-11-25](https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/) |
 
 ---
@@ -82,4 +84,4 @@ Autonomous tracker of the **offensive AI-security frontier** — AI for offense 
 
 ---
 
-📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (34)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-27](reports/2026-11-27.md) · 📅 weekly: [2026-W47](reports/weekly/2026-W47.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
+📄 [TRENDS.md](TRENDS.md) · 👁 [watchlist (33)](TRENDS.md#observation_queue) · 🗂 [reports/](reports/) → [2026-11-27](reports/2026-11-27.md) · 📅 weekly: [2026-W48](reports/weekly/2026-W48.md) · 📘 [AGENTS.md](AGENTS.md) · 🌐 [SOURCES.md](SOURCES.md)
